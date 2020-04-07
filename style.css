@@ -62,3 +62,13 @@ a
     text-align: center;
     margin: auto;
 }
+.AudioPlayer{
+    background: #251d3a;
+    shape-margin: round;
+}
+.AudioPlayer > div{
+    margin-left: 20px;
+}
+audio:hover, audio:focus, audio:active{
+    background-color: #0e0b16;
+}
