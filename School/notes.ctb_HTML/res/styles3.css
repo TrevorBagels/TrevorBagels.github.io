@@ -22,6 +22,8 @@ body {
     font-size: 13px;
     font-family: "Open Sans", sans-serif !important;
     white-space: pre-wrap;
+    background: #4e0128;
+    color: #ede8c3;
 }
 
 div.two-panels {
@@ -34,6 +36,7 @@ div.two-panels {
     bottom: 0;
     left: 0;
     right: 0;
+    background-color: #400022;
 }
 
 div.tree-panel {
@@ -90,7 +93,7 @@ div.tree button {
 }
 
 div.tree a, div.tree a:visited {
-    color: #666666;
+    color: #34abeb;
     text-decoration: none;
 }
 
@@ -191,18 +194,19 @@ div.codebox, div.page code, div.page pre {
     font-family: "Courier New", Courier, monospace;
     font-weight: normal;
     font-size: 13px;
-    background-color: #EEEEEE;
+    background-color: #1a0040;
     border: 1px solid #DDDDDD;
 }
 
 div.page p.tagged-text,
 div.page code {
-    /*color: #859C00;*/
+    
     padding-left: 0.25em;
     padding-right: 0.25em;
 }
 
 div.page pre {
+    
     padding: 0.25em;
     overflow: auto !important;
     width: 75%;
