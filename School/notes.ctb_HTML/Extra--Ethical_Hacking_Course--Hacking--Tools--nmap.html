@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>nmap</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">nmap</h1><br/>nmap<br />cybermentor method<br /><br />pingsweep<br />nmap -sn 192.168.1.0/24<br /><br /><br />T1-T5 - speed. T1 = fast, not great, T5 = slow, thorough<br />nmap -T4 ipaddress  <br /><br />add more depth<br />nmap -T4 -A -p- ipaddress<br />-A - all (os detection, version detection, script scanning and traceroute)<br />-p port<br />-p- all ports<br /><br />-p80,443,512 - scans ports 80, 443, and 512<br />-oA filename - outputs all to filename.txt<br /><br />scan UDP<br /><br />nmap -sU -T4 ipaddress  <br />UDP scans are crap. <br />But that doesn't mean to neglect UDP.<br />(UDP can provide useful stuff (sometimes))<br /><br />ls /usr/share/nmap/scripts will list all the scripts for nmap<br /><br />nmap -p 443 --script=ssl-enum-ciphers - note: setting script to all will run every script<br /><br /><br /><br />nmap --script=ssl-enum-ciphers -p 443 192.168.202.130<br />gives you a bunch of ciphers for that IP<br />there's a least strength cipher at the bottom of the output<br /></div></body></html>

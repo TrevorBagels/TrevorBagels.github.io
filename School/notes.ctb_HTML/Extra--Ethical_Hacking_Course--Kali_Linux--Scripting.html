@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Scripting</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Scripting</h1><br/><br />ping -c 1 10.0.1.3 (this ip actually works)<br /><br />ping -c 1 10.0.1.3 &gt; ip.txt<br />    writes the info to a file<br />    <br />we're gonna build a pingsweeper<br /><br />look for 64 bytes lines (that differentiates up/down)<br /><br />| grep “64 bytes” <br />| cut -d “ ” -f 4 ----splits by “ ”, returns fourth field/index<br />| tr -d “:” ---removes the “:” at the end of the line<br /><br /><br />nano ipsweep.sh<br /><br />add #!bin/bash<br />if it were python, it'd be #!bin/python<br /><br />.sh - shell script<br /><br />for loops<br />(use backticks here (the same key as ~))<br /><br />LINE 1 <br />for ip in a sequence of 1 through 254 (like range(255))<br />$1.$ip <br />$ == user input<br />&amp; is faster than ; (threading and stuff)<br /><div class="codebox"><div class="codebox">for&nbsp;ip&nbsp;in&nbsp;`seq&nbsp;1&nbsp;254`;&nbsp;do<br />ping&nbsp;-c&nbsp;1&nbsp;$1.$ip&nbsp;|grep&nbsp;“64&nbsp;bytes”&nbsp;&amp;<br />done</div></div><br /><br /><br />Trying to run the file doesn't work<br /><br />use chmod +x ipsweep.sh to give exec. perms<br />use ./ipsweep.sh to run<br />somethin still doesnt work<br />bad interpreter: No such file or directory<br /><br />fixed using bash ./ipsweep.sh 10.0.1<br />actually fixed by changing the bash line at the top from #!bin/bash to #!/bin/bash<br />send output to iplist.txt with &gt; iplist.txt at the end of the line<br /><br /><br />if statements<br /><br /><div class="codebox"><div class="codebox">if&nbsp;[&nbsp;$1&nbsp;==&nbsp;“”]#if&nbsp;userinput&nbsp;==&nbsp;“”<br />then<br />echo&nbsp;“You&nbsp;fogrot&nbsp;to&nbsp;input&nbsp;an&nbsp;IP&nbsp;address”<br />echo&nbsp;“Syntax:&nbsp;./ipsweep.sh&nbsp;10.0.2”<br /><br />else<br />#that&nbsp;big&nbsp;chunk&nbsp;of&nbsp;code<br />fi<br />#if&nbsp;backwards&nbsp;(ends&nbsp;if&nbsp;else&nbsp;statement)<br /><br /></div></div><br /><br />for x in $(cat file.txt); do xxx $x<br />^^that will run xxx using parameter $x (which is each line of file.txt)<br /><br /><br />PYTHON<br />You can make multi lined strings<br /><div class="codebox"><div class="codebox">print("""This&nbsp;is&nbsp;a&nbsp;multi<br />lined&nbsp;string""")</div></div><br />Outputs <br />This is a multi <br />lined string<br /><br /><br /><div class="codebox"><div class="codebox">“-”.join(["some",&nbsp;“stuff”,&nbsp;“or”,&nbsp;“something”])</div></div><br /><br />Returns some-stuff-or-something<br /><br /> <br />use dict.update(anotherDict) to merge dictionaries<br />dict.get(key) will return a value of a dictionary, or None (if it doesn't exist)<br /><br /><br /><br /><br /><br />string[:-1] removes last letter<br />string[-1:] gets last letter<br /><br /><br /></div></body></html>

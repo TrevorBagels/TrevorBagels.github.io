@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Servers and stuff</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Servers and stuff</h1><br/>python -m SimpleHTTPServer<br />this will start a httpserver<br />then go to the ipadress:port (probably 8000)<br />and it'll give you a directory listing<br />python3 -m http.server 80<br /><br />Host an ftp server<br />pip install pyftpdlib<br /><br />python -m pyftpdlib -p 21 w<br />^^Starts an ftp server<br /><br />use url <a href="ftp://ipadress">ftp://ipadress</a><br /></div></body></html>

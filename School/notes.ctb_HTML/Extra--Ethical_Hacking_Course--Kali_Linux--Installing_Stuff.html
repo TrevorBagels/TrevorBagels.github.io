@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Installing Stuff</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Installing Stuff</h1><br/><br />apt update &amp;&amp; apt upgrade - updates and ugrades stuff<br /><br />INSTALLING TOOLS<br />apt install git -y <br />    -y = say yes automatically<br />    -git = github<br /><br />apt install ftp<br /><br />install impacket from github<br />kali version of impacket is broken<br />apt purge *impacket* - gets rid of everything having to do with impacket<br /><br />cd to /opt/<br />clone the repo<br />go to /opt/impacket<br /><br />github instructions say to run pip install .<br />pip doesnt exist on the machine<br /><br /><br /><br /><br />DOING STUFF WITH SERVICES<br />ifconfig<br />get inet address<br /><br />Setup webserver<br />go to inet address<br />nothing there<br />service apache2 start<br />now theres a default apache2 page<br /><br />other services<br />ssh<br />postgresql (for metasploit)<br /><br />All of these services will be disabled upon restarting the pc<br /><br />use service servicename stop to stop services<br /><br />systemctl enable servicename to start services automatically</div></body></html>
