@@ -16,6 +16,7 @@
             <p>A new and crappy genre of music for this new and crappy age of society. Click <a href='PEJazz.html'>here</a> to view all of the music for this.</p>
             <br>
             <h2>MUSIC</h2>
+            <p id='jswarning'>All of the music requires JS to be enabled (so that my script can put the music on the page).</p>
         </div>
             <div class="AudioPlayer" style='width: 100%;'>
 	<table class='tablemain' id='MusicTable'>
@@ -26,6 +27,7 @@
 		</tr>
 	</table>
 	<script>
+        document.getElementById("jswarning").innerHTML = ""
 		function song(name, album, path)
 		{
 			document.getElementById("MusicTable").innerHTML += "<tr><th>"+name+"</th><th>"+album+"</th><th>" + '<audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/'+path+'" type="audio/mpeg"></audio></th>'
@@ -42,7 +44,6 @@
 		song("Little Bitterness", "Friend", "3/ThemeOfLittleBitterness.wav")
 		song("Mental Torment", "Friend", "3/MentalTorment.wav")
 		song("Moving On", "Friend", "3/MovingOn.wav")
-
 	</script>
     <style>
     #cover
