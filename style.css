@@ -72,3 +72,13 @@ a
 audio:hover, audio:focus, audio:active{
     background-color: #0e0b16;
 }
+
+.tablemain
+{
+    width: 100%;
+    font-size: 28px;
+}
+th{
+    text-align: left;
+    text-indent: 10px;
+}

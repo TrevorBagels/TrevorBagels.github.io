@@ -18,14 +18,32 @@
             <h2>MUSIC</h2>
         </div>
             <div class="AudioPlayer" style='width: 100%;'>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">Swarm</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/1/Swarm.wav" type="audio/mpeg"></audio></div>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">An Old Beginning</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/1/AnOldBeginning.wav" type="audio/mpeg"></audio></div>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">Welcome To Space (From the WPLTS OST)</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/2/WelcomeToSpace.wav" type="audio/mpeg"></audio></div>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">Drifting Off A Planet (From the WPLTS OST)</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/2/DriftingOffAPlanet.wav" type="audio/mpeg"></audio></div>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">ACX-48 (From the WPLTS OST)</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/2/ACX48.wav" type="audio/mpeg"></audio></div>
-    </div>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">The Ordinance (From the WPLTS OST)</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/2/TheOrdinance.wav" type="audio/mpeg"></audio></div>
-    </div>
+	<table class='tablemain' id='MusicTable'>
+		<tr>
+			<th>Title</th>
+			<th>Album</th>
+			<th></th>
+		</tr>
+	</table>
+	<script>
+		function song(name, album, path)
+		{
+			document.getElementById("MusicTable").innerHTML += "<tr><th>"+name+"</th><th>"+album+"</th><th>" + '<audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/'+path+'" type="audio/mpeg"></audio></th>'
+		}
+		song("Welcome to Space", "Welcome, Primitive Lifeform, to Space (OST)", "2/WelcomeToSpace.wav")
+		song("ACX-48", "Welcome, Primitive Lifeform, to Space (OST)", "2/ACX48.wav")
+		song("The Ordinance", "Welcome, Primitive Lifeform, to Space (OST)", "2/TheOrdinance.wav")
+		song("Drifting Off a Planet", "Welcome, Primitive Lifeform, to Space (OST)", "2/DriftingOffAPlanet.wav")
+		song("Docking", "Welcome, Primitive Lifeform, to Space (OST)", "2/Docking.wav")
+		song("An Old Beginning", "An Old Beginning", "1/AnOldBeginning.wav")
+		song("Swarm", "An Old Beginning", "1/Swarm.wav")
+		song("Sleep", "An Old Beginning", "1/Sleep.wav")
+		song("Wilderness", "Friend", "3/Wilderness.wav")
+		song("Little Bitterness", "Friend", "3/ThemeOfLittleBitterness.wav")
+		song("Mental Torment", "Friend", "3/MentalTorment.wav")
+		song("Moving On", "Friend", "3/MovingOn.wav")
+
+	</script>
     <style>
     #cover
     {
