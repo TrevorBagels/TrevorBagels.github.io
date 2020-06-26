@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trevor Bagels</title>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170661548-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-170661548-1');
+    </script>
+    </head>
+    <body>
+        <div id='content'>
+          <h1>Bagel's Inventory Documentation</h1>
+            <h2>Adding Items</h2>
+            <h3><i>Which Methods to Use</i></h3>
+            <p>When adding an item to the inventory that comes from a predefined item (the scriptable object), it’s best to use <code>Inventory.AddItem(ItemObject.GetItem());</code></p>
+            <p>If the item exists in-game, and it relies on a gameobject to exist, and said gameobject WILL be destroyed, you should use <code>Inventory.AddClonedItem(itm);</code><br>This will generate a duplicate of the item, so that destroying the gameobject the item is attached to doesn’t destroy the reference as well.</p>
+            <h2>Removing Items</h2>
+            <p>To remove an item, simply use <code>Inventory.RemoveItem(GUID, amount)</code>, where the GUID is the GUID of the item. If the item is stackable, the GUID will be the same as the item's name. Amount is not a required parameter, and it defaults to 1 if not provided.
+            <h2>Getting items</h2>
+            <p>The best practice to use when getting an item is <code>Inventory.GetItemByGUID(GUID)</code>. The alternative, and much slower approach, would be to use <code>Inventory.GetItemByName(Name)</code>.</p>
+            <h2>Item structure</h2>
+            <p>The <code>Item</code> class, located in ItemObject.cs, is a serializable class with a few important attributes. The first attribute is the <code>Name</code>, which is simply the Name of the item. The second attribute is the <code>Stackable</code> boolean. This should be true if the item can be stacked. Then, there's the <code>GUID</code>, which is a random globaly unique identifier assigned to the item. This can be auto-generated with <code>Item.RegenerateGUID()</code>. If the item is stackable, <b>the GUID will be the same as the item's name. </b><br>Finally, there's the <code>Amount</code> value. If the item is stackable, this amount will be used when adding the item to the inventory.</p>
+            <h3><i>Additional Attributes</i></h3>
+            <p>Additional attributes can be added to the item using the <code>Properties</code> attriubute. This is a list of custom properties for the item. Each property can contain a string value, as well as a floating point value. To access a property, use either <code>Item.GetPropertyTxt(propertyName)</code> to get a string value, or <code>Item.GetPropertyValue(propertyName)</code> to get a float value. </p>
+            <br>
+            <h2>The example scene</h2>
+            <p>Click on the Canvas object to view the inventory in action. Press "1" to add a non stackable item. Press "2" to add a stackable item. Press "3" to remove the stackable item. Press "4" to update the UI view.</p>
+            <br>
+            <h2>Complete method documentation</h2>
+            <table>
+              <tr><th>Method</th><th>Description</th></tr>
+              <tr><td>AddItem(Item itm)</td><td>Adds an item to the inventory.</td></tr>
+              <tr><td>AddClonedItem(Item itm)</td><td>Adds a clone of the given item to the inventory.</td></tr>
+              <tr><td>RemoveItem(string guid, int amt)</td><td>Removes an item from the inventory.</td></tr>
+              <tr><td>GetItemByGUID(string GUID)</td><td>Gets an item using the given GUID.</td></tr>
+              <tr><td>GetItemByName(string Name)</td><td>Gets an item using the given Name. Will return the first item found with a matching name.</td></tr>
+              </table>
+            </p>
+            <br><br><br>
+
+
+        </div>
+</body>
+</html>
