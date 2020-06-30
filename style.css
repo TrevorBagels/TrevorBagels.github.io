@@ -12,6 +12,9 @@ body
     color: #ede8c3;
     font-family: 'Teko', sans-serif;
 }
+h2, h3{
+    font-style: italic;
+}
 .background
 {
     background: #4e0128;
