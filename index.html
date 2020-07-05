@@ -24,7 +24,7 @@
             <p>As of now, I offer my services for free. Money is nice, but it isn't a necessity for me at the moment.</p>
             <div id="contact">
                 <h2>CONTACT INFO AND STUFF</h2>
-                <p><b>Email - </b> <i>trevorbagels@gmail.com</i><br><b>Discord - </b><i>theangrybagel#2557</i><br><b>Soundcloud - </b><i><a href="https://soundcloud.com/trevorbagels">theangrybagelbox2</a></i><br><b>YouTube - </b><i><a href="https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw">Trevor Bagels</a></i></p></p>
+                <p><b>Email - </b> <i>trevorbagels@gmail.com</i><br><b>Discord - </b><i>theangrybagel#2557</i><br><b>Soundcloud - </b><i><a target="_blank"href="https://soundcloud.com/trevorbagels">theangrybagelbox2</a></i><br><b>YouTube - </b><i><a target="_blank" href="https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw">Trevor Bagels</a></i></p></p>
             </div>
             <h2>AVAILABILITY</h2>
             <h3 id="currentTime">The current time for me is (javascript does this part)</h3>
@@ -45,27 +45,27 @@
                 setInterval(SetTime, 500)
             </script>
             <h2>PROJECTS</h2>
-            <h3><a href='https://theangrybagel.github.io/index.html'>Welcome, Primitive Lifeform, To Space</a></h3>
+            <h3><a target="_blank" href='https://theangrybagel.github.io/index.html'>Welcome, Primitive Lifeform, To Space</a></h3>
             <p>A tabletop RPG with an extensive amount of lore, as well as a WIP videogame, as well as a soundtrack with different themes for different space things. </p>
             <br>
             <h3><a href='PEJazz.html'>Smooth PE Jazz</a></h3>
             <p>A new and crappy genre of music for this new and crappy (no offense) age of society. Click <a href='PEJazz.html'>here</a> to view all of the music for this.</p>
             <br>
             <h3><a href="Image Generation/index.html">Image Generation</a></h3>
-            <p>A large collection of computer generated images. Everything was done using <a href="https://www.python.org/">Python</a>, along with a library to write and save the images. </p>
+            <p>A large collection of computer generated images. Everything was done using <a target="_blank" href="https://www.python.org/">Python</a>, along with a library to write and save the images. </p>
             <br>
             <h3><a href='#'>Bee-Estate</a> (WIP)</h3>
-            <p>A videogame where you break into houses at night, place beehives in those houses, buy the houses when people move out of them at a discounted price, remove the beehive, and then sell the house at its regular value. The gameplay revolves around stealth, and it heavily focuses on using lights and shadows to your advantage. The latest devlog can be viewed <a href="https://youtu.be/QKPYZLwnK8w">here</a>.</p>
+            <p>A videogame where you break into houses at night, place beehives in those houses, buy the houses when people move out of them at a discounted price, remove the beehive, and then sell the house at its regular value. The gameplay revolves around stealth, and it heavily focuses on using lights and shadows to your advantage. The latest devlog can be viewed <a target="_blank" href="https://youtu.be/QKPYZLwnK8w">here</a>.</p>
             <br>
-            <h2>MUSIC</h2>
+            <h2>MUSIC SHOWCASE</h2>
             <p id='jswarning'>All of the music requires JS to be enabled (so that my script can put the music on the page).</p>
-            <p>Some of this is also available on <a href="https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw">YouTube</a> and <a href="https://soundcloud.com/trevorbagels">Soundcloud</a>.</p>
+            <p>All of my music can be found on <a target="_blank" href="https://soundcloud.com/trevorbagels">Soundcloud</a>, and some of it can also be found on<a target="_blank" href="https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw">YouTube</a>. This is not <i>all</i> of my work, it's just a showcase of some of my favorite work</p>
         </div>
             <div class="AudioPlayer" style='width: 100%;'>
 	<table class='tablemain' id='MusicTable'>
 		<tr>
 			<th>Title</th>
-			<th>Album</th>
+			<th>Description</th>
 			<th></th>
 		</tr>
 	</table>
@@ -76,20 +76,22 @@
 		{
 			document.getElementById("MusicTable").innerHTML += "<tr><th>"+name+"</th><th>"+album+"</th><th>" + '<audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/'+path+'" type="audio/mpeg"></audio></th>'
 		}
-		song("Welcome to Space", "Welcome, Primitive Lifeform, to Space (OST)", "2/WelcomeToSpace.wav");
-		song("ACX-48", "Welcome, Primitive Lifeform, to Space (OST)", "2/ACX48.wav");
-		song("The Ordinance", "Welcome, Primitive Lifeform, to Space (OST)", "2/TheOrdinance.wav");
-		song("Drifting Off a Planet", "Welcome, Primitive Lifeform, to Space (OST)", "2/DriftingOffAPlanet.wav");
-		song("Docking", "Welcome, Primitive Lifeform, to Space (OST)", "2/Docking.wav");
-		song("An Old Beginning", "An Old Beginning", "1/AnOldBeginning.wav");
-		song("Swarm", "An Old Beginning", "1/Swarm.wav");
-		song("Sleep", "An Old Beginning", "1/Sleep.wav");
-		song("Wilderness", "Friend", "3/Wilderness.wav");
-        song("Friend", "Friend", "3/FriendFinal.1.wav");
-		song("Little Bitterness", "Friend", "3/ThemeOfLittleBitterness.wav");
-		song("Mental Torment", "Friend", "3/MentalTorment.wav");
-		song("Moving On", "Friend", "3/MovingOn.wav");
-        song("Recovery", "Friend", "3/Recovery.wav");
+        song("Driving Simulator", "Menu music for a driving simulator someone asked me to compose.", "1/DrivingSim.wav")
+        song("Untitled", "Music for someone who wanted something with a similar vibe to Concerning Hobbits by Howard Shore.", "1/124.5Shortened.wav")
+		song("Welcome to Space", "Music for <i>Welcome, Primitive Lifeform, to Space</i>", "2/WelcomeToSpace.wav");
+        song("The Ordinance", "Music for <i>Welcome, Primitive Lifeform, to Space</i>", "2/TheOrdinance.wav");
+
+		//song("Drifting Off a Planet", "Welcome, Primitive Lifeform, to Space (OST)", "2/DriftingOffAPlanet.wav");
+		//song("Docking", "Welcome, Primitive Lifeform, to Space (OST)", "2/Docking.wav");
+		//song("An Old Beginning", "An Old Beginning", "1/AnOldBeginning.wav");
+		//song("Swarm", "An Old Beginning", "1/Swarm.wav");
+		//song("Sleep", "An Old Beginning", "1/Sleep.wav");
+		//song("Wilderness", "Friend", "3/Wilderness.wav");
+        //song("Friend", "Friend", "3/FriendFinal.1.wav");
+		//song("Little Bitterness", "Friend", "3/ThemeOfLittleBitterness.wav");
+		//song("Mental Torment", "Friend", "3/MentalTorment.wav");
+		//song("Moving On", "Friend", "3/MovingOn.wav");
+        //song("Recovery", "Friend", "3/Recovery.wav");
 	</script>
 
     <script>
