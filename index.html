@@ -2,6 +2,12 @@
 <html>
     <head>
         <title>Trevor Bagels</title>
+        <meta property="og:title" content="Trevor Bagels">
+        <meta property="og:url" content="https://trevorbagels.github.io">
+        <meta property="og:description" content="Composer and game developer.">
+        <meta name="twitter:title" content="Trevor Bagels">
+        <meta name="twitter:description" content="Composer and game developer with several years of experience. ">
+
         <link href="style.css" rel="stylesheet" type="text/css">
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170661548-1"></script>
@@ -26,7 +32,7 @@
             <h3>Summary</h3>
             <p>I'm Trevor Bagels, a composer as well as a programmer. I've been alive since 2000 (+/- 5 years), and I make music and I program for a living. Most of my music is for videogames, and when it comes to programming, at least in the game-dev part of things, I generally specialize in making systems, such as this really simple <a href="https://github.com/TrevorBagels/Bagels-Inventory-System">inventory</a> I made. <br><i>(No, Bagels is not my real last name)</i></p>
             <h3>Experience</h3>
-            <p>Musical Composition - 10 years <br>Web Development (mostly JS) - 7 years<br>Python - 5 years<br>C# and Unity - 3.5 years<br></p>
+            <p>Musical Composition - 7-10 years <br>Web Development (mostly JS) - 7 years<br>Python - 5 years<br>C# and Unity - 4 years<br></p>
             <a class="anchor" id="contactpayment"></a>
             <h2><a href="#contact">CONTACT</a> &middot; <a href="#payment">PAYMENT</a></h2>
             <a class="anchor" id="contact"></a>
@@ -36,7 +42,7 @@
             </div>
             <h3>Availability</h3>
             <h4 id="currentTime">The current time for me is (javascript does this part)</h4>
-            <p id="available">I'm available from 10:00 AM PST to 4:30 PM PST Monday-Friday. (Lunch break from 12:00-1:30). I might also be available on weekends but I cannot guarantee that. </p>
+            <p id="available">I'm available from 10:00 AM PST to 4:30 PM PST Monday-Friday. (Lunch break from 12:00-1:30). If you contact me outside of those hours, I'll do my best to get back to you as soon as I can.   </p>
             <script>
                 function calcTime(offset) {
                     var d = new Date();
@@ -55,7 +61,7 @@
             <a class="anchor" id="payment"></a>
             <div>
             <h3>Payment</h3>
-            <p>As of now, I offer my services for free. Money is nice, but it isn't a necessity for me at the moment. If you'd like to support me for a track I make for you, $30 USD for a 3 minute track is reasonable (this could change, I'm basing it off of what people have paid me for so far)</p>
+            <p>As of now, I offer my services for free. Money is nice, but it isn't a necessity for me at the moment. If you'd like to support me for a track I make for you, $30 USD for a 3 minute track is reasonable (this could change, I'm basing it off of what people have paid me for so far). I accept payment through <a href="https://www.paypal.com/">PayPal</a>.</p>
             </div>
             <a class="anchor" id="projects"></a>
             <h2 style="text-align: center; margin: auto; font-size: 38pt;">PROJECTS</h2><br>
@@ -76,6 +82,10 @@
                 <h3><a href='#'>Bee-Estate</a> (WIP)</h3>
                 <p>A videogame where you break into houses at night, place beehives in those houses, buy the houses when people move out of them at a discounted price, remove the beehive, and then sell the house at its regular value. The gameplay revolves around stealth, and it heavily focuses on using lights and shadows to your advantage. The latest devlog can be viewed <a target="_blank" href="https://youtu.be/QKPYZLwnK8w">here</a>.</p>
             </div>
+            <div style="grid-area: d" class='project'>
+                <h3><a href='#'>Bee-Estate</a> (WIP)</h3>
+                <p>A videogame where you break into houses at night, place beehives in those houses, buy the houses when people move out of them at a discounted price, remove the beehive, and then sell the house at its regular value. The gameplay revolves around stealth, and it heavily focuses on using lights and shadows to your advantage. The latest devlog can be viewed <a target="_blank" href="https://youtu.be/QKPYZLwnK8w">here</a>.</p>
+            </div>
         </div>
             <a class="anchor" id="musicshowcase"></a>
             <h2>MUSIC SHOWCASE</h2>
@@ -83,20 +93,6 @@
             <p>All of my music can be found on <a target="_blank" href="https://soundcloud.com/trevorbagels">Soundcloud</a>, and some of it can also be found on <a target="_blank" href="https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw">YouTube</a>. The following playlist is just a collection of my favorite work I've done so far. </p>
         <div style="text-align: center;"><iframe id="soundcloudIframe" style="align-self: center; margin: auto;" width="50%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1087955275&color=%231f1722&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/trevorbagels" title="Trevor Bagels" target="_blank" style="color: #cccccc; text-decoration: none;">Trevor Bagels</a> · <a href="https://soundcloud.com/trevorbagels/sets/showcase" title="Showcase" target="_blank" style="color: #cccccc; text-decoration: none;">Showcase</a></div></div>
         </div>
-        <script>
-            function DoThing()
-            {
-                var iframe = document.getElementById("soundcloudIframe");
-                var things = iframe.contentWindow.document.getElementsByClassName("sc-font-light");
-                console.log(things);
-                for(var i = 0; i < things.length; i++)
-                {
-                    var element = things.item(i);
-                    element.innerHTML = "test"
-                }
-            }
-            setTimeout(DoThing, 2000)
-        </script>
             <!--div class="AudioPlayer" style='width: 100%;'>
 	<table class='tablemain' id='MusicTable'>
 		<tr>
