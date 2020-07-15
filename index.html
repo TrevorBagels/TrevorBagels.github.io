@@ -13,20 +13,29 @@
     </script>
     </head>
     <body>
+        <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a href="#contactpayment">Contact/Payment</a><a href="#projects">Projects</a><a href="#musicshowcase">Music Showcase</a></nav>
+            <div id="pageheader">
+                <div>
+                <h1>TREVOR BAGELS</h1>
+                <h2>Soundtrack composer and game developer</h2>
+                </div>
+            </div>
         <div id='content'>
-            <h2>ABOUT ME</h2>
+            <a class="anchor" id="about"></a>
+            <h2>ABOUT</h2>
+            <h3>Summary</h3>
             <p>I'm Trevor Bagels, a composer as well as a programmer. I've been alive since 2000 (+/- 5 years), and I make music and I program for a living. Most of my music is for videogames, and when it comes to programming, at least in the game-dev part of things, I generally specialize in making systems, such as this really simple <a href="https://github.com/TrevorBagels/Bagels-Inventory-System">inventory</a> I made. <br><i>(No, Bagels is not my real last name)</i></p>
-            <h2>EXPERIENCE</h2>
-            <p><i>(Last updated 6/23/2020)</i></p>
+            <h3>Experience</h3>
             <p>Musical Composition - 10 years <br>Web Development (mostly JS) - 7 years<br>Python - 5 years<br>C# and Unity - 3.5 years<br></p>
-            <h2>PAYMENT</h2>
-            <p>As of now, I offer my services for free. Money is nice, but it isn't a necessity for me at the moment. If you'd like to support me for a track I make for you, $30 USD for a 3 minute track is reasonable (this could change, I'm basing it off of what people have paid me for so far)</p>
-            <div id="contact">
-                <h2>CONTACT INFO AND STUFF</h2>
+            <a class="anchor" id="contactpayment"></a>
+            <h2><a href="#contact">CONTACT</a> &middot; <a href="#payment">PAYMENT</a></h2>
+            <a class="anchor" id="contact"></a>
+            <div>
+                <h3>Contact Info</h3>
                 <p><b>Email - </b> <i>trevorbagels@gmail.com</i><br><b>Discord - </b><i>theangrybagel#2557</i><br><b>Soundcloud - </b><i><a target="_blank"href="https://soundcloud.com/trevorbagels">theangrybagelbox2</a></i><br><b>YouTube - </b><i><a target="_blank" href="https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw">Trevor Bagels</a></i></p></p>
             </div>
-            <h2>AVAILABILITY</h2>
-            <h3 id="currentTime">The current time for me is (javascript does this part)</h3>
+            <h3>Availability</h3>
+            <h4 id="currentTime">The current time for me is (javascript does this part)</h4>
             <p id="available">I'm available from 10:00 AM PST to 4:30 PM PST Monday-Friday. (Lunch break from 12:00-1:30). I might also be available on weekends but I cannot guarantee that. </p>
             <script>
                 function calcTime(offset) {
@@ -43,19 +52,32 @@
                 SetTime();
                 setInterval(SetTime, 500)
             </script>
-            <h2>PROJECTS</h2>
-            <h3><a target="_blank" href='https://theangrybagel.github.io/index.html'>Welcome, Primitive Lifeform, To Space</a></h3>
-            <p>A tabletop RPG with an extensive amount of lore, as well as a WIP videogame, as well as a soundtrack with different themes for different space things. </p>
-            <br>
-            <h3><a href='PEJazz.html'>Smooth PE Jazz</a></h3>
-            <p>A new and crappy genre of music for this new and crappy (no offense) age of society. Click <a href='PEJazz.html'>here</a> to view all of the music for this.</p>
-            <br>
-            <h3><a href="Image Generation/index.html">Image Generation</a></h3>
-            <p>A large collection of computer generated images. Everything was done using <a target="_blank" href="https://www.python.org/">Python</a>, along with a library to write and save the images. </p>
-            <br>
-            <h3><a href='#'>Bee-Estate</a> (WIP)</h3>
-            <p>A videogame where you break into houses at night, place beehives in those houses, buy the houses when people move out of them at a discounted price, remove the beehive, and then sell the house at its regular value. The gameplay revolves around stealth, and it heavily focuses on using lights and shadows to your advantage. The latest devlog can be viewed <a target="_blank" href="https://youtu.be/QKPYZLwnK8w">here</a>.</p>
-            <br>
+            <a class="anchor" id="payment"></a>
+            <div>
+            <h3>Payment</h3>
+            <p>As of now, I offer my services for free. Money is nice, but it isn't a necessity for me at the moment. If you'd like to support me for a track I make for you, $30 USD for a 3 minute track is reasonable (this could change, I'm basing it off of what people have paid me for so far)</p>
+            </div>
+            <a class="anchor" id="projects"></a>
+            <h2 style="text-align: center; margin: auto; font-size: 38pt;">PROJECTS</h2><br>
+            <div id="projectscontainer">
+                <div style='grid-area: a' class="project">
+                    <h3><a target="_blank" href='https://theangrybagel.github.io/index.html'>Welcome, Primitive Lifeform, To Space</a></h3>
+                    <p>A tabletop RPG with an extensive amount of lore, as well as a WIP videogame, as well as a soundtrack with different themes for different space things. </p>
+                </div>
+            <div style='grid-area: b'class="project">
+                <h3><a href='PEJazz.html'>Smooth PE Jazz</a></h3>
+                <p>A new and crappy genre of music for this new and crappy (no offense) age of society. Click <a href='PEJazz.html'>here</a> to view all of the music for this.</p>
+            </div>
+            <div style='grid-area: c' class='project'>
+                <h3><a href="Image Generation/index.html">Image Generation</a></h3>
+                <p>A large collection of computer generated images. Everything was done using <a target="_blank" href="https://www.python.org/">Python</a>, along with a library to write and save the images. </p>
+            </div>
+            <div style="grid-area: d" class='project'>
+                <h3><a href='#'>Bee-Estate</a> (WIP)</h3>
+                <p>A videogame where you break into houses at night, place beehives in those houses, buy the houses when people move out of them at a discounted price, remove the beehive, and then sell the house at its regular value. The gameplay revolves around stealth, and it heavily focuses on using lights and shadows to your advantage. The latest devlog can be viewed <a target="_blank" href="https://youtu.be/QKPYZLwnK8w">here</a>.</p>
+            </div>
+        </div>
+            <a class="anchor" id="musicshowcase"></a>
             <h2>MUSIC SHOWCASE</h2>
             <!--p id='jswarning'>All of the music requires JS to be enabled (so that my script can put the music on the page).</p-->
             <p>All of my music can be found on <a target="_blank" href="https://soundcloud.com/trevorbagels">Soundcloud</a>, and some of it can also be found on <a target="_blank" href="https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw">YouTube</a>. The following playlist is just a collection of my favorite work I've done so far. </p>

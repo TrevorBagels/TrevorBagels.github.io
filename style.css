@@ -12,8 +12,79 @@ body
     color: #ede8c3;
     font-family: 'Teko', sans-serif;
 }
-h2, h3{
+h3{
     font-style: italic;
+}
+h2 a
+{
+    color: #ede8c3;
+}
+a.anchor {
+    display: block;
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+}
+nav
+{
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    display: block;
+    background: #38021d;
+    width: 100%;
+    min-height: 50px;
+    box-shadow: 0px 5px 20px black;
+}
+#projectscontainer{
+    width: 90%;
+    margin: auto;
+    align-self: center;
+    text-align: center;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-areas: 
+    "a a a a a a a a b b b b"
+    "a a a a a a a a b b b b"
+    "a a a a a a a a b b b b"
+    "c c c c c d d d d d d d"
+    "c c c c c d d d d d d d"
+    "c c c c c d d d d d d d"
+
+}
+
+.project
+{
+    box-shadow: 0px 15px 30px black;
+}
+#pageheader
+{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(56,2,29,1) 0%, rgba(56,2,29,1) 80%, rgba(78,1,40,1) 100%);
+}
+#pageheader div
+{
+    margin: auto;
+}
+#pageheader h1
+{
+    font-size: 72pt;
+}
+#pageheader h2
+{
+    margin: auto;
+    font-size: 42pt;
+}
+nav a
+{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 25pt;
 }
 .background
 {
