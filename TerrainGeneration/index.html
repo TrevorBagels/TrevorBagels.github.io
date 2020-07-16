@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Temperature Fun</title>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170661548-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-170661548-1');
+    </script>
+    </head>
+
+<body>
+	<nav><a href="../index.html#projects">Back</a></nav>
+	<style>
+		.TemperatureScale {
+		  background-image: linear-gradient(to right, blue, green, yellow, red, purple);
+		  min-height: 30px;
+		  height: 45px;
+		  color: white;
+		  min-width: 400px;
+		  width: 500px;
+		}
+</style>
+<div id="content">
+	<h1>Temperature Fun</h1>
+	<h3>Usage</h3>
+
+	<p><ol>
+		<li>Use WASD to move around</li>
+		<li>Press "Proceed to next step"</li>
+		<li>Press "Temperature Controls", then click on "Thermal View". <br>You can press "Change scale of temperature" to change how things look. </li>
+		<li>Press "Proceed to next step"</li>
+		<li>Click on "Selected Cell Controls" and then click "Cell temperature control"</li>
+		<li>You can enter an amount in the input field that was generated, and press + or - to modify the temperature of a cell. Try using big numbers, it looks cool. </li>
+	</ol></p>
+	<br />
+	<br />
+	<div style="place-content: center; display: block; background: black; padding-top: 45px; padding-bottom: 45px; width: 100%">
+		<p id="Info" style="color: white; min-width: 75px; min-height: 100px;">
+			Info
+		</p>
+		<p id="Notif" style="color: white; min-width: 150px; min-height: 500px; float: right">
+			Notifications
+		</p>
+		<canvas id="Canvas" style="margin: 0 auto; background: darkgray; display: block;" width="300px" height="300px"></canvas>
+	</div>
+	<b id="Instructions"></b>
+	<input type="text" id="mainInput">
+	<script src="../random.js"></script>
+	<script src="../engine3/math3.js"></script>
+	<script src="../engine3/engine3.js"></script>
+	<script src="code.js"></script>
+	<button onclick="Continue()">Proceed to next step</button>
+	<br>
+	<button style="background-color: gray" id="tempCTRL_B" onclick="TempCTRL();">Temperature Controls</button>
+	<button style="background-color: gray" id="cellCTRL_B" onclick="CellCTRL();">Selected Cell Controls</button>
+	<button style="background-color: gray" id="otherCTRL_B" onclick="OtherCTRL();">Other Controls</button>
+	<div id="Controls">
+		<div id="tempCTRL" style="visibility: hidden;">
+			<button onclick="ViewThermal()">Thermal View</button>
+			<button onclick="ChangeTempScale()">Change scale of Temperature</button>
+			<span id="tempScale" class="TemperatureScale"></span>
+		</div>
+		<div id="cellCTRL" style="visibility: hidden;">
+			<div id="cellInfo"></div>
+			<button onclick="cellTemp()">Cell Temperature Control</button>
+			<div style="visibility: hidden;" id="cellTempCTRL">
+				<input type="text" id="cellTempModify">
+				<button onclick="ModifyTemp('set')">Set Temperature</button>
+				<button onclick="ModifyTemp('-')">-</button><button onclick="ModifyTemp('+')">+</button>
+			</div>
+		</div>
+	</div>
+	<script src="tools.js"></script>
+	<script type="text/javascript" src="code.js"></script>
+	<script src="control.js"></script>
+</div>
+</body>
+
+</html>

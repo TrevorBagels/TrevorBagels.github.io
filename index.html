@@ -96,12 +96,38 @@
                     <h3>Dirty Mouth Attack Bot</h3>
                     <p>Another Discord bot that I wrote. This one utilizes my script that replaces words, and spams the entire bee movie script to a user in their DMs if provoked. The only way to provoke it is by saying something ever so slightly offensive. Oh yeah, when it spams The Bee Movie script, it uses a <a href="https://www.cs.cmu.edu/~biglou/resources/bad-words.txt">very large list of innapropriate words</a> and filters lines from The Bee Movie through my script. So it's The Bee Movie script, but extremely offensive. </p>
                 </div>
+
+                <div style='grid-area: h' class="project">
+                    <h3><a href="TerrainGeneration/index.html">Temperature Simulation</a></h3>
+                    <p>A small project back from when I was in 10th grade or something. The original intent was to create terrain through water erosion and temperature simulation, but it ended up turning into me having fun simulating the transfer of heat. </p>
+                </div>
+                <div style='grid-area: j' class="project">
+                    <h3><a href="2D Physics for BE3/index2.html">2D Gas Physics</a></h3>
+                    <p>Another small project from a long time ago. This one simulates gas in a 2D enviroment.  </p>
+                </div>
+                <div style='grid-area: i' class='project'><h3><a href="death/home.html">Project Epilepsy</a></h3>
+                    <p>Realtime image generation in JS. It's called project epilepsy to warn people of its dangers before seeing the actual epilepsy warning, which I made in highschool, so it's a bit of an excessive warning. I recommend clicking on the first link at the bottom of the page. </p>
+                </div>
         </div>
+        <script>
+            width = document.documentElement.clientWidth;
+            height = document.documentElement.clientHeight;
+            if(width < height)
+            {
+                console.log("fix stuff")
+                //fix stuff. we're in a mobile looking view
+                document.getElementById("projectscontainer").id = ""
+
+            }
+            console.log(width);
+
+        </script>
             <a class="anchor" id="musicshowcase"></a>
             <h2>MUSIC SHOWCASE</h2>
             <!--p id='jswarning'>All of the music requires JS to be enabled (so that my script can put the music on the page).</p-->
             <p>All of my music can be found on <a target="_blank" href="https://soundcloud.com/trevorbagels">Soundcloud</a>, and some of it can also be found on <a target="_blank" href="https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw">YouTube</a>. The following playlist is just a collection of my favorite work I've done so far. </p>
-        <div style="text-align: center;"><iframe id="soundcloudIframe" style="align-self: center; margin: auto;" width="50%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1087955275&color=%231f1722&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/trevorbagels" title="Trevor Bagels" target="_blank" style="color: #cccccc; text-decoration: none;">Trevor Bagels</a> · <a href="https://soundcloud.com/trevorbagels/sets/showcase" title="Showcase" target="_blank" style="color: #cccccc; text-decoration: none;">Showcase</a></div></div>
+        <div style="text-align: center;"><iframe class="project" id="soundcloudIframe" style="align-self: center; margin: auto;" width="50%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1087955275&color=%231f1722&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/trevorbagels" title="Trevor Bagels" target="_blank" style="color: #cccccc; text-decoration: none;">Trevor Bagels</a> · <a href="https://soundcloud.com/trevorbagels/sets/showcase" title="Showcase" target="_blank" style="color: #cccccc; text-decoration: none;">Showcase</a></div></div>
+
         </div>
             <!--div class="AudioPlayer" style='width: 100%;'>
 	<table class='tablemain' id='MusicTable'>

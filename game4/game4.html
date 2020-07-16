@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<dmeta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Some Game</title>
+</head>
+
+<body>
+	<h1>Welcome to Some Game.</h1>
+	<br />
+	<br />
+	<div style="place-content: center; display: block; background: black; padding-top: 45px; padding-bottom: 45px; width: 100%">
+		<p id="Info" style="color: white; min-width: 75px; min-height: 100px;">
+			Info
+		</p>
+		<p id="Notif" style="color: white; min-width: 150px; min-height: 500px; float: right">
+			Notifications
+		</p>
+		<canvas id="Canvas" style="margin: 0 auto; background: darkgray; display: block;" width="300px" height="300px"></canvas>
+	</div>
+	<b id="Instructions">Enter a seed (then press enter)</b>
+	<input type="text" id="mainInput">
+	<script src="../random.js"></script>
+	<script src="../independent.js"></script>
+	<script src="../engine2.js"></script>
+	<script>
+		var makeland = false
+	</script>
+	<script src="game4Terrain.js"></script>
+	<script src="game4.js"></script>
+</body>
+
+</html>
