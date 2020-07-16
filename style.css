@@ -45,21 +45,10 @@ nav
     display: grid;
     grid-gap: 15px;
     grid-template-areas: 
-    "a a a a a a a a b b b b"
-    "a a a a a a a a b b b b"
-    "a a a a a a a a b b b b"
-    "c c c c c d d d d d d d"
-    "c c c c c d d d d d d d"
-    "c c c c c d d d d d d d"
-    "e e e e e e f f f g g g"
-    "e e e e e e f f f g g g"
-    "e e e e e e f f f g g g"
-    "e e e e e e f f f g g g"
-    "h h h j j j i i i i i i"
-    "h h h j j j i i i i i i"
-    "h h h j j j i i i i i i"
-
-
+    "a a a a a b b b"
+    "c c c d d d d d"
+    "e e e e f g g g"
+    "h h j j k k i i"
 }
 
 .project

@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>Terrain Generation</title>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+	    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170661548-1"></script>
+	    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-<head>
-	<meta charset="UTF-8" />
-	<dmeta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>Perlin Noise Terrain Generation</title>
-</head>
-
+      gtag('config', 'UA-170661548-1');
+    </script>
+    </head>
 <body>
-	<h1>Welcome to a thing. This seems somewhat like perlin noise.</h1>
+	<nav><a href="../index.html#projects">Back</a></nav>
+	<div id="content">
+	<h4>Note: I made this with my own algorithim, and I still don't actually know the technical details of any noise generation algorithims, so I don't know if this is or isn't the same thing as perlin noise. </h4>
 	<br />
 	<br />
 	<div style="place-content: center; display: block; background: black; padding-top: 45px; padding-bottom: 45px; width: 100%">
@@ -24,9 +31,10 @@
 	<b id="Instructions">Enter a seed (then press enter)</b>
 	<input type="text" id="mainInput">
 	<script src="../random.js"></script>
-	<script src="../independent.js"></script>
-	<script src="../engine2.js"></script>
+	<script src="independent.js"></script>
+	<script src="engine2.js"></script>
 	<script src="terrainGenMethods.js"></script>
+</div>
 </body>
 
 </html>
