@@ -116,10 +116,11 @@
             height = document.documentElement.clientHeight;
             if(width < height)
             {
-                console.log("fix stuff")
+                console.log("fix stuff");
                 //fix stuff. we're in a mobile looking view
-                document.getElementById("projectscontainer").id = ""
-
+                document.getElementById("projectscontainer").id = "";
+                document.getElementById("currentTime").style = "font-size: 12pt";
+                document.querySelectorAll('.anchor').forEach(function(e){e.style.top = "-200px";});
             }
             console.log(width);
 
