@@ -19,7 +19,7 @@
     </script>
     </head>
     <body>
-        <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a href="#contactpayment">Contact/Payment</a><a href="#projects">Projects</a><a href="#musicshowcase">Music Showcase</a><a id="currentTime">The current time for me is (javascript does this part)</a></nav>
+        <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a href="#contactpayment">Contact/Payment</a><a href="#projects">Projects</a><a href="#musicshowcase">Music Showcase</a><a style="float: right" id="currentTime">The current time for me is (javascript does this part)</a></nav>
             <div id="pageheader">
                 <div>
                 <h1>TREVOR BAGELS</h1>
@@ -41,7 +41,7 @@
                 <p><b>Email - </b> <i>trevorbagels@gmail.com</i><br><b>Discord - </b><i>theangrybagel#2557</i><br><b>Soundcloud - </b><i><a target="_blank"href="https://soundcloud.com/trevorbagels">theangrybagelbox2</a></i><br><b>YouTube - </b><i><a target="_blank" href="https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw">Trevor Bagels</a></i></p></p>
             </div>
             <h3>Availability</h3>
-            
+            <h4 id="currentTimeMobile"></h4>
             <p id="available">I'm available from 10:00 AM PST to 4:30 PM PST Monday-Friday. (Lunch break from 12:00-1:30). If you contact me outside of those hours, I'll do my best to get back to you as soon as I can.   </p>
             <script>
                 function calcTime(offset) {
@@ -55,7 +55,10 @@
 
                 function SetTime()
                 {
-                    document.getElementById("currentTime").innerHTML = "<code> " + calcTime('-7') + " (PST)<br>(-"+ offset +" hours)</code>"
+                    otherpart = "<br>(-"+ offset +" hours)"
+                    if(offset == 0)
+                        otherpart = ""
+                    document.getElementById("currentTime").innerHTML = "<code> " + calcTime('-7') + " (PST)" + otherpart + "</code>"
                 }
                 SetTime();
                 setInterval(SetTime, 500)
@@ -92,7 +95,7 @@
                 <iframe class='project' style='grid-area:f' src="https://discordapp.com/widget?id=501504352268320799&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
                 <div style='grid-area: g' class='project'>
                     <h3>Dirty Mouth Attack Bot</h3>
-                    <p>Another Discord bot that I wrote. This one utilizes my script that replaces words, and spams the entire bee movie script to a user in their DMs if provoked. The only way to provoke it is by saying something ever so slightly offensive. Oh yeah, when it spams The Bee Movie script, it uses a <a target="_blank" href="https://www.cs.cmu.edu/~biglou/resources/bad-words.txt">very large list of innapropriate words</a> and filters lines from The Bee Movie through my script. So it's The Bee Movie script, but extremely offensive. </p>
+                    <p>Another Discord bot that I wrote. This one utilizes my script that replaces words, and spams the entire Bee Movie script to a user in their DMs if provoked. The only way to provoke it is by saying something ever so slightly offensive. Oh yeah, when it spams The Bee Movie script, it uses a <a target="_blank" href="https://www.cs.cmu.edu/~biglou/resources/bad-words.txt">very large list of innapropriate words</a> and filters lines from The Bee Movie through my script. So it's the Bee Movie script, but extremely offensive. </p>
                 </div>
 
                 <div style='grid-area: h' class="project">
@@ -121,6 +124,10 @@
                 document.getElementById("projectscontainer").id = "";
                 document.getElementById("currentTime").style = "font-size: 12pt";
                 document.querySelectorAll('.anchor').forEach(function(e){e.style.top = "-200px";});
+                document.getElementById("currentTime").innerHTML = "";
+                document.getElementById("currentTime").id = "";
+                document.getElementById("currentTimeMobile").id = "currentTime";
+
             }
             console.log(width);
 
