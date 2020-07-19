@@ -88,6 +88,10 @@
         <script>
             width = document.documentElement.clientWidth;
             height = document.documentElement.clientHeight;
+            if(width < height*1.15)
+            {
+                document.getElementById("projectscontainer").id = "";
+            }
             if(width < height)
             {
                 console.log("fix stuff");
@@ -99,10 +103,7 @@
                 document.getElementById("currentTimeMobile").id = "currentTime";
 
             }
-            if(width/height < 1750/1080)
-            {
-                document.getElementById("projectscontainer").id = "";
-            }
+
             console.log(width);
 
         </script>
