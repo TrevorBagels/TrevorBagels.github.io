@@ -12,6 +12,10 @@ body
     color: #ede8c3;
     font-family: 'Teko', sans-serif;
 }
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 0px;
+}
 h3{
     font-style: italic;
 }
@@ -83,7 +87,9 @@ nav
     "a a a a a b b b"
     "c c c d d d d d"
     "e e e e f g g g"
-    "h h j j k k i i"
+    "h h h i i i k k"
+    "j j l l l l k k"
+
 }
 
 .project
