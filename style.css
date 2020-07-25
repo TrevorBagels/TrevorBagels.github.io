@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Teko&display=swap);
 html
 {
-      scroll-behavior: smooth;
+        scroll-behavior: smooth;
         font-family: 'Teko', sans-serif;
 }
 body
@@ -88,7 +88,7 @@ nav
     "c c c d d d d d"
     "e e e e f g g g"
     "h h h i i i k k"
-    "j j l l l l k k"
+    "j j l l l l k k";
 
 }
 
