@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript" src="amplitude.min.js"></script>
+        <script src="code.js"></script>
         <title>Trevor Bagels</title>
         <meta property="og:title" content="Trevor Bagels (portfolio)">
         <meta property="og:url" content="https://trevorbagels.github.io">
@@ -18,7 +20,7 @@
       gtag('config', 'UA-170661548-1');
     </script>
     </head>
-    <body>
+    <body onload="Setup()">
         <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#musicshowcase">Music Showcase</a><a href="#contactpayment">Contact/Payment</a><a style="float: right" id="currentTime">The current time for me is (javascript does this part)</a></nav>
             <div id="pageheader">
                 <div>
@@ -26,17 +28,31 @@
                 <h2>Soundtrack composer and game developer</h2>
                 </div>
             </div>
+        <div id="songPlayer">
+            <div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
+                <progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" id="song-played-progress"></progress>
+                <div class="time-container">
+                    <div style="float: left; margin-left: 30px;"><span class="current-time">
+                    <span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>:<span class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
+                    </span></div>
+                    <div style="float: right; margin-right: 30px;">
+                    <span class="duration">
+                    <span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>:<span class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
+                    </span></div><br>
+                    <div style='text-align: center' id="songInfo">Driving Simulator Music</div>   
+                </div>
+        </div>
         <div id='content'>
             <a class="anchor" id="about"></a>
             <h2>ABOUT</h2>
             <h3>Summary</h3>
-            <p>I'm Trevor Bagels, a composer/programmer based in Portland, Oregon. I have several years of experience, and I spend most of my time making music and doing little programming side-projects. When it comes to music, I mostly do ambient tracks and themes, and when it comes to programming, I specialize in making systems, like this really basic <a href="https://github.com/TrevorBagels/Bagels-Inventory-System">inventory</a> system. </p>
+            <p>I'm Trevor Bagels, a composer/programmer based in Portland, Oregon. I have several years of experience, and I spend most of my time making music and doing little programming side-projects. When it comes to music, I mostly do ambient tracks and themes, and when it comes to programming, I specialize in making systems, like this really basic <a target="_blank" href="https://github.com/TrevorBagels/Bagels-Inventory-System">inventory</a> system. </p>
             <!--p>I'm Trevor Bagels, a composer as well as a programmer. I've been alive since 2000 (+/- 5 years), and I make music and I program for a living. Most of my music is for videogames, and when it comes to programming, at least in the game-dev part of things, I generally specialize in making systems, such as this really simple  I made. <br><i>(No, Bagels is not my real last name)</i></p-->
+            <hr>
             <h3>General Experience</h3>
             <p>Musical Composition - I've been composing for around 7-9 years, although I only started recording and sharing my compositions two years ago. <br>
             Programming - I've been programming for 6 years. I have experience with JavaScript, Python, and C#.<br>
-            Markup - Web development is where I started learning; I have about 8 years of experience in HTML and CSS.
-        </p>
+            Markup - Web development is where I started learning; I have about 8 years of experience in HTML and CSS.</p>
             <h3>Software, tools, and operating systems</h3>
             <table class="toolsTable">
                 <tr><th>Game Engines</th> <td>Unity3D</td></tr><!--Game engines-->
@@ -47,7 +63,13 @@
                 <tr><th>Task Management</th><td>Trello, Miro/Realtime Board</td></tr><!--Productivity/task management-->
                 <tr><th>Text Editors</th><td>Visual Studio, Visual Studio Code, Sublime Text</td></tr><!--Text Editors-->
             </table>
-
+            <hr>
+            <a class="anchor" id="music"></a>
+            <h2 style="text-align: center; margin: auto; font-size: 38pt;">MUSIC</h2>
+            <div id="musicgrid">
+            </div>
+            <p style='text-align: center; margin-bottom: -40px;'>See more on <a target="_blank" href="https://soundcloud.com/trevorbagels">Soundcloud</a></p>
+            <hr>
             <a class="anchor" id="projects"></a>
             <h2 style="text-align: center; margin: auto; font-size: 38pt;">PROJECTS</h2><br>
             <div id="projectscontainer">
@@ -102,34 +124,8 @@
                 </div>
 
         </div>
-        <script>
-            width = document.documentElement.clientWidth;
-            height = document.documentElement.clientHeight;
-            if(width < height*1.15)
-            {
-                document.getElementById("projectscontainer").id = "";
-            }
-            if(width < height)
-            {
-                console.log("fix stuff");
-                //fix stuff. we're in a mobile looking view
-                document.getElementById("currentTime").style = "font-size: 12pt";
-                document.querySelectorAll('.anchor').forEach(function(e){e.style.top = "-200px";});
-                document.getElementById("currentTime").innerHTML = "";
-                document.getElementById("currentTime").id = "";
-                document.getElementById("currentTimeMobile").id = "currentTime";
 
-            }
-
-            console.log(width);
-
-        </script>
             <a class="anchor" id="musicshowcase"></a>
-            <h2>MUSIC SHOWCASE</h2>
-            <!--p id='jswarning'>All of the music requires JS to be enabled (so that my script can put the music on the page).</p-->
-            <p>All of my music can be found on <a target="_blank" href="https://soundcloud.com/trevorbagels">Soundcloud</a>, and some of it can also be found on <a target="_blank" href="https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw">YouTube</a>. The following playlist is just a collection of my favorite work I've done so far. </p>
-            <div style="text-align: center;"><iframe class="project" id="soundcloudIframe" style="align-self: center; margin: auto;" width="50%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1087955275&color=%231f1722&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/trevorbagels" title="Trevor Bagels" target="_blank" style="color: #cccccc; text-decoration: none;">Trevor Bagels</a> · <a href="https://soundcloud.com/trevorbagels/sets/showcase" title="Showcase" target="_blank" style="color: #cccccc; text-decoration: none;">Showcase</a></div></div>
-
                     <a class="anchor" id="contactpayment"></a>
             <h2><a href="#contact">CONTACT</a> &middot; <a href="#payment">PAYMENT</a></h2>
             <a class="anchor" id="contact"></a>
@@ -169,6 +165,28 @@
             <p>As of now, I offer my services for free. Money is nice, but it isn't a necessity for me at the moment. If you'd like to support me for a track I make for you, a small payment through PayPal works just fine. </p>
             </div>
         </div>
+        <!--Fixing thing on mobile-->
+        <script>
+            width = document.documentElement.clientWidth;
+            height = document.documentElement.clientHeight;
+            if(width < height*1.15)
+            {
+                document.getElementById("projectscontainer").id = "";
+            }
+            if(width < height)
+            {
+                console.log("fix stuff");
+                //fix stuff. we're in a mobile looking view
+                document.getElementById("currentTime").style = "font-size: 12pt";
+                document.querySelectorAll('.anchor').forEach(function(e){e.style.top = "-200px";});
+                document.getElementById("currentTime").innerHTML = "";
+                document.getElementById("currentTime").id = "";
+                document.getElementById("currentTimeMobile").id = "currentTime";
+
+            }
+
+            console.log(width);
+        </script>
             <!--div class="AudioPlayer" style='width: 100%;'>
 	<table class='tablemain' id='MusicTable'>
 		<tr>
