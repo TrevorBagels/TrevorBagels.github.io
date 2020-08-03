@@ -1,6 +1,7 @@
 document.head.innerHTML += ''
 var onPhone = document.documentElement.clientWidth < document.documentElement.clientHeight;
 mySongs = []
+var timeOnPage = Date.now()
 var isHovering = false;
 //var fileDepth = "../"
 var mediaPlayerHTML = `
@@ -20,6 +21,7 @@ var mediaPlayerHTML = `
         </div>
 `
 var setupFinished = false;
+var songSetupFinished = false;
 function AddSong(name, desc, url, tags, disableHtml)
 {
 	console.log(disableHtml);
@@ -32,10 +34,10 @@ function AddSong(name, desc, url, tags, disableHtml)
 	}
 	
 	var html = '<div class="music amplitude-skip-to" data-amplitude-song-index="'+mySongs.length+'" onclick="PlaySong()" data-amplitude-location="0"><div class="background"></div><h3>'+name+'</h3><p>'+desc+'</p></div>';
-	if(disableHtml == null && document.getElementById("musicgrid") != null)
+	/*if(disableHtml == null && document.getElementById("musicgrid") != null)
 	{
 		document.getElementById("musicgrid").innerHTML += html   
-	}
+	}*/
 	mySongs.push({"name": name, "artist": "Trevor Bagels", "album": "none", "url": fileDepthPrefix + url, "html": html, "addHTML": disableHtml})
 	return html;
 }
@@ -62,6 +64,9 @@ function MouseLeave()
 }
 function SongSetup()
 {
+	if(songSetupFinished)
+		return;
+	songSetupFinished = true;
 	AddSong("Driving Simulator Music", "Menu music I made for an unreleased driving simulator.", "Music/1/DrivingSim.mp3", []);
 	AddSong("Orchestral Action Music", "Action music I made for an indie RPG.", "Music/1/OrchestralAction.mp3", [])
 	AddSong("Zombie Shooter Soundtrack", "The overall soundtrack for a zombie shooter game. It starts out calm, and eventually becomes more tense.", "Music/1/ZombieApocGameFull.3.mp3", [])
@@ -73,16 +78,22 @@ function SongSetup()
 	AddSong("Sweat and Fatigue", "", "Music/PeJazz/Sweat.wav", [], true);
 	AddSong("Slippery Floors and Squeaky Shoes", "", "Music/PeJazz/slippery.wav", [], true);
 	AddSong("My Kneecaps Ran Away", "", "Music/PeJazz/My Kneecaps Ran Away.wav", [], true);
+	Amplitude.init({"songs": mySongs, "autoplay": true});
 }
 
 function Setup()
 {
-	if(setupFinished) return;
-	setupFinished = true;
 	SongSetup();
+	if(setupFinished) return;
+	for(var x = 0; x < mySongs.length; x++)
+    {
+    	if(mySongs[x]["addHTML"] != true && document.getElementById("musicgrid") != null)
+        	document.getElementById("musicgrid").innerHTML += mySongs[x]["html"];
+    }
 	if(document.getElementById("songPlayer") == undefined)
 		document.body.innerHTML += mediaPlayerHTML;
-	Amplitude.init({"songs": mySongs, "autoplay": true});
+	setupFinished = true;
+
 	songplayer = document.getElementById("songPlayer");
 	if(onPhone)
 	{
@@ -123,16 +134,32 @@ function Setup()
 	setTimeout(function(){setInterval(SongCookieUpdate, 10);}, 500);
 	var playerstate = Cookies.get("playState");
 	if(playerstate == "stopped" || playerstate == "paused")
-		Amplitude.pause();
+		{setTimeout(Amplitude.pause, 30); console.log("PAUSE because of last playerstate. ")}
+    Amplitude.bindNewElements();
 }
+
 function SongCookieUpdate()
 {
 	try{
 		if(Amplitude.getSongPlayedSeconds() != undefined)
 		{
 			Cookies.set("songIndex", Amplitude.getActiveIndex());
-			Cookies.set("songTime", Amplitude.getSongPlayedSeconds());
-			Cookies.set("playState", Amplitude.getPlayerState())
+			var timestamp = Amplitude.getSongPlayedSeconds();
+			if(Date.now() - timeOnPage > 1100)
+			{
+				var state = "paused";
+				//cant use getplayer state because it's broken for some reason. Instead, keep track of how far we go through the song each update
+				if(timestamp != Cookies.get("songTime"))
+				{
+					state = "playing";
+				}
+
+				//console.log(Amplitude.getPlayerState());
+				//Cookies.set("playState", Amplitude.getPlayerState())
+				Cookies.set("playState", state);
+			}
+			Cookies.set("songTime", timestamp);
+
 		}
 	}
 	catch{
@@ -163,5 +190,5 @@ window.addEventListener('keydown', function(e) {
     	document.getElementById("play-pause").click()
   }
 });
-
+SongSetup();
 setTimeout(function(){if(!setupFinished) Setup();}, 900)
