@@ -298,7 +298,7 @@ div.amplitude-play-pause.amplitude-playing {
     height: 100%;
     transition: opacity .2s ease;
 }
-#musicgrid
+#musicgrid, .musicgrid
 {
     width: 90%;
     margin: auto;
@@ -308,7 +308,7 @@ div.amplitude-play-pause.amplitude-playing {
     grid-gap: 15px;
     grid-template-columns: auto auto auto;
 }
-#musicgrid p
+#musicgrid p, .musicgrid p
 {
     padding: 5px 10px 5px 10px;
 }

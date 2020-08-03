@@ -3,6 +3,9 @@
     <head>
         <title>Trevor Bagels</title>
         <link href="style.css" rel="stylesheet" type="text/css">
+        <script type='text/javascript' src="js.cookie-2.2.1.min.js"></script>
+        <script type="text/javascript" src="amplitude.min.js"></script>
+        <script src="code.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170661548-1"></script>
     <script>
@@ -13,21 +16,20 @@
       gtag('config', 'UA-170661548-1');
     </script>
     </head>
-    <body>
+    <body onload="Setup()">
         <nav><a href="index.html#projects">Back</a></nav>
         <div id='content'>
             <br>
             <h2>SMOOTH PE JAZZ</h2>
             <p>A musical style I generated through the creation of several programs (using python and midi utilities). Enjoy the mayhem.</p>
             <br><br></div>
-            <div class="AudioPlayer" style='width: 100%;'>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">Smooth PE Jazz</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/PeJazz/Smooth Pe Jazz.wav" type="audio/mpeg"></audio></div>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">Attack of the Drill Sargeant</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/PeJazz/Attack Of The Drill Sargeant.wav" type="audio/mpeg"></audio></div>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">Birds Don't Run The Mile</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/PeJazz/BirdsDontNeedExercise.wav" type="audio/mpeg"></audio></div>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">Sweat and Fatigue</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/PeJazz/Sweat.wav" type="audio/mpeg"></audio></div>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">Slippery Floors and Squeaky Shoes</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/PeJazz/slippery.wav" type="audio/mpeg"></audio></div>
-    <div><h3 style="display:inline-block;padding-right: 20px;width: 20%;">My Kneecaps Ran Away</h3><audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/PeJazz/My Kneecaps Ran Away (tragic).wav" type="audio/mpeg"></audio></div>
-    </div>
+            <div id="pejazz" class="musicgrid"></div>
+            <script>
+                for(var x = 5; x < mySongs.length; x++)
+                {
+                    document.getElementById("pejazz").innerHTML += mySongs[x]["html"];
+                }
+            </script>
     <style>
     #cover
     {

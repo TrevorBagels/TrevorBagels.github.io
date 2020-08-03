@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type='text/javascript' src="js.cookie-2.2.1.min.js"></script>
         <script type="text/javascript" src="amplitude.min.js"></script>
         <script src="code.js"></script>
         <title>Trevor Bagels</title>
@@ -21,27 +22,14 @@
     </script>
     </head>
     <body onload="Setup()">
-        <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#musicshowcase">Music Showcase</a><a href="#contactpayment">Contact/Payment</a><a style="float: right" id="currentTime">The current time for me is (javascript does this part)</a></nav>
+        <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#music">Music</a><a href="#contactpayment">Contact/Payment</a><a style="float: right" id="currentTime">The current time for me is (javascript does this part)</a></nav>
             <div id="pageheader">
                 <div>
                 <h1>TREVOR BAGELS</h1>
                 <h2>Soundtrack composer and game developer</h2>
                 </div>
             </div>
-        <div id="songPlayer">
-            <div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
-                <progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" id="song-played-progress"></progress>
-                <div class="time-container">
-                    <div style="float: left; margin-left: 30px;"><span class="current-time">
-                    <span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>:<span class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
-                    </span></div>
-                    <div style="float: right; margin-right: 30px;">
-                    <span class="duration">
-                    <span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>:<span class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
-                    </span></div><br>
-                    <div style='text-align: center' id="songInfo">Driving Simulator Music</div>   
-                </div>
-        </div>
+
         <div id='content'>
             <a class="anchor" id="about"></a>
             <h2>ABOUT</h2>
@@ -124,7 +112,7 @@
                 </div>
 
         </div>
-
+        <hr>
             <a class="anchor" id="musicshowcase"></a>
                     <a class="anchor" id="contactpayment"></a>
             <h2><a href="#contact">CONTACT</a> &middot; <a href="#payment">PAYMENT</a></h2>
@@ -164,6 +152,15 @@
             <h3>Payment</h3>
             <p>As of now, I offer my services for free. Money is nice, but it isn't a necessity for me at the moment. If you'd like to support me for a track I make for you, a small payment through PayPal works just fine. </p>
             </div>
+            <br><br><hr>
+            <div style='text-align: center; bottom: 0px; font-size: 12pt; font-family: "Times New Roman", Times, serif;'><p>Notice: This site uses cookies to keep track of what state the media player is left in. No other information is ever stored here. Cookies only exist on <i>your</i> local machine.</p><p id="yourCookies"></p></div><br><br>
+            <script>
+                function yourCookiesUpdate()
+                {
+                    document.getElementById("yourCookies").innerHTML = "Your cookies look like this: <br>" + "Song index: " + Cookies.get("songIndex") + ", Song Time: " + Cookies.get("songTime") +", Play State: " + Cookies.get("playState"); 
+                }
+                setInterval(yourCookiesUpdate, 500)
+            </script>
         </div>
         <!--Fixing thing on mobile-->
         <script>
