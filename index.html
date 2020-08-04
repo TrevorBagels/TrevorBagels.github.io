@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--script type="text/javascript" src="node_modules/amplitudejs/dist/visualizations/michaelbromley.js"></script-->
+        <script src="node_modules/mathjs/dist/math.min.js"></script>
+        <script src="visualizationcode.js"></script>
         <script type='text/javascript' src="js.cookie-2.2.1.min.js"></script>
         <script type="text/javascript" src="amplitude.min.js"></script>
-        <script src="code.js"></script>
         <title>Trevor Bagels</title>
         <meta property="og:title" content="Trevor Bagels (portfolio)">
         <meta property="og:url" content="https://trevorbagels.github.io">
         <meta property="og:description" content="Composer and game developer.">
         <meta name="twitter:title" content="Trevor Bagels">
         <meta name="twitter:description" content="Composer and game developer with several years of experience. ">
-
         <link href="style.css" rel="stylesheet" type="text/css">
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170661548-1"></script>
@@ -21,7 +22,24 @@
       gtag('config', 'UA-170661548-1');
     </script>
     </head>
+    <div id='visualizer' class="amplitude-visualization"></div>
     <body onload="Setup()">
+        <div id="songPlayer">
+            <div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
+                <progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" id="song-played-progress"></progress>
+                <div class="time-container">
+                    <div style="float: left; margin-left: 30px;"><span class="current-time">
+                    <span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>:<span class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
+                    </span></div>
+                    <div style="float: right; margin-right: 30px;">
+                    <span class="duration">
+                    <span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>:<span class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
+                    </span></div><br>
+                    <div class='hideVis' onclick='hideVisuals();'></div>
+                    <div style='text-align: center' id="songInfo">Driving Simulator Music</div>   
+                </div>
+        </div>
+
         <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#music">Music</a><a href="#contactpayment">Contact/Payment</a><a style="float: right" id="currentTime">The current time for me is (javascript does this part)</a></nav>
             <div id="pageheader">
                 <div>
@@ -184,6 +202,8 @@
 
             console.log(width);
         </script>
+        <script src="code.js"></script>
+
             <!--div class="AudioPlayer" style='width: 100%;'>
 	<table class='tablemain' id='MusicTable'>
 		<tr>
@@ -216,7 +236,9 @@
 		//song("Moving On", "Friend", "3/MovingOn.wav");
         //song("Recovery", "Friend", "3/Recovery.wav");
 	</script-->
-
+    <script>
+        //var canvas = 
+    </script>
     <style>
     #cover
     {

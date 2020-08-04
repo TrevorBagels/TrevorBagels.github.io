@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trevor Bagels</title>
+        <script type="text/javascript" src="https://521dimensions.com/img/open-source/amplitudejs/visualizations/michaelbromley.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script type='text/javascript' src="js.cookie-2.2.1.min.js"></script>
+        <script type="text/javascript" src="amplitude.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170661548-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-170661548-1');
+    </script>
+    </head>
+    <body>
+      <div class="amplitude-visualization"></div>
+        <div id='content'>
+            <div id="musicgrid"></div>
+        </div>
+        <!--script>
+          mySongs = [{name: "Driving Simulator Music", artist: "Trevor Bagels", album: "none", url: "Music/1/DrivingSim.mp3", html: `"<div class="music amplitude-skip-to" data-amplitude-song-index="0" onclick="PlaySong()" data-amplitude-location="0"><div class="background"></div><h3>Driving Simulator Music</h3><p>Menu music I made for an unreleased driving simulator.</p></div>"`}]
+          Amplitude.init({"songs": mySongs, visualizations: [
+      {object: MichaelBromleyVisualization, params: {}}
+      ], visualization: 'michaelbromley_visualization', "autoplay": true});
+</script-->
+        <script src="code.js"></script>
+
+</body>
+</html>

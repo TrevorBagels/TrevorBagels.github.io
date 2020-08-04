@@ -3,6 +3,7 @@ var onPhone = document.documentElement.clientWidth < document.documentElement.cl
 mySongs = []
 var timeOnPage = Date.now()
 var isHovering = false;
+var visualsHidden = false;
 //var fileDepth = "../"
 var mediaPlayerHTML = `
         <div id="songPlayer">
@@ -77,8 +78,19 @@ function SongSetup()
 	AddSong("Attack Of The Drill Sargeant", "", "Music/PeJazz/Attack Of The Drill Sargeant.wav", [], true);
 	AddSong("Sweat and Fatigue", "", "Music/PeJazz/Sweat.wav", [], true);
 	AddSong("Slippery Floors and Squeaky Shoes", "", "Music/PeJazz/slippery.wav", [], true);
-	AddSong("My Kneecaps Ran Away", "", "Music/PeJazz/My Kneecaps Ran Away.wav", [], true);
-	Amplitude.init({"songs": mySongs, "autoplay": true});
+	AddSong("My Kneecaps Ran Away", "", "Music/PeJazz/My Kneecaps Ran Away (tragic).wav", [], true);
+	try{
+		if(BagelVis != undefined)
+			{
+					Amplitude.init({"songs": mySongs, visualizations: [
+		      {object: BagelVis, params: {}}
+		      ], visualization: 'BagelVis', "autoplay": true});
+			}
+	}
+	catch{
+		Amplitude.init({"songs": mySongs, "autoplay": true});
+	}
+
 }
 
 function Setup()
@@ -93,7 +105,6 @@ function Setup()
 	if(document.getElementById("songPlayer") == undefined)
 		document.body.innerHTML += mediaPlayerHTML;
 	setupFinished = true;
-
 	songplayer = document.getElementById("songPlayer");
 	if(onPhone)
 	{
@@ -167,6 +178,11 @@ function SongCookieUpdate()
 		return;
 	}
 	document.getElementById("songInfo").innerHTML = mySongs[Amplitude.getActiveIndex()]["name"];
+}
+var visualizerCode = ""
+function hideVisuals()
+{
+	doVisualize = !doVisualize;
 }
 function SkipTo(trackIndex, seconds)
 {
