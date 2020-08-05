@@ -22,8 +22,15 @@
       gtag('config', 'UA-170661548-1');
     </script>
     </head>
-    <div id='visualizer' class="amplitude-visualization"></div>
+    <div id='visualizer'></div>
+
     <body onload="Setup()">
+        <script>
+            if((/iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) && !window.MSStream)
+                console.log("is IOS");
+            else
+                document.getElementById('visualizer').setAttribute("class", "amplitude-visualization"); console.log('set visualizer');
+        </script>
         <div id="songPlayer">
             <div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
                 <progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" id="song-played-progress"></progress>

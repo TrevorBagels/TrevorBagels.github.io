@@ -34,8 +34,10 @@ function AddSong(name, desc, url, tags, disableHtml)
 	catch{
 		//continue
 	}
-	
-	var html = '<div class="music amplitude-skip-to" data-amplitude-song-index="'+mySongs.length+'" onclick="PlaySong()" data-amplitude-location="0"><div class="background"></div><h3>'+name+'</h3><p>'+desc+'</p></div>';
+	var href="";
+	if(isIOS)
+		href = 'target="_blank" href="https://soundcloud.com/trevorbagels';
+	var html = '<div' + ' class="music amplitude-skip-to" data-amplitude-song-index="'+mySongs.length+'" onclick="PlaySong()" data-amplitude-location="0"><div class="background"></div><h3>'+name+'</h3><p>'+desc+'</p></div>';
 	/*if(disableHtml == null && document.getElementById("musicgrid") != null)
 	{
 		document.getElementById("musicgrid").innerHTML += html   
@@ -80,7 +82,15 @@ function SongSetup()
 	AddSong("Sweat and Fatigue", "", "Music/PeJazz/Sweat.wav", [], true);
 	AddSong("Slippery Floors and Squeaky Shoes", "", "Music/PeJazz/slippery.wav", [], true);
 	AddSong("My Kneecaps Ran Away", "", "Music/PeJazz/My Kneecaps Ran Away (tragic).wav", [], true);
-	var autoplay = isIOS == false && Cookies.get("playState") != "paused";
+	if(isIOS)
+		setTimeout(InitAmplitude, 100)
+	else
+		InitAmplitude()
+
+}
+function InitAmplitude()
+{
+	var autoplay = Cookies.get("playState") != "paused";
 	try{
 		if(BagelVis != undefined)
 			{
@@ -92,9 +102,8 @@ function SongSetup()
 	catch{
 		Amplitude.init({"songs": mySongs, "autoplay": autoplay});
 	}
-
+    Amplitude.bindNewElements();
 }
-
 function Setup()
 {
 	SongSetup();
@@ -123,7 +132,7 @@ function Setup()
 			var x = e.pageX - offset.left;
 			Amplitude.setSongPlayedPercentage( ( parseFloat( x ) / parseFloat( this.offsetWidth) ) * 100 );
 	});
-	if(!onPhone)
+	if(!onPhone && !isIOS)
 	{
 		songplayer.classList.toggle("songPlayerNotHover")
 		songplayer.addEventListener("mouseenter", function(){isHovering = true; setTimeout(function(){
@@ -135,7 +144,8 @@ function Setup()
 	{
 		console.log("cookies are already set");
 		var songTime = Cookies.get("songTime");
-		SkipTo(Cookies.get("songIndex"), songTime);
+		if(!isIOS)
+			SkipTo(Cookies.get("songIndex"), songTime);
 	}
 	else{
 		console.log("setting cookies");
@@ -146,6 +156,7 @@ function Setup()
 	
 	setTimeout(function(){setInterval(SongCookieUpdate, 10);}, 500);
 	var playerstate = Cookies.get("playState");
+	if(!isIOS)
 	if(playerstate == "stopped" || playerstate == "paused")
 		{setTimeout(Amplitude.pause, 30); console.log("PAUSE because of last playerstate. ")}
     Amplitude.bindNewElements();
@@ -196,7 +207,7 @@ function PlaySong()
 {
 	console.log("Playing song...");
 	setTimeout(SongCookieUpdate, 10);
-	if(onPhone)
+	if(onPhone || isIOS)
 		return;	
 	MouseEnter();
 	setTimeout(MouseLeave, 500);
