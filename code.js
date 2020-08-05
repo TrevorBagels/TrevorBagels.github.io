@@ -4,6 +4,7 @@ mySongs = []
 var timeOnPage = Date.now()
 var isHovering = false;
 var visualsHidden = false;
+var isIOS = (/iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) && !window.MSStream;
 //var fileDepth = "../"
 var mediaPlayerHTML = `
         <div id="songPlayer">
@@ -79,16 +80,17 @@ function SongSetup()
 	AddSong("Sweat and Fatigue", "", "Music/PeJazz/Sweat.wav", [], true);
 	AddSong("Slippery Floors and Squeaky Shoes", "", "Music/PeJazz/slippery.wav", [], true);
 	AddSong("My Kneecaps Ran Away", "", "Music/PeJazz/My Kneecaps Ran Away (tragic).wav", [], true);
+	var autoplay = isIOS == false && Cookies.get("playState") != "paused";
 	try{
 		if(BagelVis != undefined)
 			{
 					Amplitude.init({"songs": mySongs, visualizations: [
 		      {object: BagelVis, params: {}}
-		      ], visualization: 'BagelVis', "autoplay": true});
+		      ], visualization: 'BagelVis', "autoplay": autoplay});
 			}
 	}
 	catch{
-		Amplitude.init({"songs": mySongs, "autoplay": true});
+		Amplitude.init({"songs": mySongs, "autoplay": autoplay});
 	}
 
 }
