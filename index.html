@@ -81,7 +81,20 @@
             <h2 style="text-align: center; margin: auto; font-size: 38pt;">MUSIC</h2>
             <div id="musicgrid">
             </div>
-            <p style='text-align: center; margin-bottom: -40px;'>See more on <a target="_blank" href="https://soundcloud.com/trevorbagels">Soundcloud</a></p>
+            <p style='text-align: center; margin-bottom: -40px;'>See more on <span id="musicplatforms"></span><br><a href="music.html">(All platforms)</a><br>
+            See drafts and unreleased work on <a target="_blank" href="https://soundcloud.com/trevorbagels">Soundcloud</a></p>
+            <script>
+                var platformIndex = 0;
+                var platforms = ["Amazon Music", "Apple Music", "Spotify", "Google Play Music"]
+                var platformLinks = ["https://music.amazon.com/artists/B08GBXXK1F?ref=dm_sh_b388-b502-dmcp-5d5c-19eef&musicTerritory=US&marketplaceId=ATVPDKIKX0DER", "https://music.apple.com/us/artist/trevor-bagels/1528425500", "https://open.spotify.com/artist/5VE7ctwQ5n5NKEl68PWaQA?si=Nwc_zLbdTLCiPO1NJu8GFg", "https://play.google.com/music/r/m/Amqzwj3525pl22wij4qyp33dmci?t=Trevor_Bagels"]
+                function updatePlatforms()
+                {
+                    platformIndex += 1;
+                    if(platformIndex >= platformLinks.length) platformIndex = 0;
+                    document.getElementById("musicplatforms").innerHTML = "<a target='_blank' href='" + platformLinks[platformIndex]+"'>" + platforms[platformIndex] + "</a>"
+                }
+                setInterval(updatePlatforms, 1800);
+            </script>
             <hr>
             <a class="anchor" id="projects"></a>
             <h2 style="text-align: center; margin: auto; font-size: 38pt;">PROJECTS</h2><br>
@@ -103,15 +116,15 @@
                 <p>A large collection of computer generated images. Everything was done using <a target="_blank" href="https://www.python.org/">Python</a>, along with a library to write and save the images. I'm currently working on a second version of this that produces videos in addition to images, and runs multiple threads in parallel. </p>
             </div>
             <div style="grid-area: d" class='project'>
-                <h3><a href='#'>Bee-Estate</a> (WIP)</h3>
-                <p>A videogame where you break into houses at night, place beehives in those houses, buy the houses when people move out of them at a discounted price, remove the beehive, and then sell the house at its regular value. The gameplay revolves around stealth, and it heavily focuses on using lights and shadows to your advantage. The latest devlog can be viewed <a target="_blank" href="https://youtu.be/QKPYZLwnK8w">here</a>.</p>
+                <h3>This Website</h3>
+                <p>I've been working on this website since March of 2020, and well, as you can probably see, I've put a lot of work into it. I've done things from implementing my own multi-device support (based on screen size and aspect ratio), to integrating my own media player that works across multiple pages. I suppose this site demonstrates some of my skills in web development, as well as many other things I'm capable of. </p>
             </div>
              <!--NEW CONTENT. ADDED 7/15/20-->
             <div style='grid-area: e' class='project'>
                 <h3>Soviet Chatbot for Discord</h3>
                 <p>A Discord bot that utilizes the Cleverbot API and a werid script that I wrote that changes user input to revolve around communism and the Cold War, thus causing the bot to give soviet themed responses. Click <a target="_blank" href="https://discord.com/api/oauth2/authorize?client_id=733025640835448842&permissions=0&scope=bot">here</a> to invite it to a server. Please be mindful when using it, as I'm limited to a certain number of API calls before I have to pay more money for them. The test server that I use my bots in can be found to the right of this text. </p>
             </div>
-                <iframe class='project' style='grid-area:f' src="https://discordapp.com/widget?id=501504352268320799&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+                <iframe src="https://discordapp.com/widget?id=501504352268320799&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                 <div style='grid-area: g' class='project'>
                     <h3>Dirty Mouth Attack Bot</h3>
                     <p>Another Discord bot that I wrote. This one utilizes my script that replaces words, and spams the entire Bee Movie script to a user in their DMs if provoked. The only way to provoke it is by saying something ever so slightly offensive. Oh yeah, when it spams The Bee Movie script, it uses a <a target="_blank" href="https://www.cs.cmu.edu/~biglou/resources/bad-words.txt">very large list of innapropriate words</a> and filters lines from The Bee Movie through my script. So it's the Bee Movie script, but extremely offensive. </p>

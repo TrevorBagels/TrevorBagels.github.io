@@ -86,8 +86,8 @@ nav
     display: grid;
     grid-gap: 15px;
     grid-template-areas: 
-    "a a a q q b b b"
-    "c c c d d d d d"
+    "c c c q q b b b"
+    "a a a d d d d d"
     "e e e e f g g g"
     "h h h i i i k k"
     "j j l l l l k k";

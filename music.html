@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trevor Bagels - Streaming Platforms</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="musicplatforms.css" rel="stylesheet" type="text/css">
+        <script type='text/javascript' src="js.cookie-2.2.1.min.js"></script>
+        <script type="text/javascript" src="amplitude.min.js"></script>
+        <script src="code.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170661548-1"></script>
+        <meta property="og:title" content="Trevor Bagels">
+        <meta property="og:url" content="https://trevorbagels.github.io/music.html">
+        <meta property="og:description" content="Links to music on different streaming services.">
+        <meta name="twitter:title" content="Trevor Bagels">
+        <meta name="twitter:description" content="Links to music on different streaming services. ">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-170661548-1');
+    </script>
+    </head>
+    <body onload="Setup()">
+    <nav><a href="index.html">Home</a></nav>
+    <div id='content'>
+    
+    <ul class='circle-container'>
+      <li><a target="_blank" href="https://music.amazon.com/artists/B08GBXXK1F?ref=dm_sh_b388-b502-dmcp-5d5c-19eef&musicTerritory=US&marketplaceId=ATVPDKIKX0DER">
+        <img src='musicicons/amazonmusic.png' alt="Amazon Music" /></a></li>
+
+      <li><a target="_blank" href="https://play.google.com/music/r/m/Amqzwj3525pl22wij4qyp33dmci?t=Trevor_Bagels">
+        <img src='musicicons/googleplaymusic.jpg' alt="Google Play Music" /></a></li>
+
+      <li><a target="_blank" href="https://www.iheart.com/artist/trevor-bagels-34940701/">
+        <img src='musicicons/iheart.png' alt="iHeart Radio" /></a></li>
+
+      <li><a target="_blank" href="https://www.shazam.com/track/535639423/an-old-beginning">
+        <img src='musicicons/shazam.png' alt="Shazam" /></a></li>
+
+      <li><a target="_blank" href="https://us.napster.com/artist/trevor-bagels">
+        <img src='musicicons/napster.png' alt="Napster" /></a></li>
+
+      <li><a target="_blank" href="https://www.deezer.com/us/artist/104591522">
+        <img src='musicicons/deezer.png' alt="Deezer" /></a></li>
+
+      <li><a target="_blank" href="https://open.spotify.com/artist/5VE7ctwQ5n5NKEl68PWaQA?si=Nwc_zLbdTLCiPO1NJu8GFg">
+        <img src='musicicons/spotify.jpg' alt="Spotify" /></a></li>
+      <li><a target="_blank" href="https://music.apple.com/us/artist/trevor-bagels/1528425500"><img src='musicicons/applemusic.png' alt="Apple Music" /></a></li>
+    </ul>
+    <div id='sharelink'><p>Share this link:<br><input id='copylink' type="text" value="https://trevorbagels.github.io/music.html" readonly><button onclick="copyText()">Copy</button></p></div>
+        </div>
+        <script>
+          function copyText()
+          {
+            //stolen from w3schools
+              /* Get the text field */
+              var copyText = document.getElementById("copylink");
+
+              /* Select the text field */
+              copyText.select();
+              copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+              /* Copy the text inside the text field */
+              document.execCommand("copy");
+          }
+        </script>
+        <style>
+          #sharelink
+          {
+            margin: auto;
+            width: 50%;
+            padding-top: 100px;
+          }
+          input{
+            width: 250px;
+            padding: 10px 10px;
+            background-color: #251d3a;
+            color: white;
+            border: none;
+          }
+          button
+          {
+            margin-left: 30px;
+            border: none;
+            background-color: #38021d;
+            color: white;
+            padding: 15px 15px;
+            text-align: center;
+            display: inline-block;
+          }
+        </style>
+  </body>
+</html>
