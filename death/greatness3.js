@@ -14,17 +14,10 @@ function CreatePixels() {
 function rand(min, max) {
   return Math.random() * (max - min) + min;
 }
-function closeTo(value, target, range) {
-  if (range === undefined) {
-    range = 15;
-  }
-  if (value < target + range && value > target - range) return true;
-  return false;
-}
+
 function Pixel(x, y) {
   pixels2D[x].push(this);
   pixels.push(this);
-  this.override = false;
   this.x = x;
   this.y = y;
   this.color = new rgb(0, 0, 0);
@@ -74,23 +67,10 @@ CreatePixels();
 // Define the image dimensions
 var width = canv.width;
 var height = canv.height;
-var specialrands = [];
-for (var i = 0; i < width * height; i++) {
-  specialrands.push(rand(0, 1000) / 1000);
+var r = [];
+for (var i = 0; i < 20; i++) {
+  r.push(rand(0, 1000) / 1000);
 }
-var scale = 3;
-var mode = 0;
-var buildingAmt = 20 * scale;
-var buildingWidth = 30 * scale;
-var buildingHeight = 100 * scale;
-var a5 = 0; //max = 360, min = -360.
-var a5speed = 1;
-var a5dir = 1;
-var views = 4;
-var views2 = 1;
-var freezed = false;
-var noise = true;
-var bandw = false;
 var iterations = 0;
 var currentindex = [0, 0];
 function srand(min, max) {
@@ -103,13 +83,9 @@ var imagedata = ctx.createImageData(width, height);
 // Create the image
 function createImage(offset, seedThing) {
   // Loop over all of the pixels
-  if (freezed) return;
   var Border = 0;
   iterations += 1;
-  if (iterations > 100) return;
-  a5 += a5dir * a5speed;
-  if (a5 > 1) a5dir = -1;
-  if (a5 < -1) a5dir = 1;
+  if (iterations > 1000) iterations = 0;
   currentindex = [0, 0];
   var randomi = rand(1, 1000);
   for (var x = 0 + Border; x < width - Border; x++) {
@@ -117,13 +93,11 @@ function createImage(offset, seedThing) {
     var randomx = rand(1, 1000);
     for (var y = 0 + Border; y < height - Border; y++) {
       currentindex[1] = y;
-      if (freezed) return;
       // Get the pixel index
       //wave the index thing
       var originalX = x;
       var originalY = y;
       var actualPix = [x, y];
-
       var thingg = [1, 0];
       x = Math.round(x);
       y = Math.round(y);
@@ -134,51 +108,12 @@ function createImage(offset, seedThing) {
           Clamp(Math.round(actualPix[thingg[1]]), 0, width)) *
         views;
       var pix = pixels[pixelindex];
-      if (pix === undefined) {
+      if (pix == undefined)
         pix = pixels[0];
-        if (noise) pix = pixels[rand(0, pixels.length - 1)];
-      }
-      if (pix === undefined) pix = pixels[0];
       //ALWAYS
       var red = 0;
       var green = 0;
       var blue = 0;
-      var writenewpix = true;
-      var keepoldpix = true;
-      if (specialmodeindex === 1) keepoldpix = true;
-      if (keepoldpix) {
-        blue = pix.color.b;
-        red = pix.color.r;
-        green = pix.color.g;
-      }
-      var originalx = x;
-      var originaly = y;
-      y = Clamp(Math.sin(x * 10) * x + y, y, height);
-
-      var skyred = Math.abs(x - width / 2) - y;
-      var skyblue = Math.sin(x) * 30 * Math.sin((y + x) / 2) * 10;
-      var skygreen = Math.sqrt(((x * x) / y) * y);
-      if (iterations < 3) {
-        red = skyred;
-        blue = skyblue;
-        green = skygreen;
-      }
-      var lightx = width / 2;
-      var lighty = 70;
-      var d = Math.sqrt(Math.pow(lightx - x, 2) + Math.pow(lighty - y, 2));
-      var m = (width / 2 / d) * (1 + Math.sin(x) / 4);
-      red *= m;
-      blue *= m;
-      green *= m / 12;
-      //B&W
-      if (bandw) {
-        var bw = (red + blue + green) / 3;
-        red = bw + 20;
-        blue = bw;
-        green = bw + 10;
-      }
-      x = originalx;
-      y = originaly;
       if (writenewpix) {
         pixelindex = Clamp(pixelindex, 0, imagedata.data.length + 2);
         // Set the pixel data

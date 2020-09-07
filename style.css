@@ -366,3 +366,43 @@ hr
     z-index: 0;
 }
 
+
+input
+{
+    background-color: #4e0128;
+    margin-left: 20px;
+    padding: 10px 10px;
+    width: 175px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+input:focus
+{
+    background-color: #251d3a;
+}
+.copiedMarkerActive
+{
+    margin-left: 30px;
+    animation-name: copyTextFade;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    color: rgba(255, 68, 31, 0);
+}
+@keyframes copyTextFade
+{
+    0% {color: rgba(255, 68, 31, 1);}
+    70% {color: rgba(255, 68, 31, 1);}
+
+    100% {color: rgba(255, 68, 31, 0);}
+
+}
+.copiedMarker
+{
+    margin-left: 30px;
+    color: rgba(255, 68, 31, 0);
+}
+
+
+
+
