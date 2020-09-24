@@ -24,6 +24,67 @@ var mediaPlayerHTML = `
 `
 var setupFinished = false;
 var songSetupFinished = false;
+
+var themeIndex = 1;
+var themeGrayscale = {"backgroundcolor": "#313231", 
+					"textcolor": "#F4F3EF", 
+					"navlink": "#3f738c", 
+					"linkhover": "#DFBF57", 
+					"navbackground": "#212221", 
+					"glowshadow": "#889797",
+					"fontfamily": "'Teko', sans-serif"};
+
+var themeOriginal = {"backgroundcolor": "#4e0128", 
+					"textcolor": "#ede8c3", 
+					"navlink": "#308693", 
+					"linkhover": "#ff441f", 
+					"navbackground": "#38021d", 
+					"glowshadow": "#cc086a",
+					"fontfamily": "'Teko', sans-serif"};
+var themePaper = {"backgroundcolor": "#f1f1f1", 
+					"textcolor": "#090A09", 
+					"navlink": "#3F738C", 
+					"linkhover": "#A04A92", 
+					"navbackground": "#889797", 
+					"glowshadow": "#9E9EA0",
+					"fontfamily": "'Roboto', sans-serif"};
+var themes = [themeGrayscale, themeOriginal, themePaper];
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+function updateTheme()
+{
+	themeIndex = localStorage.themeIndex
+	if (themeIndex == undefined)
+		themeIndex = 0;
+
+	let root = document.documentElement;
+	var tt = themes[themeIndex]
+	root.style.setProperty("--backgroundcolor", tt["backgroundcolor"]);
+	root.style.setProperty("--textcolor", tt["textcolor"]);
+	root.style.setProperty("--navlink", tt["navlink"]);
+	root.style.setProperty("--navbackground", tt["navbackground"]);
+	root.style.setProperty("--glowshadow", tt["glowshadow"]);
+	root.style.setProperty("--fontfamily", tt["fontfamily"]);
+	var rgb1 = hexToRgb(tt['navbackground']);
+	var rgb2 = hexToRgb(tt['backgroundcolor']);
+	var rgba1 = "rgba("+rgb1.r+","+rgb1.g+","+rgb1.b+",1)";
+	var rgba2 = "rgba("+rgb2.r+","+rgb2.g+","+rgb2.b+",1)";
+	root.style.setProperty("--pageheader", "linear-gradient(180deg, "+rgba1+" 0%, "+rgba1+" 80%, "+rgba2+" 100%)");
+
+}
+function setTheme(i)
+{
+	themeIndex = i;
+	localStorage.themeIndex = i;
+	updateTheme();
+}
+updateTheme();
 function AddSong(name, desc, url, tags, disableHtml)
 {
 	console.log(disableHtml);
@@ -153,7 +214,9 @@ function Setup()
 		Cookies.set("songTime", 0);
 		Cookies.set("playState", Amplitude.getPlayerState());
 	}
-	
+	if(localStorage.themeIndex == undefined)
+		localStorage.themeIndex = 0;
+
 	setTimeout(function(){setInterval(SongCookieUpdate, 10);}, 500);
 	var playerstate = Cookies.get("playState");
 	if(!isIOS)

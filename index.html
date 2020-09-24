@@ -47,7 +47,10 @@
                 </div>
         </div>
 
-        <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a href="#music">Music</a><a href="#projects">Projects</a><a href="#contactpayment">Contact/Payment</a><a style="float: right" id="currentTime">The current time for me is (javascript does this part)</a></nav>
+        <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a href="#music">Music</a><a href="#projects">Projects</a><a href="#contactpayment">Contact/Payment</a>
+            <div class="dropdown"><button id="themeselector" onclick="togglethemeDropdown()" class=".dropbtn">Theme</button>
+            <div id='themedropdown' class="dropdown-content"><button onclick="setTheme(0);">Grayscale</button><button onclick="setTheme(1);">Original</button><button onclick="setTheme(2);">Paper</button></div></div>
+            <a style="float: right" id="currentTime">The current time for me is (javascript does this part)</a></nav>
             <div id="pageheader">
                 <div>
                 <h1>TREVOR BAGELS</h1>
@@ -56,6 +59,24 @@
             </div>
 
             <script>
+                function togglethemeDropdown()
+                {
+                    document.getElementById("themedropdown").classList.toggle("show");
+                }
+                window.onclick = function(event) {
+                      if (!event.target.matches('#themeselector')) {
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                          var openDropdown = dropdowns[i];
+                          if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                          }
+                        }
+                      }
+                    }
+
+
           function copyText(target)
           {
               /* Get the text field */
@@ -74,7 +95,7 @@
             <a class="anchor" id="about"></a>
             <h2>ABOUT</h2>
             <h3>Summary</h3>
-            <p>I'm Trevor Bagels (that's not my real last name), a composer/programmer (and beginner sound designer) based in Portland, Oregon. I have several years of experience, and I spend most of my time making music and doing little programming side-projects. When it comes to music, I mostly do ambient tracks and themes, and when it comes to programming, I specialize in making systems, like this really basic <a target="_blank" href="https://github.com/TrevorBagels/Bagels-Inventory-System">inventory</a> system (for unity). </p>
+            <p>I'm Trevor Bagels (that's not my real last name), a composer/programmer (and beginner sound designer) based in Portland, Oregon. I have several years of experience, and I spend most of my time making music and doing little programming side-projects. When it comes to music, I mostly do ambient tracks and themes, and when it comes to programming, I specialize in making automated processes and systems, like this really basic <a target="_blank" href="https://github.com/TrevorBagels/Bagels-Inventory-System">inventory</a> system (for unity). </p>
             <!--p>I'm Trevor Bagels, a composer as well as a programmer. I've been alive since 2000 (+/- 5 years), and I make music and I program for a living. Most of my music is for videogames, and when it comes to programming, at least in the game-dev part of things, I generally specialize in making systems, such as this really simple  I made. <br><i>(No, Bagels is not my real last name)</i></p-->
             <hr>
             <h3>General Experience</h3>

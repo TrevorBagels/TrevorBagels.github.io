@@ -1,19 +1,79 @@
 @import url(https://fonts.googleapis.com/css?family=Teko&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300&family=Roboto&display=swap');/*
+original pallete
+:root{
+    --backgroundcolor: #4e0128;
+    --textcolor: #ede8c3;
+    --navlink: #308693;
+    --linkhover: #ff441f;
+    --navbackground: #38021d;
+    --glowshadow: #cc086a;
+    --pageheader: linear-gradient(180deg, rgba(56,2,29,1) 0%, rgba(56,2,29,1) 80%, rgba(78,1,40,1) 100%)
+}
+*/
+:root{
+    --backgroundcolor: #313231;
+    --textcolor: #F4F3EF;
+    --navlink: #3f738c;
+    --linkhover: #DFBF57;
+
+    --navbackground: #212221;
+    --glowshadow: #889797;
+    --pageheader: linear-gradient(180deg, rgba(33, 34, 33 ,1) 0%, rgba(33, 34, 33 ,1) 80%, rgba(49, 50, 49 ,1) 100%);
+    --fontfamily: 'Teko', sans-serif;
+}
+#themeselector{
+    font-size: 10pt;
+    cursor: pointer;
+    background-color: var(--backgroundcolor);
+    border: none;
+    outline: none;
+    font-family: var(--fontfamily);
+    color: var(--textcolor);
+}
+#themeselector:focus
+{
+    color: var(--linkhover);
+    border: none;
+    outline: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--backgroundcolor);
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content button
+{
+    background-color: var(--backgroundcolor);
+    color: var(--textcolor);
+    border: none;
+    outline: none;
+    font-family: var(--fontfamily);
+}
+.show {display: block;}
 
 html
 {
         scroll-behavior: smooth;
-        font-family: 'Teko', sans-serif;
+        font-family: var(--fontfamily);
 }
 body
 {
     margin: 0;
     padding: 0;
-    background: #4e0128;
-    color: #ede8c3;
-    font-family: 'Teko', sans-serif;
+    background: var(--backgroundcolor);
+    color: var(--textcolor);
+    font-family: var(--fontfamily);
 }
-/* Let's get this party started */
+
 ::-webkit-scrollbar {
     width: 0px;
 }
@@ -22,7 +82,7 @@ h3{
 }
 h2 a
 {
-    color: #ede8c3;
+    color: var(--textcolor);
 }
 a.anchor {
     display: block;
@@ -41,7 +101,7 @@ nav a {
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  color: #308693;
+  color: var(--navlink);
 }
 
 nav a:after {
@@ -62,7 +122,7 @@ nav a:after {
 nav a:hover:after {
   width: 100%;
   left: 0;
-  background:  #ff441f;
+  background:  var(--linkhover);
 }
 
 nav
@@ -72,7 +132,7 @@ nav
     top: 0;
     margin: 0;
     display: block;
-    background: #38021d;
+    background: var(--navbackground);
     width: 100%;
     min-height: 50px;
     box-shadow: 0px 5px 20px black;
@@ -100,7 +160,7 @@ nav
 .project
 {
     z-index: 9;
-    background: #4e0128;
+    background: var(--backgroundcolor);
     box-shadow: 0px 15px 30px black;
     border-radius: 15px;
     transition: box-shadow .5s ease;
@@ -109,7 +169,7 @@ nav
 .project:hover
 {
     z-index: 4;
-    box-shadow: 0px 15px 60px #cc086a;
+    box-shadow: 0px 15px 60px var(--glowshadow);
     transition: box-shadow .5s ease;
 }
 .project p
@@ -123,7 +183,7 @@ nav
     display: flex;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(180deg, rgba(56,2,29,1) 0%, rgba(56,2,29,1) 80%, rgba(78,1,40,1) 100%);
+    background: var(--pageheader);
 }
 #pageheader div
 {
@@ -146,9 +206,10 @@ nav a
 }
 .background
 {
-    background: #4e0128;
-    color: #ede8c3;
+    background: var(--backgroundcolor);
+    color: var(--textcolor);
 }
+/*not sure if this is even used*/
 .background-light
 {
     background: #251d3a;
@@ -157,7 +218,7 @@ nav a
 .button 
 {
     background: #0e0b16;
-    color: #ede8c3;
+    color: var(--textcolor);
 }
 a:visited
 {
@@ -166,18 +227,18 @@ a:visited
 a:hover
 {
     text-decoration: none; 
-    color: #ff441f;
+    color: var(--linkhover);
 
 }
 a
 {
-    color:#308693;
+    color:var(--navlink);
     text-decoration: none;
 }
 
 #content
 {
-    /*background: #4e0128;*/
+    /*background: var(--backgroundcolor);*/
     margin-left: 50px;
     padding-left: 10px;
     padding-top: 25px;
@@ -252,7 +313,7 @@ div.amplitude-play-pause.amplitude-playing {
     right: 0;
     margin: 0;
     display: block;
-    background: #38021d;
+    background: var(--navbackground);
     width: 200px;
     min-height: 80px;
     box-shadow: 0px 5px 20px black;
@@ -272,7 +333,7 @@ div.amplitude-play-pause.amplitude-playing {
 {
     position: relative;
     z-index: 5;
-    background: #4e0128;
+    background: var(--backgroundcolor);
     box-shadow: 0px 15px 30px black;
     border-radius: 15px;
     transition: box-shadow .5s ease;
@@ -284,7 +345,7 @@ div.amplitude-play-pause.amplitude-playing {
 .music:hover
 {
     z-index: 4;
-    box-shadow: 0px 15px 60px #cc086a;
+    box-shadow: 0px 15px 60px var(--glowshadow);
     transition: box-shadow .5s ease, background .15s ease;
 
 }
@@ -369,11 +430,11 @@ hr
 
 input
 {
-    background-color: #4e0128;
+    background-color: var(--backgroundcolor);
     margin-left: 20px;
     padding: 10px 10px;
     width: 175px;
-    color: white;
+    color: var(--textcolor)
     border: none;
     border-radius: 6px;
 }
