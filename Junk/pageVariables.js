@@ -39,3 +39,4 @@ var pejazzpage = `
     }
     </style>
 `
+//this is when I was trying to add dynamic page loading. not as easy as I thought, this file is pretty much pointless
