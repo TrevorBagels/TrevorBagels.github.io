@@ -204,8 +204,10 @@
 
             <h3>Availability</h3>
             <h4 id="currentTimeMobile"></h4>
-            <p id="available">I'm available from 10:00 AM PST to 4:30 PM PST Monday-Friday. (Lunch break from 12:00-1:30). If you contact me outside of those hours, I'll do my best to get back to you as soon as I can. </p>
+            <p id="available">I'm available from 10:00 AM PST to 4:30 PM PST Monday-Friday. (Lunch break from 11:00 - 12:00). If you contact me outside of those hours, I'll do my best to get back to you as soon as I can. </p>
             <script>
+            
+            //hmmm. seems like as the year changes, daylight savings time makes stuff weird.
                 function calcTime(offset) {
                     var d = new Date();
                     var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
@@ -213,7 +215,7 @@
                     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "This day doesn't exist"]
                     return days[nd.getDay()] + ", " + nd.getMonth() + "/" + nd.getDate() + ", " + nd.toLocaleString().split(",")[1];
                 }
-                var offset = 7 - new Date().getTimezoneOffset()/60;
+                var offset = 8 - new Date().getTimezoneOffset()/60;
 
                 function SetTime()
                 {
