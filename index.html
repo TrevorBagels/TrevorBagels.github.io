@@ -209,12 +209,14 @@
             
             //hmmm. seems like as the year changes, daylight savings time makes stuff weird.
                 function calcTime(offset) {
+                    var dstThing = -60
                     var d = new Date();
-                    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+                    var utc = d.getTime() + ((d.getTimezoneOffset() + dstThing) * 60000);
                     var nd = new Date(utc + (3600000*offset));
                     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "This day doesn't exist"]
                     return days[nd.getDay()] + ", " + nd.getMonth() + "/" + nd.getDate() + ", " + nd.toLocaleString().split(",")[1];
                 }
+                
                 var offset = 8 - new Date().getTimezoneOffset()/60;
 
                 function SetTime()
