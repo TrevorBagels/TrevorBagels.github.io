@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Teko&display=swap);
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300&family=Roboto&display=swap');/*
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300&family=Roboto&display=swap');
+
+/*
 original pallete
 :root{
     --backgroundcolor: #4e0128;
@@ -11,7 +13,7 @@ original pallete
     --pageheader: linear-gradient(180deg, rgba(56,2,29,1) 0%, rgba(56,2,29,1) 80%, rgba(78,1,40,1) 100%)
 }
 */
-:root{
+:root {
     --backgroundcolor: #313231;
     --textcolor: #F4F3EF;
     --navlink: #3f738c;
@@ -19,10 +21,11 @@ original pallete
 
     --navbackground: #212221;
     --glowshadow: #889797;
-    --pageheader: linear-gradient(180deg, rgba(33, 34, 33 ,1) 0%, rgba(33, 34, 33 ,1) 80%, rgba(49, 50, 49 ,1) 100%);
+    --pageheader: linear-gradient(180deg, rgba(33, 34, 33, 1) 0%, rgba(33, 34, 33, 1) 80%, rgba(49, 50, 49, 1) 100%);
     --fontfamily: 'Teko', sans-serif;
 }
-#themeselector{
+
+#themeselector {
     font-size: 10pt;
     cursor: pointer;
     background-color: var(--backgroundcolor);
@@ -31,42 +34,46 @@ original pallete
     font-family: var(--fontfamily);
     color: var(--textcolor);
 }
-#themeselector:focus
-{
+
+#themeselector:focus {
     color: var(--linkhover);
     border: none;
     outline: none;
 }
+
 .dropdown {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
+
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--backgroundcolor);
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: var(--backgroundcolor);
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
-.dropdown-content button
-{
+
+.dropdown-content button {
     background-color: var(--backgroundcolor);
     color: var(--textcolor);
     border: none;
     outline: none;
     font-family: var(--fontfamily);
 }
-.show {display: block;}
 
-html
-{
-        scroll-behavior: smooth;
-        font-family: var(--fontfamily);
+.show {
+    display: block;
 }
-body
-{
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--fontfamily);
+}
+
+body {
     margin: 0;
     padding: 0;
     background: var(--backgroundcolor);
@@ -77,13 +84,15 @@ body
 ::-webkit-scrollbar {
     width: 0px;
 }
-h3{
+
+h3 {
     font-style: italic;
 }
-h2 a
-{
+
+h2 a {
     color: var(--textcolor);
 }
+
 a.anchor {
     display: block;
     position: relative;
@@ -91,42 +100,41 @@ a.anchor {
     visibility: hidden;
 }
 
-#currentTime
-{
+#currentTime {
     top: 0;
     font-size: 16pt;
 }
+
 nav a {
-  float: left;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: var(--navlink);
+    float: left;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--navlink);
 }
 
 nav a:after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  height: 3px;
-  width: 0;
-  background: transparent;
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 3px;
+    width: 0;
+    background: transparent;
 }
 
 nav a:after {
-  transition: width .5s ease, background-color .5s ease, left .5s ease;
+    transition: width .5s ease, background-color .5s ease, left .5s ease;
 }
 
 nav a:hover:after {
-  width: 100%;
-  left: 0;
-  background:  var(--linkhover);
+    width: 100%;
+    left: 0;
+    background: var(--linkhover);
 }
 
-nav
-{
+nav {
     z-index: 10;
     position: fixed;
     top: 0;
@@ -138,46 +146,47 @@ nav
     box-shadow: 0px 5px 20px black;
 }
 
-#projectscontainer{
+#projectscontainer {
     width: 90%;
     margin: auto;
     align-self: center;
     text-align: center;
     display: grid;
     grid-gap: 15px;
-    grid-template-areas: 
-    "c c c q q b b b"
-    "a a a d d d d d"
-    "e e e e f g g g"
-    "h h h i i i k k"
-    "j j l l l l k k";
+    grid-template-areas:
+        "m m m m n n n n"
+        "c c c q q b b b"
+        "a a a d d d d d"
+        "e e e e f g g g"
+        "h h h i i i k k"
+        "j j l l l l k k";
 
 }
-.toolsTable th
-{
+
+.toolsTable th {
     padding-right: 35px;
 }
-.project
-{
+
+.project {
     z-index: 9;
     background: var(--backgroundcolor);
     box-shadow: 0px 15px 30px black;
     border-radius: 15px;
     transition: box-shadow .5s ease;
-    
+
 }
-.project:hover
-{
+
+.project:hover {
     z-index: 4;
     box-shadow: 0px 15px 60px var(--glowshadow);
     transition: box-shadow .5s ease;
 }
-.project p
-{
+
+.project p {
     padding: 5px
 }
-#pageheader
-{
+
+#pageheader {
     text-align: center;
     justify-content: center;
     display: flex;
@@ -185,59 +194,58 @@ nav
     width: 100%;
     background: var(--pageheader);
 }
-#pageheader div
-{
+
+#pageheader div {
     margin: auto;
 }
-#pageheader h1
-{
+
+#pageheader h1 {
     font-size: 72pt;
 }
-#pageheader h2
-{
+
+#pageheader h2 {
     margin: auto;
     font-size: 42pt;
 }
-nav a
-{
+
+nav a {
     padding-left: 15px;
     padding-right: 15px;
     font-size: 25pt;
 }
-.background
-{
+
+.background {
     background: var(--backgroundcolor);
     color: var(--textcolor);
 }
+
 /*not sure if this is even used*/
-.background-light
-{
+.background-light {
     background: #251d3a;
     color: #e7dfdd;
 }
-.button 
-{
+
+.button {
     background: #0e0b16;
     color: var(--textcolor);
 }
-a:visited
-{
+
+a:visited {
     text-decoration: none;
 }
-a:hover
-{
-    text-decoration: none; 
+
+a:hover {
+    text-decoration: none;
     color: var(--linkhover);
 
 }
-a
-{
-    color:var(--navlink);
+
+a {
+    color: var(--navlink);
     text-decoration: none;
 }
 
-#content
-{
+#content {
     /*background: var(--backgroundcolor);*/
     margin-left: 50px;
     padding-left: 10px;
@@ -246,57 +254,64 @@ a
     text-align: left;
     font-size: 25px;
 }
-.center
-{
+
+.center {
     text-align: center;
 }
-.title
-{
+
+.title {
     text-align: center;
     margin: auto;
 }
-.AudioPlayer{
+
+.AudioPlayer {
     background: #251d3a;
     shape-margin: round;
 }
-.AudioPlayer > div{
+
+.AudioPlayer>div {
     margin-left: 20px;
 }
-audio:hover, audio:focus, audio:active{
+
+audio:hover,
+audio:focus,
+audio:active {
     background-color: #0e0b16;
 }
 
-.tablemain
-{
+.tablemain {
     width: 100%;
     font-size: 28px;
 }
-th{
+
+th {
     text-align: left;
     text-indent: 10px;
 }
+
 div.amplitude-play-pause {
-  width: 74px;
-  height: 74px;
-  cursor: pointer;
-  float: left;
-  margin-left: 10px;
+    width: 74px;
+    height: 74px;
+    cursor: pointer;
+    float: left;
+    margin-left: 10px;
 }
 
 div.amplitude-play-pause.amplitude-paused {
-  background: url('play.png');
-  background-size: cover;
-  max-width: 20px;
-  max-height: 20px;
+    background: url('play.png');
+    background-size: cover;
+    max-width: 20px;
+    max-height: 20px;
 }
 
 div.amplitude-play-pause.amplitude-playing {
-  background: url('pause.png');
-  background-size: cover;
-  max-width: 20px;
-  max-height: 20px;
+    background: url('pause.png');
+    background-size: cover;
+    max-width: 20px;
+    max-height: 20px;
 }
-.hideVis{
+
+.hideVis {
     min-width: 20px;
     max-width: 20px;
     min-height: 20px;
@@ -306,31 +321,32 @@ div.amplitude-play-pause.amplitude-playing {
     background: url('eye.png');
     background-size: cover;
 }
-#songPlayer
-{
+
+#songPlayer {
     z-index: 11;
     position: fixed;
     right: 0;
     margin: 0;
+    visibility: hidden;
     display: block;
     background: var(--navbackground);
     width: 200px;
     min-height: 80px;
     box-shadow: 0px 5px 20px black;
 }
-.songPlayerNotHover
-{
+
+.songPlayerNotHover {
     bottom: -60px;
     transition: bottom .5s ease;
     transition-delay: 2s;
 }
-.songPlayerHover
-{
+
+.songPlayerHover {
     bottom: 0px;
     transition: bottom .5s ease;
 }
-.music
-{
+
+.music {
     position: relative;
     z-index: 5;
     background: var(--backgroundcolor);
@@ -342,20 +358,19 @@ div.amplitude-play-pause.amplitude-playing {
 
 }
 
-.music:hover
-{
+.music:hover {
     z-index: 4;
     box-shadow: 0px 15px 60px var(--glowshadow);
     transition: box-shadow .5s ease, background .15s ease;
 
 }
-.music:hover .background
-{
+
+.music:hover .background {
     opacity: .7;
     transition: opacity .8s ease;
 }
-.music .background
-{
+
+.music .background {
     position: absolute;
     top: 0;
     left: 0;
@@ -368,8 +383,9 @@ div.amplitude-play-pause.amplitude-playing {
     height: 100%;
     transition: opacity .2s ease;
 }
-#musicgrid, .musicgrid
-{
+
+#musicgrid,
+.musicgrid {
     width: 90%;
     margin: auto;
     align-self: center;
@@ -378,41 +394,44 @@ div.amplitude-play-pause.amplitude-playing {
     grid-gap: 15px;
     grid-template-columns: auto auto auto;
 }
-#musicgrid p, .musicgrid p
-{
+
+#musicgrid p,
+.musicgrid p {
     padding: 5px 10px 5px 10px;
 }
-hr
-{
+
+hr {
     margin-top: 80px;
     margin-bottom: 80px;
 }
 
-.musicTag
-{
+.musicTag {
     bottom: 0;
     right: 0;
     width: 50px;
     font-size: 10pt;
     display: block;
 }
-.orchestral:after
-{
+code {
+    font-size: 14pt;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+.orchestral:after {
     background: orange;
     content: "orchestral";
 }
-.ambient:after
-{
+
+.ambient:after {
     background: darkblue;
     content: "ambient";
 }
-.electronic
-{
+
+.electronic {
     background: pink;
 }
 
-.amplitude-visualization
-{
+.amplitude-visualization {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -421,49 +440,50 @@ hr
     opacity: .8;
 }
 
-.amplitude-visualization canvas
-{
+.amplitude-visualization canvas {
     width: 100%;
     z-index: 0;
 }
 
 
-input
-{
+input {
     background-color: var(--backgroundcolor);
     margin-left: 20px;
     padding: 10px 10px;
     width: 175px;
-    color: var(--textcolor)
-    border: none;
+    color: var(--textcolor) border: none;
     border-radius: 6px;
 }
-input:focus
-{
+
+input:focus {
     background-color: #251d3a;
 }
-.copiedMarkerActive
-{
+
+.copiedMarkerActive {
     margin-left: 30px;
     animation-name: copyTextFade;
     animation-duration: 4s;
     animation-iteration-count: 1;
     color: rgba(255, 68, 31, 0);
 }
-@keyframes copyTextFade
-{
-    0% {color: rgba(255, 68, 31, 1);}
-    70% {color: rgba(255, 68, 31, 1);}
 
-    100% {color: rgba(255, 68, 31, 0);}
+@keyframes copyTextFade {
+    0% {
+        color: rgba(255, 68, 31, 1);
+    }
+
+    70% {
+        color: rgba(255, 68, 31, 1);
+    }
+
+    100% {
+        color: rgba(255, 68, 31, 0);
+    }
 
 }
-.copiedMarker
-{
+
+.copiedMarker {
     margin-left: 30px;
     color: rgba(255, 68, 31, 0);
 }
-
-
-
 

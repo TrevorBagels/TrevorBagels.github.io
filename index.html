@@ -1,317 +1,406 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!--script type="text/javascript" src="node_modules/amplitudejs/dist/visualizations/michaelbromley.js"></script-->
-        <script src="node_modules/mathjs/dist/math.min.js"></script>
-        <script src="visualizationcode.js"></script>
-        <script type='text/javascript' src="js.cookie-2.2.1.min.js"></script>
-        <script type="text/javascript" src="amplitude.min.js"></script>
-        <title>Trevor Bagels</title>
-        <meta property="og:title" content="Trevor Bagels (portfolio)">
-        <meta property="og:url" content="https://trevorbagels.github.io">
-        <meta property="og:description" content="Composer, programmer, and sound designer.">
-        <meta name="twitter:title" content="Trevor Bagels">
-        <meta name="twitter:description" content="Composer, programmer, and sound designer. ">
-        <link href="style.css" rel="stylesheet" type="text/css">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<head>
+    <!--script type="text/javascript" src="node_modules/amplitudejs/dist/visualizations/michaelbromley.js"></script-->
+    <script src="node_modules/mathjs/dist/math.min.js"></script>
+    <script src="visualizationcode.js"></script>
+    <script type='text/javascript' src="js.cookie-2.2.1.min.js"></script>
+    <script type="text/javascript" src="amplitude.min.js"></script>
+    <title>Trevor Bagels</title>
+    <meta property="og:title" content="Trevor Bagels (portfolio)">
+    <meta property="og:url" content="https://trevorbagels.github.io">
+    <meta property="og:description" content="Composer, programmer, and sound designer.">
+    <meta name="twitter:title" content="Trevor Bagels">
+    <meta name="twitter:description" content="Composer, programmer, and sound designer. ">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170661548-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-170661548-1');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-170661548-1');
     </script>
-    </head>
-    <div id='visualizer'></div>
+</head>
+<div id='visualizer'></div>
 
-    <body onload="Setup()">
-        <script>
-            if((/iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) && !window.MSStream)
-                console.log("is IOS");
-            else
-                document.getElementById('visualizer').setAttribute("class", "amplitude-visualization"); console.log('set visualizer');
-        </script>
-        <div id="songPlayer">
-            <div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
-                <progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" id="song-played-progress"></progress>
-                <div class="time-container">
-                    <div style="float: left; margin-left: 30px;"><span class="current-time">
-                    <span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>:<span class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
-                    </span></div>
-                    <div style="float: right; margin-right: 30px;">
-                    <span class="duration">
-                    <span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>:<span class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
-                    </span></div><br>
-                    <div class='hideVis' onclick='hideVisuals();'></div>
-                    <div style='text-align: center' id="songInfo">Driving Simulator Music</div>   
-                </div>
+<body onload="Setup();">
+    <script>
+        if ((/iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator
+                .maxTouchPoints > 1)) && !window.MSStream)
+            console.log("is IOS");
+        else
+            document.getElementById('visualizer').setAttribute("class", "amplitude-visualization");
+        console.log('set visualizer');
+    </script>
+    <div id="songPlayer">
+        <div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
+        <progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true"
+            id="song-played-progress"></progress>
+        <div class="time-container">
+            <div style="float: left; margin-left: 30px;"><span class="current-time">
+                    <span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>:<span
+                        class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
+                </span></div>
+            <div style="float: right; margin-right: 30px;">
+                <span class="duration">
+                    <span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>:<span
+                        class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
+                </span></div><br>
+            <div class='hideVis' onclick='hideVisuals();'></div>
+            <div style='text-align: center' id="songInfo">Driving Simulator Music</div>
         </div>
+    </div>
 
-        <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a href="#music">Music</a><a href="#projects">Projects</a><a href="#contactpayment">Contact/Payment</a>
-            <div class="dropdown"><button id="themeselector" onclick="togglethemeDropdown()" class=".dropbtn">Theme</button>
-            <div id='themedropdown' class="dropdown-content"><button onclick="setTheme(0);">Grayscale</button><button onclick="setTheme(1);">Original</button><button onclick="setTheme(2);">Paper</button></div></div>
-            <a style="float: right" id="currentTime">The current time for me is (javascript does this part)</a></nav>
-            <div id="pageheader">
-                <div>
-                <h1>TREVOR BAGELS</h1>
-                <h2>Composer, programmer, and a sound designer</h2>
-                </div>
-            </div>
+    <nav><a href="https://trevorbagels.github.io">Trevor Bagels</a><a href="#about">About</a><a
+            href="#music">Music</a><a href="#projects">Projects</a><a href="#contactpayment">Contact/Payment</a>
+        <div class="dropdown"><button id="themeselector" onclick="togglethemeDropdown()" class=".dropbtn">Theme</button>
+            <div id='themedropdown' class="dropdown-content"><button onclick="setTheme(0);">Grayscale</button><button
+                    onclick="setTheme(1);">Original</button><button onclick="setTheme(2);">Paper</button></div>
+        </div>
+        <a style="float: right" id="currentTime">The current time for me is (javascript does this part)</a>
+    </nav>
+    <div id="pageheader">
+        <div>
+            <h1>TREVOR BAGELS</h1>
+            <h2>Composer, programmer, and a sound designer</h2>
+        </div>
+    </div>
 
-            <script>
-                function togglethemeDropdown()
-                {
-                    document.getElementById("themedropdown").classList.toggle("show");
-                }
-                window.onclick = function(event) {
-                      if (!event.target.matches('#themeselector')) {
-                        var dropdowns = document.getElementsByClassName("dropdown-content");
-                        var i;
-                        for (i = 0; i < dropdowns.length; i++) {
-                          var openDropdown = dropdowns[i];
-                          if (openDropdown.classList.contains('show')) {
-                            openDropdown.classList.remove('show');
-                          }
-                        }
-                      }
+    <script>
+        function togglethemeDropdown() {
+            document.getElementById("themedropdown").classList.toggle("show");
+        }
+        window.onclick = function (event) {
+            if (!event.target.matches('#themeselector')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
                     }
-
-
-          function copyText(target)
-          {
-              /* Get the text field */
-              var copyText = document.getElementById(target).querySelector("input");
-              console.log(copyText)
-              copiedMarker = document.getElementById(target).querySelector('span');
-              copiedMarker.classList.remove("copiedMarkerActive");
-              copiedMarker.classList.remove("copiedMarker");
-              copiedMarker.classList.add("copiedMarkerActive");
-              copyText.select();
-              copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-              document.execCommand("copy");
-          }
-        </script>
-        <div id='content'>
-            <a class="anchor" id="about"></a>
-            <h2>ABOUT</h2>
-            <h3>Summary</h3>
-            <p>I'm Trevor Bagels (that's not my real last name), a composer/programmer (and beginner sound designer) based in Portland, Oregon. I have several years of experience, and I spend most of my time making music and doing little programming side-projects. When it comes to music, I mostly do ambient tracks and themes, and when it comes to programming, I make automated processes and systems, like this really basic <a target="_blank" href="https://github.com/TrevorBagels/Bagels-Inventory-System">inventory</a> system (for unity). </p>
-            <!--p>I'm Trevor Bagels, a composer as well as a programmer. I've been alive since 2000 (+/- 5 years), and I make music and I program for a living. Most of my music is for videogames, and when it comes to programming, at least in the game-dev part of things, I generally specialize in making systems, such as this really simple  I made. <br><i>(No, Bagels is not my real last name)</i></p-->
-            <hr>
-            <h3>General Experience</h3>
-            <p>Musical Composition - I've been composing for around 7-9 years, although I only started recording and sharing my compositions two or three years ago. <br>
-            Programming - I've been programming for 6 years. I have experience with JavaScript, Python, and C#.<br>
-            Markup - Web development is where I started learning; I have about 8 years of experience in HTML and CSS.</p>
-            <h3>Software, tools, and operating systems</h3>
-            <table class="toolsTable">
-                <tr><th>Game Engines</th> <td>Unity3D</td></tr><!--Game engines-->
-                <tr><th>DAWs</th> <td>Ableton Live</td> <!--FL Studio is next for this list--></tr> <!--DAW-->
-                <tr><th>Audio Engines</th> <td>FMOD Studio</td><!--WWISE is next on the list--></tr> <!--Audio Engines-->
-                <tr><th>Operating Systems</th> <td>Windows, MacOS, Ubuntu, Kali Linux, Arch Linux</td></tr> <!--OS-->
-                <tr><th>Source Control</th><td>Github, Bitbucket, Unity Collab</td></tr><!--Source Control-->
-                <tr><th>Task Management</th><td>Trello, Miro/Realtime Board</td></tr><!--Productivity/task management-->
-                <tr><th>Text Editors</th><td>Visual Studio, Visual Studio Code, Sublime Text</td></tr><!--Text Editors-->
-            </table>
-            <hr>
-            <a class="anchor" id="music"></a>
-            <h2 style="text-align: center; margin: auto; font-size: 38pt;">MUSIC</h2>
-            <div id="musicgrid">
-            </div>
-            <p style='text-align: center; margin-bottom: -40px;'>See more on <span id="musicplatforms"></span><br><a href="music.html">(All platforms)</a><br>
-            See drafts and unreleased work on <a target="_blank" href="https://soundcloud.com/trevorbagels">Soundcloud</a></p>
-            <script>
-                var platformIndex = 0;
-                var platforms = ["Amazon Music", "Apple Music", "Spotify", "Google Play Music"]
-                var platformLinks = ["https://music.amazon.com/artists/B08GBXXK1F?ref=dm_sh_b388-b502-dmcp-5d5c-19eef&musicTerritory=US&marketplaceId=ATVPDKIKX0DER", "https://music.apple.com/us/artist/trevor-bagels/1528425500", "https://open.spotify.com/artist/5VE7ctwQ5n5NKEl68PWaQA?si=Nwc_zLbdTLCiPO1NJu8GFg", "https://play.google.com/music/r/m/Amqzwj3525pl22wij4qyp33dmci?t=Trevor_Bagels"]
-                function updatePlatforms()
-                {
-                    platformIndex += 1;
-                    if(platformIndex >= platformLinks.length) platformIndex = 0;
-                    document.getElementById("musicplatforms").innerHTML = "<a target='_blank' href='" + platformLinks[platformIndex]+"'>" + platforms[platformIndex] + "</a>"
                 }
-                setInterval(updatePlatforms, 1800);
-            </script>
-            <hr>
-            <a class="anchor" id="projects"></a>
-            <h2 style="text-align: center; margin: auto; font-size: 38pt;">PROJECTS</h2><br>
-            <div id="projectscontainer">
-                <div style='grid-area: a' class="project">
-                    <h3><a target="_blank" href='https://theangrybagel.github.io/index.html'>Welcome, Primitive Lifeform, To Space</a></h3>
-                    <p>A tabletop RPG with an extensive amount of lore, as well as a WIP videogame, as well as a soundtrack with different themes for different space things. </p>
-                </div>
+            }
+        }
+
+
+        function copyText(target) {
+            /* Get the text field */
+            var copyText = document.getElementById(target).querySelector("input");
+            console.log(copyText)
+            copiedMarker = document.getElementById(target).querySelector('span');
+            copiedMarker.classList.remove("copiedMarkerActive");
+            copiedMarker.classList.remove("copiedMarker");
+            copiedMarker.classList.add("copiedMarkerActive");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+            document.execCommand("copy");
+        }
+    </script>
+    <div id='content'>
+        <a class="anchor" id="about"></a>
+        <h2>ABOUT</h2>
+        <h3>Summary</h3>
+        <p>I'm Trevor Bagels (that's not my real last name), a composer/programmer (and beginner sound designer) based
+            in Portland, Oregon. I have several years of experience, and I spend most of my time making music and doing
+            little programming side-projects. When it comes to music, I mostly do ambient tracks and themes, and when it
+            comes to programming, I make automated processes and systems, like this really basic <a target="_blank"
+                href="https://github.com/TrevorBagels/Bagels-Inventory-System">inventory</a> system (for unity). </p>
+        <!--p>I'm Trevor Bagels, a composer as well as a programmer. I've been alive since 2000 (+/- 5 years), and I make music and I program for a living. Most of my music is for videogames, and when it comes to programming, at least in the game-dev part of things, I generally specialize in making systems, such as this really simple  I made. <br><i>(No, Bagels is not my real last name)</i></p-->
+        <hr>
+        <h3>General Experience</h3>
+        <p>Musical Composition - I've been composing for around 7-9 years, although I only started recording and sharing
+            my compositions two or three years ago. <br>
+            Programming - I've been programming for 6 years. I have experience with JavaScript, Python, and C#.<br>
+            Markup - Web development is where I started learning; I have about 8 years of experience in HTML and CSS.
+        </p>
+        <h3>Software, tools, and operating systems</h3>
+        <table class="toolsTable">
+            <tr>
+                <th>Game Engines</th>
+                <td>Unity3D</td>
+            </tr>
+            <!--Game engines-->
+            <tr>
+                <th>DAWs</th>
+                <td>Ableton Live</td>
+                <!--FL Studio is next for this list-->
+            </tr>
+            <!--DAW-->
+            <tr>
+                <th>Audio Engines</th>
+                <td>FMOD Studio</td>
+                <!--WWISE is next on the list-->
+            </tr>
+            <!--Audio Engines-->
+            <tr>
+                <th>Operating Systems</th>
+                <td>Windows, MacOS, Ubuntu, Kali Linux, Arch Linux</td>
+            </tr>
+            <!--OS-->
+            <tr>
+                <th>Source Control</th>
+                <td>Github, Bitbucket, Unity Collab</td>
+            </tr>
+            <!--Source Control-->
+            <tr>
+                <th>Task Management</th>
+                <td>Trello, Miro/Realtime Board</td>
+            </tr>
+            <!--Productivity/task management-->
+            <tr>
+                <th>Text Editors</th>
+                <td>Visual Studio, Visual Studio Code, Sublime Text</td>
+            </tr>
+            <!--Text Editors-->
+        </table>
+        <hr>
+        <a class="anchor" id="music"></a>
+        <h2 style="text-align: center; margin: auto; font-size: 38pt;">MUSIC</h2>
+        <div id="musicgrid">
+        </div>
+        <p style='text-align: center; margin-bottom: -40px;'>See more on <span id="musicplatforms"></span><br><a
+                href="music.html">(All platforms)</a><br>
+            See drafts and unreleased work on <a target="_blank"
+                href="https://soundcloud.com/trevorbagels">Soundcloud</a></p>
+        <script>
+            var platformIndex = 0;
+            var platforms = ["Amazon Music", "Apple Music", "Spotify", "YouTube Music"]
+            var platformLinks = [
+                "https://music.amazon.com/artists/B08GBXXK1F?ref=dm_sh_b388-b502-dmcp-5d5c-19eef&musicTerritory=US&marketplaceId=ATVPDKIKX0DER",
+                "https://music.apple.com/us/artist/trevor-bagels/1528425500",
+                "https://open.spotify.com/artist/5VE7ctwQ5n5NKEl68PWaQA?si=Nwc_zLbdTLCiPO1NJu8GFg",
+                "https://music.youtube.com/channel/UCHD9fLzph_3tNheEIidKdUQ"
+            ]
+
+            function updatePlatforms() {
+                platformIndex += 1;
+                if (platformIndex >= platformLinks.length) platformIndex = 0;
+                document.getElementById("musicplatforms").innerHTML = "<a target='_blank' href='" + platformLinks[
+                    platformIndex] + "'>" + platforms[platformIndex] + "</a>"
+            }
+            setInterval(updatePlatforms, 1800);
+        </script>
+        <hr>
+        <a class="anchor" id="projects"></a>
+        <h2 style="text-align: center; margin: auto; font-size: 38pt;">PROJECTS</h2><br>
+        <div id="projectscontainer">
+            <div style='grid-area: m' class="project">
+                <h3><a target="_blank" href='https://github.com/TrevorBagels/PulsepointScraper'>Pulsepoint Scraper</a></h3>
+                <p>A python program that scrapes PulsePoint, and can be used to monitor areas for emergency events and notify you when a configured location has an emergency near it. </p>
+            </div>
+            <div style='grid-area: n' class="project">
+                <h3><a target="_blank" href='https://github.com/TrevorBagels/JSON4JSON'>JSON4JSON</a></h3>
+                <p>A python library that uses JSON to configure rules for JSON files. Makes the lives of developers much easier. Can be installed with <code>pip install JSON4JSON</code></code></p>
+            </div>
+            <div style='grid-area: a' class="project">
+                <h3><a target="_blank" href='https://theangrybagel.github.io/index.html'>Welcome, Primitive Lifeform, To
+                        Space</a></h3>
+                <p>A tabletop RPG with an extensive amount of lore, as well as a WIP videogame, as well as a soundtrack
+                    with different themes for different space things. </p>
+            </div>
             <div class="project" style="grid-area: q">
-                <h3><a target="_blank" href="https://github.com/EricZhengLian/NWAPW_music_recognition">Music Fingerprinting and Recognition</a></h3>
-                <p>A program that utilizes machine learning to compare a given audio file to a database of songs, eventually returning the most similar song in our database. I developed the frontend and backend integration using NodeJS (and a bit of Python), while the other team members focused on the machine learning side of things using Python. </p>
+                <h3><a target="_blank" href="https://github.com/EricZhengLian/NWAPW_music_recognition">Music
+                        Fingerprinting and Recognition</a></h3>
+                <p>A program that utilizes machine learning to compare a given audio file to a database of songs,
+                    eventually returning the most similar song in our database. I developed the frontend and backend
+                    integration using NodeJS (and a bit of Python), while the other team members focused on the machine
+                    learning side of things using Python. </p>
             </div>
-            <div style='grid-area: b'class="project">
+            <div style='grid-area: b' class="project">
                 <h3><a href='PEJazz.html'>Smooth PE Jazz</a></h3>
-                <p>A new and crappy genre of music for this new and crappy (no offense) age of society. All of this was generated by a program I wrote in python. Click <a href='PEJazz.html'>here</a> to view all of the music for this.</p>
+                <p>A new and crappy genre of music for this new and crappy (no offense) age of society. All of this was
+                    generated by a program I wrote in python. Click <a href='PEJazz.html'>here</a> to view all of the
+                    music for this.</p>
             </div>
-            <div style='grid-area: c' class='project'><!--*-->
+            <div style='grid-area: c' class='project'>
+                <!--*-->
                 <h3><a href="ImageGeneration/index.html">Image Generation</a></h3>
-                <p>A large collection of computer generated images. Everything was done using <a target="_blank" href="https://www.python.org/">Python</a>, along with a library to write and save the images. I'm currently working on a second version of this that produces videos in addition to images, and runs multiple threads in parallel. </p>
+                <p>A large collection of computer generated images. Everything was done using <a target="_blank"
+                        href="https://www.python.org/">Python</a>, along with a library to write and save the images.
+                    I'm currently working on a second version of this that produces videos in addition to images, and
+                    runs multiple threads in parallel. </p>
             </div>
             <div style="grid-area: d" class='project'>
                 <h3>This Website</h3>
-                <p>I've been working on this website since March of 2020, and well, as you can probably see, I've put a lot of work into it. I've done things from implementing my own multi-device support (based on screen size and aspect ratio), to integrating my own media player that works across multiple pages. I suppose this site demonstrates some of my skills in web development, as well as many other things I'm capable of. </p>
+                <p>I've been working on this website since March of 2020, and well, as you can probably see, I've put a
+                    lot of work into it. I've done things from implementing my own multi-device support (based on screen
+                    size and aspect ratio), to integrating my own media player that works across multiple pages. I
+                    suppose this site demonstrates some of my skills in web development, as well as many other things
+                    I'm capable of. </p>
             </div>
-             <!--NEW CONTENT. ADDED 7/15/20-->
+            <!--NEW CONTENT. ADDED 7/15/20-->
             <div style='grid-area: e' class='project'>
                 <h3>Soviet Chatbot for Discord</h3>
-                <p>A Discord bot that utilizes the Cleverbot API and a werid script that I wrote that changes user input to revolve around communism and the Cold War, thus causing the bot to give soviet themed responses. Click <a target="_blank" href="https://discord.com/api/oauth2/authorize?client_id=733025640835448842&permissions=0&scope=bot">here</a> to invite it to a server. Please be mindful when using it, as I'm limited to a certain number of API calls before I have to pay more money for them. The test server that I use my bots in can be found to the right of this text. </p>
+                <p>A Discord bot that utilizes the Cleverbot API and a werid script that I wrote that changes user input
+                    to revolve around communism and the Cold War, thus causing the bot to give soviet themed responses.
+                    Click <a target="_blank"
+                        href="https://discord.com/api/oauth2/authorize?client_id=733025640835448842&permissions=0&scope=bot">here</a>
+                    to invite it to a server. <br>Please be mindful when using it, as I'm limited to a certain number of API
+                    calls before I have to pay more money for them. The test server that I use my bots in can be found
+                    to the right of this text.</p>
             </div>
-                <iframe src="https://discordapp.com/widget?id=501504352268320799&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                <div style='grid-area: g' class='project'>
-                    <h3>Dirty Mouth Attack Bot</h3>
-                    <p>Another Discord bot that I wrote. This one utilizes my script that replaces words, and spams the entire Bee Movie script to a user in their DMs if provoked. The only way to provoke it is by saying something ever so slightly offensive. Oh yeah, when it spams The Bee Movie script, it uses a <!--a target="_blank" href="https://www.cs.cmu.edu/~biglou/resources/bad-words.txt"-->very large list of innapropriate words<!--/a--> and filters lines from The Bee Movie through my script. So it's the Bee Movie script, but extremely offensive. Any wordlist can be used however, so you could make the bot talk about sunshine and rainbows if you really wanted to. </p>
-                </div>
+            <iframe src="https://discordapp.com/widget?id=501504352268320799&theme=dark" width="350" height="500"
+                allowtransparency="true" frameborder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            <div style='grid-area: g' class='project'>
+                <h3>Dirty Mouth Attack Bot</h3>
+                <p>Another Discord bot that I wrote. This one utilizes my script that replaces words, and spams the
+                    entire Bee Movie script to a user in their DMs if provoked. The only way to provoke it is by saying
+                    something ever so slightly offensive. Oh yeah, when it spams The Bee Movie script, it uses a
+                    <!--a target="_blank" href="https://www.cs.cmu.edu/~biglou/resources/bad-words.txt"-->very large
+                    list of innapropriate words
+                    <!--/a--> and filters lines from The Bee Movie through my script. So it's the Bee Movie script, but
+                    extremely offensive. Any wordlist can be used however, so you could make the bot talk about sunshine
+                    and rainbows if you really wanted to. </p>
+            </div>
 
-                <div style='grid-area: h' class="project">
-                    <h3><a href="TerrainGeneration/index.html">Temperature Simulation</a></h3>
-                    <p>A small project back from when I was in 10th grade or something. The original intent was to create terrain through water erosion and temperature simulation, but it ended up turning into me having fun simulating the transfer of heat. I'm not sure that "simulation" is the right word however, because I can't remember if I actually used the right equations for this. </p>
-                </div>
-                <div style='grid-area: j' class="project">
-                    <h3><a href="2D Physics for BE3/index2.html">2D Gas Physics</a></h3>
-                    <p>Another small project from a long time ago. This one simulates gas in a 2D enviroment.  </p>
-                </div>
-                <div style='grid-area: k' class='project'><h3><a href="death/home.html">Project Epilepsy</a></h3>
-                    <p>Realtime image generation in JS. It's called project epilepsy to warn people of its dangers before seeing the actual epilepsy warning, which I made in highschool, so it's a bit of an excessive warning. I recommend clicking on the first link at the bottom of the page. </p>
-                </div>
-                <div style='grid-area: i' class='project'><h3><a href="game4/perlinNoise.html">Terrain Generation</a></h3>
-                    <p>A while back I made this simple terrain/heightmap generator completely from scratch (except for the random library, which is used to seed everything. The perlin-like noise feature is something I made on my own). </p>
-                </div>
-                <div style='grid-area: l' class='project'><h3><a target="_blank" href="https://bots.ondiscord.xyz/bots/734222377638166638">Faker Interface Bot</a></h3>
-                    <p style=''>A Discord bot that generates fake information, such as names, addresses, emails, and more. </p> 
-                    <a target="_blank" style="" href="https://bots.ondiscord.xyz/bots/734222377638166638"><img src="https://bots.ondiscord.xyz/bots/734222377638166638/embed?theme=dark&showGuilds=true" alt="Faker Interface" /></a>
-                </div>
+            <div style='grid-area: h' class="project">
+                <h3><a href="TerrainGeneration/index.html">Temperature Simulation</a></h3>
+                <p>A small project back from when I was in 10th grade or something. The original intent was to create
+                    terrain through water erosion and temperature simulation, but it ended up turning into me having fun
+                    simulating the transfer of heat. I'm not sure that "simulation" is the right word however, because I
+                    can't remember if I actually used the right equations for this. </p>
+            </div>
+            <div style='grid-area: j' class="project">
+                <h3><a href="2D Physics for BE3/index2.html">2D Gas Physics</a></h3>
+                <p>Another small project from a long time ago. This one simulates gas in a 2D enviroment. </p>
+            </div>
+            <div style='grid-area: k' class='project'>
+                <h3><a href="death/home.html">Project Epilepsy</a></h3>
+                <p>Realtime image generation in JS. It's called project epilepsy to warn people of its dangers before
+                    seeing the actual epilepsy warning, which I made in highschool, so it's a bit of an excessive
+                    warning. I recommend clicking on the first link at the bottom of the page. </p>
+            </div>
+            <div style='grid-area: i' class='project'>
+                <h3><a href="game4/perlinNoise.html">Terrain Generation</a></h3>
+                <p>A while back I made this simple terrain/heightmap generator completely from scratch (except for the
+                    random library, which is used to seed everything. The perlin-like noise feature is something I made
+                    on my own). </p>
+            </div>
+            <div style='grid-area: l' class='project'>
+                <h3><a target="_blank" href="https://bots.ondiscord.xyz/bots/734222377638166638">Faker Interface Bot</a>
+                </h3>
+                <p style=''>A Discord bot that generates fake information, such as names, addresses, emails, and more.
+                </p>
+                <a target="_blank" style="" href="https://bots.ondiscord.xyz/bots/734222377638166638"><img
+                        src="https://bots.ondiscord.xyz/bots/734222377638166638/embed?theme=dark&showGuilds=true"
+                        alt="Faker Interface" /></a>
+            </div>
 
         </div>
         <hr>
-            <a class="anchor" id="musicshowcase"></a>
-                    <a class="anchor" id="contactpayment"></a>
-            <h2><a href="#contact">CONTACT</a> &middot; <a href="#payment">PAYMENT</a></h2>
-            <a class="anchor" id="contact"></a>
-            <div>
-                <h3>Contact Info</h3>
-                <p>I can guarantee a response within 24 hours of being contacted. Discord is the quickest way to contact me, but I can also work with email.</p>
+        <a class="anchor" id="musicshowcase"></a>
+        <a class="anchor" id="contactpayment"></a>
+        <h2><a href="#contact">CONTACT</a> &middot; <a href="#payment">PAYMENT</a></h2>
+        <a class="anchor" id="contact"></a>
+        <div>
+            <h3>Contact Info</h3>
+            <p>I can guarantee a response within 24 hours of being contacted. Discord is the quickest way to contact me,
+                but I can also work with email.</p>
         </div>
         <div>
-                <p class="sharelink" id='emailCopy'>Email<input type='text' value='trevorbagels@gmail.com' readonly onclick="copyText('emailCopy')"></input><span class='copiedMarker'>copied!</span><br></p>
-                <p class="sharelink" id='discordCopy'>Discord<input type='text' value='theangrybagel#2557' readonly onclick="copyText('discordCopy')"></input><span class='copiedMarker'>copied!</span><br></p>
-            </div>
-            
-
-
-            <h3>Availability</h3>
-            <h4 id="currentTimeMobile"></h4>
-            <p id="available">I'm available from 10:00 AM PST to 4:30 PM PST Monday-Friday. (Lunch break from 11:00 - 12:00). If you contact me outside of those hours, I'll do my best to get back to you as soon as I can. </p>
-            <script>
-            
-            //hmmm. seems like as the year changes, daylight savings time makes stuff weird.
-                function calcTime(offset) {
-                    var dstThing = -60
-                    var d = new Date();
-                    var utc = d.getTime() + ((d.getTimezoneOffset() + dstThing) * 60000);
-                    var nd = new Date(utc + (3600000*offset));
-                    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "This day doesn't exist"]
-                    return days[nd.getDay()] + ", " + nd.getMonth() + "/" + nd.getDate() + ", " + nd.toLocaleString().split(",")[1];
-                }
-                
-                var offset = 8 - new Date().getTimezoneOffset()/60;
-
-                function SetTime()
-                {
-                    otherpart = "<br>(-"+ offset +" hours)"
-                    if(offset == 0)
-                        otherpart = ""
-                    document.getElementById("currentTime").innerHTML = "<code> " + calcTime('-7') + " (PST)" + otherpart + "</code>"
-                }
-                SetTime();
-                setInterval(SetTime, 500)
-            </script>
-            <a class="anchor" id="payment"></a>
-            <div>
-            <h3>Payment</h3>
-            <p>As of now, I offer my services for free. Money is nice, but it isn't a necessity for me at the moment. If you'd like to support me for a track I make for you, a small payment through PayPal works just fine. </p>
-            </div>
-            <br><br><hr>
-            <div style='text-align: center; bottom: 0px; font-size: 12pt; font-family: "Times New Roman", Times, serif;'><p>Notice: This site uses cookies to keep track of what state the media player is left in. No other information is ever stored here. Cookies only exist on <i>your</i> local machine.</p><p id="yourCookies"></p></div><br><br>
-            <script>
-                function yourCookiesUpdate()
-                {
-                    document.getElementById("yourCookies").innerHTML = "Your cookies look like this: <br>" + "Song index: " + Cookies.get("songIndex") + ", Song Time: " + Cookies.get("songTime") +", Play State: " + Cookies.get("playState"); 
-                }
-                setInterval(yourCookiesUpdate, 500)
-            </script>
+            <p class="sharelink" id='emailCopy'>Email<input type='text' value='trevorbagels@gmail.com' readonly
+                    onclick="copyText('emailCopy')"></input><span class='copiedMarker'>copied!</span><br></p>
+            <p class="sharelink" id='discordCopy'>Discord<input type='text' value='theangrybagel#2557' readonly
+                    onclick="copyText('discordCopy')"></input><span class='copiedMarker'>copied!</span><br></p>
         </div>
-        <!--Fixing thing on mobile-->
+
+
+
+        <h3>Availability</h3>
+        <h4 id="currentTimeMobile"></h4>
+        <p id="available">I'm available from 10:00 AM PST to 4:30 PM PST Monday-Friday. (Lunch break from 11:00 -
+            12:00). If you contact me outside of those hours, I'll do my best to get back to you as soon as I can. </p>
         <script>
-            width = document.documentElement.clientWidth;
-            height = document.documentElement.clientHeight;
-            if(width < height*1.15)
-            {
-                document.getElementById("projectscontainer").id = "";
-            }
-            if(width < height)
-            {
-                console.log("fix stuff");
-                //fix stuff. we're in a mobile looking view
-                document.getElementById("currentTime").style = "font-size: 12pt";
-                document.querySelectorAll('.anchor').forEach(function(e){e.style.top = "-200px";});
-                document.getElementById("currentTime").innerHTML = "";
-                document.getElementById("currentTime").id = "";
-                document.getElementById("currentTimeMobile").id = "currentTime";
-
+            //hmmm. seems like as the year changes, daylight savings time makes stuff weird.
+            function calcTime(offset) {
+                var dstThing = -60
+                var d = new Date();
+                var utc = d.getTime() + ((d.getTimezoneOffset() + dstThing) * 60000);
+                var nd = new Date(utc + (3600000 * offset));
+                var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+                    "This day doesn't exist"
+                ]
+                return days[nd.getDay()] + ", " + nd.getMonth() + "/" + nd.getDate() + ", " + nd.toLocaleString().split(
+                    ",")[1];
             }
 
-            console.log(width);
+            var offset = 8 - new Date().getTimezoneOffset() / 60;
+
+            function SetTime() {
+                otherpart = "<br>(-" + offset + " hours)"
+                if (offset == 0)
+                    otherpart = ""
+                document.getElementById("currentTime").innerHTML = "<code> " + calcTime('-7') + " (PST)" + otherpart +
+                    "</code>"
+            }
+            SetTime();
+            setInterval(SetTime, 500)
         </script>
-        <script src="code.js"></script>
+        <a class="anchor" id="payment"></a>
+        <div>
+            <h3>Payment</h3>
+            <p>As of now, I offer my services for free. Money is nice, but it isn't a necessity for me at the moment. If
+                you'd like to support me for a track I make for you, a small payment through PayPal works just fine.
+            </p>
+        </div>
+        <br><br>
+        <hr>
+        <div style='text-align: center; bottom: 0px; font-size: 12pt; font-family: "Times New Roman", Times, serif;'>
+            <p>Notice: This site uses cookies to keep track of what state the media player is left in. No other
+                information is ever stored here. Cookies only exist on <i>your</i> local machine.</p>
+            <p id="yourCookies"></p>
+        </div><br><br>
+        <script>
+            function yourCookiesUpdate() {
+                document.getElementById("yourCookies").innerHTML = "Your cookies look like this: <br>" +
+                    "Song index: " + Cookies.get("songIndex") + ", Song Time: " + Cookies.get("songTime") +
+                    ", Play State: " + Cookies.get("playState");
+            }
+            setInterval(yourCookiesUpdate, 500)
+        </script>
+    </div>
+    <!--Fixing thing on mobile-->
+    <script>
+        width = document.documentElement.clientWidth;
+        height = document.documentElement.clientHeight;
+        if (width < height * 1.15) {
+            document.getElementById("projectscontainer").id = "";
+        }
+        if (width < height) {
+            console.log("fix stuff");
+            //fix stuff. we're in a mobile looking view
+            document.getElementById("currentTime").style = "font-size: 12pt";
+            document.querySelectorAll('.anchor').forEach(function (e) {
+                e.style.top = "-200px";
+            });
+            document.getElementById("currentTime").innerHTML = "";
+            document.getElementById("currentTime").id = "";
+            document.getElementById("currentTimeMobile").id = "currentTime";
 
-            <!--div class="AudioPlayer" style='width: 100%;'>
-	<table class='tablemain' id='MusicTable'>
-		<tr>
-			<th>Title</th>
-			<th>Description</th>
-			<th></th>
-		</tr>
-	</table>
-</div-->
-	<!--script>
-        document.getElementById("jswarning").innerHTML = ""
-		function song(name, album, path)
-		{
-			document.getElementById("MusicTable").innerHTML += "<tr><th>"+name+"</th><th>"+album+"</th><th>" + '<audio  controls preload="metadata" style="width:300px;display: inline;height:25px;"><source src="Music/'+path+'" type="audio/mpeg"></audio></th>'
-		}
-        song("Driving Simulator", "Menu music for a driving simulator someone asked me to compose.", "1/DrivingSim.wav")
-        song("Untitled", "Music for someone who wanted something with a similar vibe to Concerning Hobbits by Howard Shore.", "1/124.5Shortened.wav")
-		song("Welcome to Space", "Title music for <i>Welcome, Primitive Lifeform, to Space</i>", "2/WelcomeToSpace.wav");
-        song("The Ordinance", "The theme of a very large spaceship capable of mass destruction. For the WPLTS soundtrack.", "2/TheOrdinance.wav");
+        }
 
-		//song("Drifting Off a Planet", "Welcome, Primitive Lifeform, to Space (OST)", "2/DriftingOffAPlanet.wav");
-		//song("Docking", "Welcome, Primitive Lifeform, to Space (OST)", "2/Docking.wav");
-		//song("An Old Beginning", "An Old Beginning", "1/AnOldBeginning.wav");
-		//song("Swarm", "An Old Beginning", "1/Swarm.wav");
-		//song("Sleep", "An Old Beginning", "1/Sleep.wav");
-		//song("Wilderness", "Friend", "3/Wilderness.wav");
-        //song("Friend", "Friend", "3/FriendFinal.1.wav");
-		//song("Little Bitterness", "Friend", "3/ThemeOfLittleBitterness.wav");
-		//song("Mental Torment", "Friend", "3/MentalTorment.wav");
-		//song("Moving On", "Friend", "3/MovingOn.wav");
-        //song("Recovery", "Friend", "3/Recovery.wav");
-	</script-->
+        console.log(width);
+    </script>
+    <script src="code.js"></script>
     <script>
         //var canvas = 
     </script>
     <style>
-    #cover
-    {
-        width: 100%;
-  position: sticky;
-  top: -15%;
-  z-index: -1;
-    }
-    /*
+        #cover {
+            width: 100%;
+            position: sticky;
+            top: -15%;
+            z-index: -1;
+        }
+
+        /*
     #containerMain
     {
     perspective: 100vw;
@@ -320,13 +409,13 @@
   overflow-x: hidden;
   overflow-y: scroll;
     }*/
-    #content
-    {
-        perspective: 50vw;
-        position: relative;
-        display: block;
-        z-index: 1;
-    }
+        #content {
+            perspective: 50vw;
+            position: relative;
+            display: block;
+            z-index: 1;
+        }
     </style>
 </body>
+
 </html>
