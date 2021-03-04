@@ -33,7 +33,8 @@ var themeGrayscale = {
 	"linkhover": "#DFBF57",
 	"navbackground": "#212221",
 	"glowshadow": "#889797",
-	"fontfamily": "'Teko', sans-serif"
+	"fontfamily": "'Teko', sans-serif",
+	"fontsize": "10pt"
 };
 
 var themeOriginal = {
@@ -43,7 +44,8 @@ var themeOriginal = {
 	"linkhover": "#ff441f",
 	"navbackground": "#38021d",
 	"glowshadow": "#cc086a",
-	"fontfamily": "'Teko', sans-serif"
+	"fontfamily": "'Teko', sans-serif",
+	"fontsize": "10pt"
 };
 var themePaper = {
 	"backgroundcolor": "#f1f1f1",
@@ -52,7 +54,8 @@ var themePaper = {
 	"linkhover": "#A04A92",
 	"navbackground": "#889797",
 	"glowshadow": "#9E9EA0",
-	"fontfamily": "'Roboto', sans-serif"
+	"fontfamily": "'Roboto', sans-serif",
+	"fontsize": "7.25pt"
 };
 var themes = [themeGrayscale, themeOriginal, themePaper];
 
@@ -64,7 +67,6 @@ function hexToRgb(hex) {
 		b: parseInt(result[3], 16)
 	} : null;
 }
-
 function updateTheme() {
 	themeIndex = localStorage.themeIndex
 	if (themeIndex == undefined)
@@ -78,6 +80,7 @@ function updateTheme() {
 	root.style.setProperty("--navbackground", tt["navbackground"]);
 	root.style.setProperty("--glowshadow", tt["glowshadow"]);
 	root.style.setProperty("--fontfamily", tt["fontfamily"]);
+	root.style.setProperty("--fontsize", tt["fontsize"]);
 	var rgb1 = hexToRgb(tt['navbackground']);
 	var rgb2 = hexToRgb(tt['backgroundcolor']);
 	var rgba1 = "rgba(" + rgb1.r + "," + rgb1.g + "," + rgb1.b + ",1)";

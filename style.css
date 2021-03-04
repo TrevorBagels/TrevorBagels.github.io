@@ -18,15 +18,62 @@ original pallete
     --textcolor: #F4F3EF;
     --navlink: #3f738c;
     --linkhover: #DFBF57;
-
+    --fontsize: 10pt;
     --navbackground: #212221;
     --glowshadow: #889797;
+    --target: rgb(43, 206, 57);
     --pageheader: linear-gradient(180deg, rgba(33, 34, 33, 1) 0%, rgba(33, 34, 33, 1) 80%, rgba(49, 50, 49, 1) 100%);
     --fontfamily: 'Teko', sans-serif;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--backgroundcolor);
+    color: var(--textcolor);
+    font-family: var(--fontfamily);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--fontfamily);
+    font-size: var(--fontsize);
+}
+
+#downarrow{
+    display: block;
+    position: absolute;
+    top: 78vh;
+    width: 90px;
+    margin: auto;
+    align-self: center;
+    
+}
+#downarrow path{
+    cursor: pointer;
+    stroke: var(--textcolor);
+    fill: transparent;
+    box-shadow: none;
+    stroke-width: 2px;
+    animation: downarrowanim 3s infinite;
+    transition: .1s;
+}
+#downarrow path:hover{
+    cursor: pointer;
+    stroke: var(--linkhover);
+    fill: transparent;
+    stroke-width: 2px;
+    animation: downarrowanim 3s infinite;
+    transition: .1s;
+}
+@keyframes downarrowanim{
+    0%{transform: translateY(0px); opacity: 0;}
+    15%{opacity: 1;}
+    80%{opacity: .9;}
+    100%{transform: translateY(100px); opacity: 0;}
+}
 #themeselector {
-    font-size: 10pt;
+    font-size: 100%;
     cursor: pointer;
     background-color: var(--backgroundcolor);
     border: none;
@@ -68,18 +115,8 @@ original pallete
     display: block;
 }
 
-html {
-    scroll-behavior: smooth;
-    font-family: var(--fontfamily);
-}
 
-body {
-    margin: 0;
-    padding: 0;
-    background: var(--backgroundcolor);
-    color: var(--textcolor);
-    font-family: var(--fontfamily);
-}
+
 
 ::-webkit-scrollbar {
     width: 0px;
@@ -102,7 +139,7 @@ a.anchor {
 
 #currentTime {
     top: 0;
-    font-size: 16pt;
+    font-size: 130%;
 }
 
 nav a {
@@ -148,6 +185,9 @@ nav {
 
 #projectscontainer {
     width: 90%;
+    max-height: 600px;
+    overflow: hidden;
+    padding: 65px 65px 65px 65px;
     margin: auto;
     align-self: center;
     text-align: center;
@@ -200,18 +240,18 @@ nav {
 }
 
 #pageheader h1 {
-    font-size: 72pt;
+    font-size: 702%;
 }
 
 #pageheader h2 {
     margin: auto;
-    font-size: 42pt;
+    font-size: 420%;
 }
 
 nav a {
     padding-left: 15px;
     padding-right: 15px;
-    font-size: 25pt;
+    font-size: 250%;
 }
 
 .background {
@@ -228,6 +268,20 @@ nav a {
 .button {
     background: #0e0b16;
     color: var(--textcolor);
+    cursor: pointer;
+}
+.button2 {
+    background: #0e0b16;
+    color: var(--textcolor);
+    border: solid #251d3a 2px;
+    cursor: pointer;
+    transition: border-color .2s;
+}
+.button2:hover {
+    background: #0e0b16;
+    color: var(--textcolor);
+    border-color:#DFBF57;
+    transition: border-color .2s;
 }
 
 a:visited {
@@ -252,7 +306,7 @@ a {
     padding-top: 25px;
     margin: auto;
     text-align: left;
-    font-size: 25px;
+    font-size: 190%;
 }
 
 .center {
@@ -281,7 +335,7 @@ audio:active {
 
 .tablemain {
     width: 100%;
-    font-size: 28px;
+    font-size: 210%;
 }
 
 th {
@@ -409,11 +463,11 @@ hr {
     bottom: 0;
     right: 0;
     width: 50px;
-    font-size: 10pt;
+    font-size: 100%;
     display: block;
 }
 code {
-    font-size: 14pt;
+    font-size: 90%;
     padding-left: 20px;
     padding-bottom: 5px;
 }
@@ -451,7 +505,8 @@ input {
     margin-left: 20px;
     padding: 10px 10px;
     width: 175px;
-    color: var(--textcolor) border: none;
+    color: var(--textcolor);
+    border: none;
     border-radius: 6px;
 }
 
@@ -486,4 +541,3 @@ input:focus {
     margin-left: 30px;
     color: rgba(255, 68, 31, 0);
 }
-
