@@ -34,7 +34,11 @@ function BagelVis(){
 	*/
 	this.id = 'BagelVis';
 	this.name = 'BagelVis';
-
+	this.previousBars = []
+	this.bars = 20;
+	this.div = 37; //amount to use for averaging out the power of one bar
+	this.divOffset = 30; //just an offset so things aren't as close together
+	for(let i = 0; i < this.bars; i++) this.previousBars.push(0);
 	/*
 		Initialize the container. This will get set to the element passed in
 		when you start the visualization.
@@ -82,23 +86,57 @@ function BagelVis(){
 		}
 	}
 	this.drawBars = function(freqByteData)
-	{
-		var bars = 20;
-		var barWidth = (this.width / bars)
-		for(let i = 0; i < bars; i++)
+	{	
+		
+		var barWidth = (this.width / this.bars)
+		for(let i = 0; i < this.bars; i++)
 		{
-			var power = freqByteData[i*10];
-			var r = (power * freqByteData[i*10+2])/10
-			var g = 0
+			var power = freqByteData[i*this.div + i*this.divOffset];
+			var prevPower = this.previousBars[i];
+			for(let p = 0; p < this.div-1; p++) power += freqByteData[i*this.div + p + i * this.divOffset]; //get the avg.
+			var dampen = 5;
+			if((power / this.div)/2 > prevPower) {dampen = .15}
+			power = ((power / this.div) + (prevPower * dampen))/(dampen + 1)
+			this.previousBars[i] = power;
+			var r = (power * freqByteData[i*10+2])/10; //?
+			var g = Math.sin(this.frame / 30) * power;
 			var b = Math.floor(Math.sin(this.frame/20)*Math.cos(freqByteData[i*2]/10)*250)
 			var a = 200/power;
-			var rgb = "rgb("+r+","+g+","+b+")"
+			var rgb = "rgb("+r+","+g+","+b+")";
+			var shapeMode = 0;
 			this.ctx.shadowColor = rgb;
 			this.ctx.shadowBlur = 30;
 			this.ctx.globalAlpha = a;
 			this.ctx.fillStyle = rgb;
-			this.ctx.fillRect(0, i*barWidth, power, barWidth*.75);
-			this.ctx.fillRect(this.width, i*barWidth, -power, barWidth*.75);
+			var yOffset = Math.sin(this.frame/30)*2
+			this.ctx.fillRect(0, yOffset+this.height - i*barWidth, power, barWidth*.75);
+			this.ctx.fillRect(this.width, yOffset+this.height - i*barWidth, -power, barWidth*.75);
+		}
+	}
+	this.drawTris = function(freqByteData)
+	{
+		var bars = 20;
+		var barWidth = (this.width / bars)
+		if(freqByteData[60] > 190)
+			this.frame = 90;
+		for(let i = 0; i < bars; i++)
+		{
+			var power = freqByteData[i*10];
+			var r = (power * freqByteData[i*10+2])/10;
+			var g = Math.floor(Math.sin(this.frame/20)*Math.cos(freqByteData[i*2]/10)*250);
+			var b = Math.tan(this.frame / 30) * power;
+			var a = 200/power;
+			var rgb = "rgb("+r+","+g+","+b+")";
+			var shapeMode = 0;
+			this.ctx.shadowColor = rgb;
+			this.ctx.shadowBlur = 30;
+			this.ctx.globalAlpha = a;
+			this.ctx.fillStyle = rgb;
+			this.ctx.beginPath();
+			this.ctx.moveTo(0, i*barWidth);
+			this.ctx.lineTo(power/2, i*barWidth + power*Math.sin(this.frame/60));
+			this.ctx.lineTo(i*20, i*barWidth + barWidth);
+			this.ctx.fill();
 		}
 	}
 	this.drawLines = function(freqByteData)

@@ -96,8 +96,7 @@ function setTheme(i) {
 }
 updateTheme();
 
-function AddSong(name, desc, url, tags, disableHtml) {
-	console.log(disableHtml);
+function AddSong(name, desc, url, tags, year, disableHtml) {
 	var fileDepthPrefix = "";
 	try {
 		if (fileDepth != undefined) fileDepthPrefix = fileDepth;
@@ -107,7 +106,7 @@ function AddSong(name, desc, url, tags, disableHtml) {
 	var href = "";
 	if (isIOS)
 		href = 'target="_blank" href="https://soundcloud.com/trevorbagels';
-	var html = '<div' + ' class="music amplitude-skip-to" data-amplitude-song-index="' + mySongs.length + '" onclick="PlaySong()" data-amplitude-location="0"><div class="background"></div><h3>' + name + '</h3><p>' + desc + '</p></div>';
+	var html = '<div' + ' class="music amplitude-skip-to" data-amplitude-song-index="' + mySongs.length + '" onclick="PlaySong()" data-amplitude-location="0"><div class="background"></div><h3>' + name + '</h3><p>' + desc + '</p><p class="songYear">' + year + '</p></div>';
 	/*if(disableHtml == null && document.getElementById("musicgrid") != null)
 	{
 		document.getElementById("musicgrid").innerHTML += html   
@@ -118,7 +117,8 @@ function AddSong(name, desc, url, tags, disableHtml) {
 		"album": "none",
 		"url": fileDepthPrefix + url,
 		"html": html,
-		"addHTML": disableHtml
+		"addHTML": disableHtml,
+		"year": year
 	})
 	return html;
 }
@@ -148,17 +148,23 @@ function SongSetup() {
 	if (songSetupFinished)
 		return;
 	songSetupFinished = true;
-	AddSong("Driving Simulator Music", "Menu music I made for an unreleased driving simulator.", "Music/1/DrivingSim.mp3", []);
-	AddSong("Orchestral Action Music", "Action music I made for an indie RPG.", "Music/1/OrchestralAction.mp3", [])
-	AddSong("Zombie Shooter Soundtrack", "The overall soundtrack for a zombie shooter game. It starts out calm, and eventually becomes more tense.", "Music/1/ZombieApocGameFull.3.mp3", [])
-	AddSong("Welcome To Space", "Some upbeat music for the <i>Welcome, Primitive Lifeform, to Space</i> Soundtrack", "Music/2/WelcomeToSpace.mp3", [])
-	AddSong("The Ordinance", "The theme for a spaceship capable of mass destruction, from Welcome, Primitive Lifeform, To Space (WPLTS).", "Music/2/TheOrdinance.mp3", [])
-	AddSong("ACX-48", "The theme for a mining facility, in which players are encouraged to raid, from WPLTS.", "Music/2/ACX48.mp3", [])
-	AddSong("Smooth PE Jazz", "", "Music/PeJazz/Smooth Pe Jazz.wav", [], true);
-	AddSong("Attack Of The Drill Sargeant", "", "Music/PeJazz/Attack Of The Drill Sargeant.wav", [], true);
-	AddSong("Sweat and Fatigue", "", "Music/PeJazz/Sweat.wav", [], true);
-	AddSong("Slippery Floors and Squeaky Shoes", "", "Music/PeJazz/slippery.wav", [], true);
-	AddSong("My Kneecaps Ran Away", "", "Music/PeJazz/My Kneecaps Ran Away (tragic).wav", [], true);
+	AddSong("Driving Simulator Music", "Menu music I made for an unreleased driving simulator.", "Music/1/DrivingSim.mp3", [], 2020);
+	AddSong("Orchestral Action Music", "Action music I made for an indie RPG.", "Music/1/OrchestralAction.mp3", [], 2020);
+	AddSong("Zombie Shooter Soundtrack", "The overall soundtrack for a zombie shooter game. It starts out calm, and eventually becomes more tense.", "Music/1/ZombieApocGameFull.3.mp3", [], 2020);
+	AddSong("Welcome To Space", "Some upbeat music for the <i>Welcome, Primitive Lifeform, to Space</i> Soundtrack", "Music/2/WelcomeToSpace.mp3", [], 2019);
+	AddSong("The Ordinance", "The theme for a spaceship capable of mass destruction, from Welcome, Primitive Lifeform, To Space (WPLTS).", "Music/2/TheOrdinance.mp3", [], 2019);
+	AddSong("ACX-48", "The theme for a mining facility, in which players are encouraged to raid, from WPLTS.", "Music/2/ACX48.mp3", [], 2020);
+	AddSong("Face Making", "A piece I composed for a character creation menu.", "Music/3/faceMaking.wav", [], 2020);
+	AddSong("Afraid", "From my album, \"Friend\", which I wrote during a not-so-great time in my life. This song in particular is supposed to sound rather unsettling. Enjoy.", "Music/3/afraid.wav", [], 2020);
+	AddSong("Mostly a Day Off", "A song I wrote on a day that I surprisingly didn't have to do anything.", "Music/3/mostlyADayOff.wav", [], 2020);
+	AddSong("Bulk", "Another one of my singles, written during a period of time in which I had a lot going on. I also spent an incredible amount of time fine tuning the details of this song.", "Music/3/bulk.wav", [], 2020);
+	AddSong("They Call Me Bagel", "It's true. People call me that.", "Music/3/theyCallMeBagel.wav", [], 2020);
+	//smooth PE jazz
+	AddSong("Smooth PE Jazz", "", "Music/PeJazz/Smooth Pe Jazz.wav", [], 2019, true);
+	AddSong("Attack Of The Drill Sargeant", "", "Music/PeJazz/Attack Of The Drill Sargeant.wav", [], 2019, true);
+	AddSong("Sweat and Fatigue", "", "Music/PeJazz/Sweat.wav", [], 2019, true);
+	AddSong("Slippery Floors and Squeaky Shoes", "", "Music/PeJazz/slippery.wav", [], 2019, true);
+	AddSong("My Kneecaps Ran Away", "", "Music/PeJazz/My Kneecaps Ran Away (tragic).wav", [], 2019, true);
 	if (isIOS)
 		setTimeout(InitAmplitude, 100)
 	else
@@ -192,10 +198,31 @@ function InitAmplitude() {
 function Setup() {
 	SongSetup();
 	if (setupFinished) return;
+	var totalSongsAdded = 0;
+	var currentSongGrid = 0;
 	for (var x = 0; x < mySongs.length; x++) {
-		if (mySongs[x]["addHTML"] != true && document.getElementById("musicgrid") != null)
-			document.getElementById("musicgrid").innerHTML += mySongs[x]["html"];
+		if (mySongs[x]["addHTML"] != true && document.getElementById("musicSlides") != null)
+		{
+			if(totalSongsAdded >= 6) {
+				currentSongGrid += 1;
+				var newGrid = `<div class="musicgrid" id="musicgrid${currentSongGrid}"></div>`
+				console.log("create " + newGrid)
+				document.getElementById('musicSlides').innerHTML += newGrid;
+				totalSongsAdded = 0;
+			}
+			console.log(`musicgrid${currentSongGrid}`);
+			document.getElementById(`musicgrid${currentSongGrid}`).innerHTML += mySongs[x]["html"];
+			totalSongsAdded += 1;
+		}
 	}
+	
+	if(typeof(nextMusicSlide) != "undefined")
+	{
+		nextMusicSlide(-1);
+		nextMusicSlide(-1);
+	}
+		
+
 	if (document.getElementById("songPlayer") == undefined)
 		document.body.innerHTML += mediaPlayerHTML;
 	setupFinished = true;
