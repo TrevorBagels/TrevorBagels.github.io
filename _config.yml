@@ -2,6 +2,6 @@ collections_dir: _collections
 collections:
   projects:
     output: true
-url: "http://localhost:4000"
+url: "https://trevorbagels.com"
 sass:
   sass_dir: _sass
