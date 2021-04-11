@@ -7,3 +7,13 @@
 		@content
 	@keyframes #{$name}
 		@content
+
+@mixin breakpoints($min-width, $max-width, $media-type: false)
+	@if $media-type
+		@media #{$media-type} and (min-width: $min-width) and (max-width: $max-width)
+      		@content;
+
+	@else
+		@media all and (min-width: $min-width) and (max-width: $max-width)
+    		@content;
+
