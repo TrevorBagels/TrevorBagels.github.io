@@ -3,3 +3,5 @@ collections:
   projects:
     output: true
 url: "http://localhost:4000"
+sass:
+  sass_dir: _sass
