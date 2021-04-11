@@ -1,0 +1,22 @@
+---
+layout: default
+title: Smooth PE JAZZ
+---
+<h2>SMOOTH PE JAZZ</h2>
+<article>
+	<p style="text-align: center;">A musical style I generated through the creation of several programs
+		(using python and midi utilities. No AI libraries were used).
+		<br>
+		Enjoy the mayhem.
+	</p>
+</article>
+<table class='music-section' style='margin-top: 9vh;'>
+	{% for song in site.data.songs limit:20 %}
+		{% if song.tags contains "pejazz" %}
+			{% capture songname %}{{song.name}}{% endcapture %}
+			{% capture index %}{{forloop.index | minus: 1}}{% endcapture %}
+			{% capture songdesc %}{{song.desc}}{% endcapture %}
+			{% include tags/playsong.html name=songname index=index desc=songdesc%}
+		{% endif %}
+	{% endfor %}
+</table>

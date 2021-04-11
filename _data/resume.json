@@ -1,0 +1,89 @@
+{
+	"skills": [
+		{
+			"name": "Programming",
+			"start": 2014
+		},
+		{
+			"name": "Musical composition",
+			"desc": "",
+			"start": 2012
+		},
+		{
+			"name": "Web Development",
+			"desc": "",
+			"start": 2013
+		},
+		{
+			"name": "Discord Bot Development",
+			"start": 2019
+		},
+		{
+			"name": "Game Development",
+			"start": 2017
+		}
+	],
+	"interests":[
+		"Investigations, open source intelligence",
+		"Vulnerability research",
+		"Data Analysis",
+		"Web Development",
+		"Discord bot development",
+		"Soundtrack composition/production",
+		"Game development"
+	],
+	"languages": [
+		{"name": "Python", "level": 100},
+		{"name": "HTML", "level": 100},
+		{"name": "CSS/SCSS/SASS", "level": 95},
+		{"name": "JavaScript", "level": 90},
+		{"name": "C#", "level": 70},
+		{"name": "LUA", "level": 20}
+	],
+	"soft_skills":
+	[
+		{"name": "listening", "level": 90},
+		{"name": "communication", "level": 95},
+		{"name": "efficiency", "level": 90},
+		{"name": "collaboration", "level": 89}
+
+	],
+	"education": [
+		{
+			"name": "The Internet",
+			"desc": "Pretty much all of my knowledge comes from this place.",
+			"time": [2010, "Present"]
+		},
+		{
+			"name": "Highschool",
+			"desc": "",
+			"time": [2017, 2021]
+		}
+	],
+	"work_experience": [
+		{
+			"name": "NWAPW",
+			"desc": "A three week project based workshop where highschool students form teams and write software.",
+			"things": [
+				"Worked with two other team members to create a simple music fingerprinting program with a browser interface.",
+				"Did all of the frontend",
+				"Integrated the frontend to the backend, and vice versa, using NodeJS and SocketIO"
+			],
+			"links": ["https://nwapw.org/about/"],
+			"time": ["07/20", "08/20"]
+		}
+	],
+	"tools": {
+		"source control": ["Git", "GitHub", "Bitbucket", "Unity Collab"],
+		"editors": ["Visual Studio Code", "Sublime Text", "Visual Studio"],
+		"os": ["Windows", "macOS", "Debian/Ubuntu"],
+		"audio": ["Ableton Live", "FMOD Studio"],
+		"gamedev": ["Unity"]
+	},
+	"contact":
+	{
+		"email": "trevorbagels@gmail.com",
+		"phone": "(248) 434 5508",
+		"discord": "theangrybagel#2557"
+	}
+}

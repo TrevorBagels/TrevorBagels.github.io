@@ -1,0 +1,42 @@
+<div id='visualizer'></div>
+
+<div id="song-player">
+	<div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
+	<progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" id="song-played-progress"></progress>
+	<div class="time-container">
+		<div style="float: left; margin-right: 30px;">
+			<span class="current-time">
+				<span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>
+				:
+				<span class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
+			</span>
+		</div>
+		
+		<div style="float: right; margin-right: 25px;">
+			<span class="duration">
+				<span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>
+				:
+				<span class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
+			</span>
+		</div>
+		<br>
+		<div class='hideVis' onclick='hideVisuals();'></div>
+		<div style='text-align: center' id="songInfo">Driving Simulator Music</div>
+	</div>
+</div>
+<script>
+	var mySongs = []
+	//{% for song in site.data.songs %}
+	mySongs.push(
+		{
+			"name": "{{song.name}}",
+			"artist": "Trevor Bagels",
+			"album": "none",
+			"url": "{{song.path}}",
+			"year": "{{song.year}}"
+		}
+	)
+	//{% endfor %}
+</script>
+<script src="/assets/js/songplayer.js">
+</script>

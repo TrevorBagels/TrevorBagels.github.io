@@ -1,0 +1,14 @@
+<div class='part' id='resume-projects'>
+	<h2>Projects</h2>
+	<table class='experience-timeline'>
+		{% for project in site.data.projects%}
+		{% if project.short %}
+		<tr>
+			<td>{{project.name}}</td>
+			<td class='shortdesc'>{{project.short}}</td>
+			<td class='exptime'>{{project.time[0]}} - {{project.time[1]}}</td>
+		</tr>
+		{% endif %}
+		{%endfor%}
+	</table>
+</div>

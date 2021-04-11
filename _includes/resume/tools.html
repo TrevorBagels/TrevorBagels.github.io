@@ -1,0 +1,13 @@
+<div class='part' id='tools'>
+	<h2>Tools</h2>
+	<ul class='resume-content'>
+		{% for tool in site.data.resume.tools%}
+			<li>{{tool[0] | | capitalize }}</li>
+			<ul>
+				{% for x in tool[1] %}
+				<li>{{x}}</li>
+				{% endfor %}
+			</ul>
+		{%endfor%}
+	</ul>
+</div>

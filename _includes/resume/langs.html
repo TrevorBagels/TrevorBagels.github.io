@@ -1,0 +1,18 @@
+<div class='part' id='langs'>
+	<h2>Languages</h2>
+	<div class='resume-content'>
+		<table style='padding-right: 10px;'>
+			{% for lang in site.data.resume.languages%}
+			<tr>
+				<td>{{lang.name}}</td>
+				<td style='margin-right: 10px;'>
+					<div class='progress-container' style='min-width: 25px'>
+						<div class='progressbar' style='width: {{lang.level}}%;'>
+						</div>
+					</div>
+				</td>
+			</tr>
+			{%endfor%}
+		</table>
+	</div>
+</div>

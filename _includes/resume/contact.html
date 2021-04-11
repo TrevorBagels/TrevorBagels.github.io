@@ -1,0 +1,11 @@
+<div class='part' id='contact'>
+	<h2>Contact</h2>
+	<div class='resume-content'>
+		{% for contact in site.data.resume.contact%}
+		<h4>{{contact[0] | capitalize}}</h4>
+		{% capture contact_id %}{{contact[0]}}{% endcapture %}
+		{% capture contact_value %}{{contact[1]}}{% endcapture %}
+		<p>{% include tags/copyinput.html id=contact_id value=contact_value %}</p>
+		{%endfor%}
+	</div>
+</div>

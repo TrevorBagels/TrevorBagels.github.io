@@ -1,0 +1,42 @@
+[
+	{
+		"name": "Amazon Music",
+		"url": "https://music.amazon.com/artists/B08GBXXK1F?ref=dm_sh_b388-b502-dmcp-5d5c-19eef&musicTerritory=US&marketplaceId=ATVPDKIKX0DER",
+		"img": "/assets/images/musicicons/amazonmusic.png"
+	},
+	{
+		"name": "Google Play Music",
+		"url": "https://play.google.com/music/r/m/Amqzwj3525pl22wij4qyp33dmci?t=Trevor_Bagels",
+		"img": "/assets/images/musicicons/googleplaymusic.jpg"
+	},
+	{
+		"name": "iHeart Radio",
+		"url": "https://www.iheart.com/artist/trevor-bagels-34940701/",
+		"img": "/assets/images/musicicons/iheart.png"
+	},
+	{
+		"name": "Shazam",
+		"url": "https://www.shazam.com/artist/208597273/trevor-bagels",
+		"img": "/assets/images/musicicons/shazam.png"
+	},
+	{
+		"name": "Napster",
+		"url": "https://us.napster.com/artist/trevor-bagels",
+		"img": "/assets/images/musicicons/napster.png"
+	},
+	{
+		"name": "YouTube",
+		"url": "https://www.youtube.com/channel/UCh69Q3mMsXisV9NIFcROhvw/",
+		"img": "/assets/images/musicicons/youtube.png"
+	},
+	{
+		"name": "Spotify",
+		"url": "https://open.spotify.com/artist/5VE7ctwQ5n5NKEl68PWaQA?si=Nwc_zLbdTLCiPO1NJu8GFg",
+		"img": "/assets/images/musicicons/spotify.jpg"
+	},
+	{
+		"name": "Apple Music",
+		"url": "https://music.apple.com/us/artist/trevor-bagels/1528425500",
+		"img": "/assets/images/musicicons/applemusic.png"
+	}
+]

@@ -1,0 +1,39 @@
+---
+layout: default
+title: Connect
+permalink: /connect
+---
+
+<div>
+	<h2>Connect</h2>
+	<article class='center'>
+		<p style="font-size: 100%;">
+			If you've got a question about something, want to hire me, or just want to have a friendly chat, feel free to contact me! 
+		</p>
+	</article>
+	<div class='card center' style='margin: auto; max-width: 50vw;'>
+		{% for contact in site.data.resume.contact%}
+		<div style='padding: 25px;'>
+			{% capture contact_id %}{{contact[0]}}{% endcapture %}
+			{% capture contact_value %}{{contact[1]}}{% endcapture %}
+			<span style='padding-right: 25px;'>{{contact[0] | capitalize}}:</span>
+			{% include tags/copyinput.html id=contact_id value=contact_value %}
+		</div>
+		{%endfor%}
+	</div>
+	<div class='center' style='display: block;'>
+		<h3>Just wanna say hi or something? Pop in to <a target="_blank" href="https://discord.gg/gN2xqw8ATc">this discord server</a> and say something!</h3>
+		<iframe src="https://discord.com/widget?id=830668986685325322&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+	</div>
+</div>
+<hr>
+<article class='center' style='font-size: 60%'>
+	<p>
+		Discord is the fastest way to get ahold of me; if you email me, it could take up to 24 hours for me to respond to your email.
+	</p>
+	<br>
+	<br>
+	<p>
+		And calling that phone number will, by no means at all, notify me of anything. So don't call it. Unless you're curious. Go ahead, see what happens ;)
+	</p>
+</article>

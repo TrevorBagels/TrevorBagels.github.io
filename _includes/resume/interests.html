@@ -1,0 +1,10 @@
+<div class='part' id='interests'>
+	<h2>Interests</h2>
+	<div class='resume-content'>	
+		<ul>
+			{% for interest in site.data.resume.interests %}
+			<li>{{interest}}</li>
+			{%endfor%}
+		</ul>
+	</div>
+</div>

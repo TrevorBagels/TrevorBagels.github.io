@@ -1,0 +1,19 @@
+<div class='part'>
+	<h2>Experience</h2>
+	<div class='experience-timeline-2'>
+		{% for exp in site.data.resume.work_experience%}
+		<div>
+			<span>{{exp.name}}</span>
+			<span class='shortdesc'>{{exp.desc}}</span>
+			<span class='exptime'>{{exp.time[0]}} - {{exp.time[1]}}</span>
+			<ul>
+				{% for item in exp.things %}
+				<li>
+					{{item}}
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		{%endfor%}
+	</div>
+</div>

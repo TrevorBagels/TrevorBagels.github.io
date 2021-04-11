@@ -1,0 +1,23 @@
+---
+layout: default
+title: Projects
+---
+<h2>PROJECTS</h2>
+<div class='projects'>
+	{% for project in site.data.projects %}
+	<div style="grid-column: span {{ project.size }}">
+		<h2>
+			{% if project.link %} <a href={{project.link}} 
+				{% if project.link contains 'https://' %}
+				target='_blank'
+				{% endif %}
+			> {%endif%}
+			{{ project.name | title }}
+			{% if project.link %} </a> {%endif%}
+		</h2>
+		<p>
+			{{ project.desc }}
+		</p>
+	</div>
+	{% endfor %}
+</div>

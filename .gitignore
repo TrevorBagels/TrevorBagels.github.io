@@ -1,0 +1,6 @@
+_site
+.jekyll-metadata
+toindex.html
+.vscode
+.jekyll-cache
+.oldsite

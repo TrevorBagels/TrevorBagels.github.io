@@ -1,0 +1,18 @@
+---
+---
+//@import url(https://fonts.googleapis.com/css?family=Teko&display=swap);
+@import "mixins";
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import "base"; // standard things
+@import "main";
+@import "typography"; // fonts and stuff
+@import "specific/songplayer";
+
+@import "specific/nav"; // navbar
+@import "specific/projects";
+@import "specific/music";
+@import "specific/resume";
+@import "extras/copytext";
+@import "extras/glitch";
+@import "extras/progressbar";

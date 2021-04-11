@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Driving Simulator Music",
+        "desc": "Menu music I made for an unreleased driving simulator.",
+        "path": "/assets/audio/Music/1/DrivingSim.mp3",
+        "tags": [],
+        "year": 2020
+    },
+    {
+        "name": "Orchestral Action Music",
+        "desc": "Action music I made for an indie RPG.",
+        "path": "/assets/audio/Music/1/OrchestralAction.mp3",
+        "tags": [],
+        "year": 2020
+    },
+    {
+        "name": "Zombie Shooter Soundtrack",
+        "desc": "The overall soundtrack for a zombie shooter game. It starts out calm, and eventually becomes more tense.",
+        "path": "/assets/audio/Music/1/ZombieApocGameFull.3.mp3",
+        "tags": [],
+        "year": 2020
+    },
+    {
+        "name": "Welcome To Space",
+        "desc": "Some upbeat music for the <i>Welcome, Primitive Lifeform, to Space</i> Soundtrack",
+        "path": "/assets/audio/Music/2/WelcomeToSpace.mp3",
+        "tags": [],
+        "year": 2019
+    },
+    {
+        "name": "The Ordinance",
+        "desc": "The theme for a spaceship capable of mass destruction, from Welcome, Primitive Lifeform, To Space (WPLTS).",
+        "path": "/assets/audio/Music/2/TheOrdinance.mp3",
+        "tags": [],
+        "year": 2019
+    },
+    {
+        "name": "ACX-48",
+        "desc": "The theme for a mining facility, in which players are encouraged to raid, from WPLTS.",
+        "path": "/assets/audio/Music/2/ACX48.mp3",
+        "tags": [],
+        "year": 2020
+    },
+    {
+        "name": "Face Making",
+        "desc": "A piece I composed for a character creation menu.",
+        "path": "/assets/audio/Music/3/faceMaking.wav",
+        "tags": [],
+        "year": 2020
+    },
+    {
+        "name": "Afraid",
+        "desc": "From my album, \"Friend\", which I wrote during a not-so-great time in my life. This song in particular is supposed to sound rather unsettling. Enjoy.",
+        "path": "/assets/audio/Music/3/afraid.wav",
+        "tags": [],
+        "year": 2020
+    },
+    {
+        "name": "Mostly a Day Off",
+        "desc": "A song I wrote on a day that I surprisingly didn't have to do anything.",
+        "path": "/assets/audio/Music/3/mostlyADayOff.wav",
+        "tags": [],
+        "year": 2020
+    },
+    {
+        "name": "Bulk",
+        "desc": "Another one of my singles, written during a period of time in which I had a lot going on. I also spent an incredible amount of time fine tuning the details of this song.",
+        "path": "/assets/audio/Music/3/bulk.wav",
+        "tags": [],
+        "year": 2020
+    },
+    {
+        "name": "They Call Me Bagel",
+        "desc": "It's true. People call me that.",
+        "path": "/assets/audio/Music/3/theyCallMeBagel.wav",
+        "tags": [],
+        "year": 2020
+    },
+    {
+        "name": "Smooth PE Jazz",
+        "desc": "Whistle whistle whistle.",
+        "path": "/assets/audio/Music/PeJazz/Smooth Pe Jazz.wav",
+        "tags": ["pejazz"],
+        "year": 2019
+    },
+    {
+        "name": "Attack Of The Drill Sargeant",
+        "desc": "Sounds like a boss battle.",
+        "path": "/assets/audio/Music/PeJazz/Attack Of The Drill Sargeant.wav",
+        "tags": ["pejazz"],
+        "year": 2019
+    },
+    {
+        "name": "Sweat and Fatigue",
+        "desc": "I never did like running.",
+        "path": "/assets/audio/Music/PeJazz/Sweat.wav",
+        "tags": ["pejazz"],
+        "year": 2019
+    },
+    {
+        "name": "Slippery Floors and Squeaky Shoes",
+        "desc": "Sometimes you just can't maintain balance, ya know?",
+        "path": "/assets/audio/Music/PeJazz/slippery.wav",
+        "tags": ["pejazz"],
+        "year": 2019
+    },
+    {
+        "name": "My Kneecaps Ran Away",
+        "desc": "Life without these would be hard.",
+        "path": "/assets/audio/Music/PeJazz/My Kneecaps Ran Away (tragic).wav",
+        "tags": ["pejazz"],
+        "year": 2019
+    }
+]

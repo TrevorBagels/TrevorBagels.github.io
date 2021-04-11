@@ -1,0 +1,9 @@
+<div class='part' id='skills'>
+	<h2>Skills</h2>
+		<ul class='resume-content'>
+		{% for skill in site.data.resume.skills%}
+			<li>{{skill.name}}</li>
+			<!--td>Since {{skill.start}}</td-->
+		{%endfor%}
+		</ul>
+</div>

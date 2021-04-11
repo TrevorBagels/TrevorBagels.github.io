@@ -1,0 +1,2 @@
+this is for storing information, such as my music and the data for each song,
+ or my projects, their descriptions, and a link to more details.

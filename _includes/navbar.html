@@ -1,0 +1,27 @@
+<nav>
+	<a href="/">Trevor Bagels</a>
+	<a href="/music">Music</a>
+	<a href="/projects">Projects</a>
+	<a href="/resume">Resume</a>
+	<a href="/connect">Connect</a>
+
+	<!--div class="dropdown">
+		<button id="themeselector" onclick="togglethemeDropdown()" class=".dropbtn">Theme</button>
+		<div id='themedropdown' class="dropdown-content">
+			<button onclick="setTheme(0);">Grayscale</button>
+			<button onclick="setTheme(1);">Original</button>
+			<button onclick="setTheme(2);">Paper</button>
+		</div>
+	</div-->
+	<a style="float: right" id="currentTime">The current time for me is (javascript does this part)</a>
+</nav>
+<script src="/assets/node_modules/spacetime/builds/spacetime.min.js"></script>
+<script>
+	function updateTime(){
+		var s = spacetime.now("America/Los_Angeles")
+		var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "This day doesn't exist"]
+		document.getElementById("currentTime").innerHTML = `<code>${s.format('nice')} (PST)</code>`
+	}
+	updateTime()
+	setInterval(updateTime, 2000)
+</script>
