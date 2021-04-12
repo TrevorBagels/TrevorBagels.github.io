@@ -2,10 +2,10 @@
 layout: default
 title: Music
 ---
-<div style="display: block; margin-top: 25vh; width: 100vw; font-size: 200%;">
+<div style="display: block; margin: auto; margin-top: 25vh; font-size: 100%;">
 {% include musicbridge.html %}
 </div>
-<div style="display: block; margin-left: 50px;">
+<div style="display: block; margin-left: 50px; margin-top: 60px;">
 	<p>Share this link:</p>
 	{% assign musiclink = site.url | append: "/music" %}
 	{% include tags/copyinput.html style="width: 175px; height: 30px;" id="copymusic" value=musiclink %}

@@ -1,0 +1,82 @@
+//modifications to enable mobile support
+@media only screen and (max-width: 600px)
+	\:root
+		--navheight: 65px
+	nav
+		display: grid
+		grid-template-columns: auto auto auto
+		a
+			font-size: 100%
+	#content
+		article
+			margin: 10px 4% 10px 4%
+
+		
+		.music-section
+			max-width: 95%
+
+		.projects
+			display: block
+
+			div
+				margin-top: 15px
+		.homepage-part.projects
+			div:nth-of-type(n + 6)
+				display: none
+		
+		#resume
+			display: block
+			width: 95%
+			#side
+				display: block
+				width: 100%
+				margin: auto
+				div.part
+					display: block
+					margin: auto
+			#main
+				display: block
+
+				.part
+					display: block
+					margin: auto
+				
+			.experience-timeline, .experience-timeline-2
+				tr
+					td.shortdesc
+						font-size: 70%
+				.exptime
+					font-size: 65%
+			.part
+				margin-top: 25px !important
+				max-height: 35vh
+				overflow-y: scroll
+			.experience-timeline-2
+				div
+					max-width: 97%
+					ul
+						margin-left: 15px
+						grid-column: span 3
+						font-size: 85%
+						border-left: 2px white solid
+					span:first-child
+						padding-right: 15px		
+	#song-player
+		max-height: 50px
+		max-width: 50px
+		#play-pause
+			float: none
+			display: block !important
+			margin-right: 0px
+			max-width: 40px
+			max-height: 40px
+			margin: auto !important
+		.amplitude-song-played-progress
+			display: none !important
+		div.time-container
+			display: none !important
+		
+	.no-mobile
+		display: none
+	.mobile-only
+		display: block

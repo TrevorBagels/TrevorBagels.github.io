@@ -27,9 +27,9 @@ permalink: /
 <a class='anchor' id='projects'></a>
 <hr class='sep'>
 <h2>PROJECTS</h2>
-<div class='projects'>
+<div class='projects homepage-part'>
 	{% for project in site.data.projects %}
-	<div style="grid-column: span {{ project.size }}">
+	<div class="grid-{{ project.size }}">
 		<h2>
 			{% if project.link %} <a href={{project.link}} 
 				{% if project.link contains 'https://' %}
@@ -44,6 +44,13 @@ permalink: /
 		</p>
 	</div>
 	{% endfor %}
+</div>
+<div class='mobile-only'>
+	<article>
+		<p>
+			View all of my projects <a href="/projects.html">here</a>.
+		</p>
+	</article>
 </div>
 
 <a class='anchor' id='music'></a>

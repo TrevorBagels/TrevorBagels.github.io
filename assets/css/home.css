@@ -76,6 +76,7 @@ big 'ol thanks to this: https://akashraj9828.github.io/svg-text-animation-genera
 }
 .desc-box h3{
 	animation: fade-in 4.85s cubic-bezier(.74, .06, .4, .92) forwards;
+	max-height: 50px;
 }
 
 @keyframes fade-in{

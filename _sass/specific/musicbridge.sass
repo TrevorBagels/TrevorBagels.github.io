@@ -1,0 +1,55 @@
+$translation: translate(8em)
+	
+.circle-container
+	position: relative
+	display: block
+	width: 20em
+	height: 20em
+	border-radius: 50%
+	transform: translate(-1.5em)
+	padding: 0
+	//left: -2vw
+	list-style: none
+	margin: auto
+	> *
+		display: block
+		position: absolute
+		top: 50%
+		left: 50%
+		margin: -3px
+		width: 4em
+		height: 4em
+	> *:nth-of-type(1)
+		-webkit-transform: rotate(0deg) $translation rotate(0deg)
+		transform: rotate(0deg) $translation rotate(0deg)
+	> *:nth-of-type(2)
+		-webkit-transform: rotate(45deg) $translation rotate(-45deg)
+		transform: rotate(45deg) $translation rotate(-45deg)
+	> *:nth-of-type(3)
+		-webkit-transform: rotate(90deg) $translation rotate(-90deg)
+		transform: rotate(90deg) $translation rotate(-90deg)
+	> *:nth-of-type(4)
+		-webkit-transform: rotate(135deg) $translation rotate(-135deg)
+		transform: rotate(135deg) $translation rotate(-135deg)
+	> *:nth-of-type(5)
+		-webkit-transform: rotate(180deg) $translation rotate(-180deg)
+		transform: rotate(180deg) $translation rotate(-180deg)
+	> *:nth-of-type(6)
+		-webkit-transform: rotate(225deg) $translation rotate(-225deg)
+		transform: rotate(225deg) $translation rotate(-225deg)
+	> *:nth-of-type(7)
+		-webkit-transform: rotate(270deg) $translation rotate(-270deg)
+		transform: rotate(270deg) $translation rotate(-270deg)
+	> *:nth-of-type(8)
+		-webkit-transform: rotate(315deg) $translation rotate(-315deg)
+		transform: rotate(315deg) $translation rotate(-315deg)
+	img
+		display: block
+		max-width: 100%
+		border-radius: 50%
+		border: solid 5px red
+		-webkit-transition: .15s
+		transition: .15s
+		width: 10vw
+	img:hover
+		transform: scale(1.25)
