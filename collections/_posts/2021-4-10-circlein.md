@@ -1,13 +1,12 @@
 ---
 layout: post
 title:  "100 Million Points in Fifteen Minutes"
-date: 2021-04-10
 desc: "Exploiting a vulnerability, becoming rich, and then reporting it. I was responsible, for the most part."
 ---
 
 
 ## Introduction
-A couple weeks ago, someone was talking about this application called [CircleIn](https://circleinapp.com), an app for task management, note-taking and note sharing, and overall productivity-boosting for things related to education. What this person was talking about, however, was the fact that they obtained **two million points in a single day**. For context, people don't usually exceed 1 million points in any given month. In fact, the average, as far as people at my university go, is about 72.9K points, if you're in on the top 100 of the leaderboard. Also, the points for each person resets at the end of each month.
+A couple weeks ago, a student at my university was talking about this application called <a target="_blank" href="https://circleinapp.com">CircleIn</a>, an app for task management, note-taking and note sharing, and overall productivity-boosting for things related to education. What this person was talking about, however, was the fact that they obtained **two million points in a single day**. For context, people don't usually exceed 1 million points in any given month. In fact, the average, as far as people at my university go, is about 72.9K points, if you're in on the top 100 of the leaderboard. Also, the points for each person resets at the end of each month.
 
 So how'd they do it? 
 
@@ -17,7 +16,7 @@ So, two million points, eh? It's sort of a large amount, but in comparison to al
 
 ## Gaming the System
 
-I was curious if the people at CircleIn had thought about this already, and whether or not they had implemented systems to prevent people from gaining massive amounts of points like this. A few weeks ago, I wrote a program to attack sites trying to collect IP address data (trackers in your email, IP loggers, etc.) The way this program works is by connecting to the site via proxies. Initially, the program was extremely slow, because routing network traffic through a free proxy can result in wait times **as long as 2 minutes**. I got around this obstacle with multithreading, where instead of doing each request one by one, the program would make several requests, each on their own thread, preventing one really slow proxy from slowing down the entire program. Read more about that [here](). 
+I was curious if the people at CircleIn had thought about this already, and whether or not they had implemented systems to prevent people from gaining massive amounts of points like this. A few weeks ago, I wrote a program to attack sites trying to collect IP address data (trackers in your email, IP loggers, etc.) The way this program works is by connecting to the site via proxies. Initially, the program was extremely slow, because routing network traffic through a free proxy can result in wait times **as long as 2 minutes**. I got around this obstacle with multithreading, where instead of doing each request one by one, the program would make several requests, each on their own thread, preventing one really slow proxy from slowing down the entire program. Read more about that <a href="/2021/04/01/multithreadedproxies" target="_blank">here</a>
 
 So I took this program, and retrofitted it, so that instead of sending a request via proxy to some URL I despise, it would make API calls, telling CircleIn to create a task on my account. Because it was no longer going through proxies, the program was much faster. And because there wasn't any browser involved, there wasn't any lag. So, just how many tasks was I making per second? Just a little under 50 per second. I could've moved the program to a beefier machine, like my desktop, and I probably would've gotten a rate of 100-200 requests per second. I could have run the program on all of my devices, and combined their power. But let's stick to what I can confirm. About 50 requests per second, on my 7-year-old MacBook Pro. That would be a whopping (60 * 60 * 50 * 1K) 180 million points in a single hour, which is about 4.3 billion points in 24 hours.
 

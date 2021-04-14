@@ -1,19 +1,41 @@
 #post
 	padding: 20px
 	background: var(--postbackground)
-	-webkit-box-shadow: 0px 0px 50px 19px rgba(200,151,255,0.1)
-	box-shadow: 0px 0px 50px 19px rgba(200,151,255,0.1)
+	-webkit-box-shadow: 0px 0px 50px 19px #12081d1a
+	box-shadow: 0px 0px 50px 19px #1409201a
 	h1
 		text-align: center
 		font-size: 500%
 	p
 		margin-top: 15px
 		line-height: 1.7em
+	h2, h3
+		text-align: left
+	.hidden-link
+		color: var(--textcolor)
+	img
+		max-width: 80%
+	img.medium-img
+		margin: auto
+		display: block
+		max-width: 45%
+	img.large-img
+		margin: auto
+		display: block
+		max-width: 85%
+	.invert
+		filter: invert(100%)
+
+
 #post.light-mode
+	-webkit-box-shadow: 0px 0px 50px 19px rgba(200,151,255,0.1)
+	box-shadow: 0px 0px 50px 19px rgba(200,151,255,0.1)
 	color: black
 	background: white
 	h4, h3, h2, h1
 		text-shadow: none
+	.invert
+		filter: none
 
 #blog-posts
 	width: 50%
@@ -21,6 +43,7 @@
 	margin: auto
 	font-size: 150%
 	.post
+		margin-top: 30px
 		padding: 10px 10px 18px 10px
 		background: var(--backgroundcolor)
 		box-shadow: 0px 15px 30px black

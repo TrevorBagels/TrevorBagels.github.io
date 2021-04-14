@@ -10,6 +10,7 @@ layout: default
 <button onclick="toggleEyeBurn()" id='myeyesarescreaming' style='max-width: 150px; position: fixed; display: block; z-index: 11; bottom: 10px; left: 5px;'>
 burn my eyes
 </button>
+
 <article id='post' class='light-mode'>
 	<h1>
 		{{page.title}}
@@ -17,6 +18,7 @@ burn my eyes
 	<p>
 		{{ page.date | date: "%A, %B %d, %Y" }}
 	</p>
+	<hr class='sep'>
 	{{content}}
 </article>
 

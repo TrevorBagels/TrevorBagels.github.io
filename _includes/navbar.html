@@ -4,7 +4,7 @@
 	<a href="/projects">Projects</a>
 	<a href="/resume">Resume</a>
 	<a href="/connect">Connect</a>
-	<!--a href="/blog">Blog</a-->
+	<a href="/blog">Blog</a>
 
 	<!--div class="dropdown">
 		<button id="themeselector" onclick="togglethemeDropdown()" class=".dropbtn">Theme</button>
@@ -21,7 +21,7 @@
 	function updateTime(){
 		var s = spacetime.now("America/Los_Angeles")
 		var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "This day doesn't exist"]
-		document.getElementById("currentTime").innerHTML = `<code>${s.format('nice')} (PST)</code>`
+		document.getElementById("currentTime").innerHTML = `<code class='inline'>${s.format('nice')} (PST)</code>`
 	}
 	updateTime()
 	setInterval(updateTime, 2000)

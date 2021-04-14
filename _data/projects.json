@@ -9,7 +9,7 @@
 	}, 
 	{
 		"name": "JSON4JSON",
-		"desc": "A python library that uses json to configure rules for json files. Makes the lives of developers much easier. Can be installed with <code>pip install JSON4JSON</code>",
+		"desc": "A python library that uses json to configure rules for json files. Makes the lives of developers much easier. Can be installed with <code class='inline'>pip install JSON4JSON</code>",
 		"link": "https://github.com/TrevorBagels/JSON4JSON",
 		"time": ["02/21", "02/21"],
 		"short": "Easier configuration for developers and users.",
