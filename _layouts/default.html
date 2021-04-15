@@ -7,19 +7,24 @@
 			@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@300&family=Roboto");
 			@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,100&family=Open+Sans&family=Roboto&family=Rubik:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 		</style>
+		<link rel='stylesheet' href='/assets/css/zoom.css'>
 		<link rel='stylesheet' href='/assets/css/prism.css'>
 		<link rel='stylesheet' href="/assets/css/styles.css">
+		
+		<script type='text/javascript' src="/assets/js/lib/jquery.min.js"></script>
 
-		<script src="/assets/js/lib/math.min.js"></script>
-		<script src="/assets/js/visualizationcode.js"></script>
+		<script type='text/javascript' src="/assets/js/lib/math.min.js"></script>
+		<script type='text/javascript' src="/assets/js/visualizationcode.js"></script>
 		<script type='text/javascript' src="/assets/js/lib/js.cookie-2.2.1.min.js"></script>
 		<script type="text/javascript" src="/assets/js/lib/amplitude.min.js"></script>
 		<script type="text/javascript" src="/assets/js/copytext.js"></script>
 		<script type="text/javascript" src="/assets/js/prism.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script type='text/javascript' src='/assets/js/zoom.js'></script>
 		{% include analytics.html %}
 		{% include metadata.html %}
 	</head>
-	<body onload="SongPlayerStart()" class='match-braces'>
+	<body onload="SongPlayerStart()" class='match-braces rainbow-braces'>
 		<!--div id='background-img'></div-->
 		{% include songplayer.html %}
 		{% include navbar.html %}
@@ -28,4 +33,9 @@
 		</div>
 		<div style='min-height: 100px;'></div>
 	</body>
+	<script>
+		Array.prototype.slice.call(document.getElementsByTagName("img")).forEach(element => {
+			element.setAttribute("data-action", "zoom");
+		});
+	</script>
 </html>
