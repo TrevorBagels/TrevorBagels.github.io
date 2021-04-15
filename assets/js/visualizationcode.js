@@ -35,6 +35,7 @@ function BagelVis(){
 	this.id = 'BagelVis';
 	this.name = 'BagelVis';
 	this.previousBars = []
+	this.visualizeroff = false
 	this.bars = 20;
 	this.div = 37; //amount to use for averaging out the power of one bar
 	this.divOffset = 30; //just an offset so things aren't as close together
@@ -158,14 +159,14 @@ function BagelVis(){
 		this.ctx.stroke()
 	}
 	this.drawFrame = function()
-	{
+	{ 
 		if(!doVisualize)
 		{
+			this.visualizeroff = true
 			this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 			this.requestAnimation = window.requestAnimationFrame( this.drawFrame.bind(this), this.canvas );
 			return;
 		}
-
 		this.frame += 1;
 		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -174,6 +175,7 @@ function BagelVis(){
 		this.analyser.getByteFrequencyData( freqByteData );
 		//ideal range is from 0 - 400
 		this.drawBars(freqByteData);
+		//this.drawTris(freqByteData)
 		this.drawLines(freqByteData);
 		this.requestAnimation = window.requestAnimationFrame( this.drawFrame.bind(this), this.canvas );
 	}
