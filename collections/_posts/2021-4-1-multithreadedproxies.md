@@ -10,7 +10,7 @@ A few weeks ago, <a target="_blank" class='hidden-link' title="(The Privacy, Sec
 ## Proxies
 
 For those who aren't aware of what a proxy is, it's basically a messenger for your network traffic, meaning your network doesn't have to interact with the other one. Instead, it tells the proxy to send a message to the other network, and the other network sends a message back to the proxy, which forwards the returning message back to you. 
-<img class='medium-img invert' src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proxy_concept_en.svg/1280px-Proxy_concept_en.svg.png" title="svg made by H2g2bob, under cc0." alt="simplified explaination of how a proxy works">
+<img class='medium-img invert zoomable' src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proxy_concept_en.svg/1280px-Proxy_concept_en.svg.png" title="svg made by H2g2bob, under cc0." alt="simplified explaination of how a proxy works">
 
 So, by filtering traffic through a proxy, the whole purpose of the IP logger is eliminated, and it will either provoke whoever is trying to log your IP address, or it'll confuse automated systems. My intention is the former, for I like provoking people, especially when they want my private information.
 
@@ -215,7 +215,7 @@ It'll look something like this:
 ```
 Now, if we run the program, and take a look at the "Logged IP's" section of the dashboard, we'll see something like this:
 
-<img title="don't worry about those dates from the future. seriously, don't worry about it." class='large-img' src='/assets/images/blog/iploggerstats.png'>
+<img title="don't worry about those dates from the future. seriously, don't worry about it." class='large-img zoomable' src='/assets/images/blog/iploggerstats.png'>
 
 Awesome, so our thing works. But it has a few problems. Firstly, near the end of the program, the output looks like this:
 ```output
@@ -394,7 +394,7 @@ For some reason, you have set the headers of the request, and then call `proxy.g
 
 Anyways, this should send a fake user agent. Let's test it.
 
-<img class='large-img' src='/assets/images/blog/iploggerstats2.png'>
+<img class='large-img zoomable' src='/assets/images/blog/iploggerstats2.png'>
 
 Sure enough, IPLogger doesn't identify the requests as bot requests. Great. Ok, but one more thing. 
 

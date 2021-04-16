@@ -34,7 +34,7 @@
 		<div style='min-height: 100px;'></div>
 	</body>
 	<script>
-		Array.prototype.slice.call(document.getElementsByTagName("img")).forEach(element => {
+		Array.prototype.slice.call(document.getElementsByClassName("zoomable")).forEach(element => {
 			element.setAttribute("data-action", "zoom");
 		});
 	</script>
