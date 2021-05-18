@@ -257,9 +257,10 @@ GEM
 
 PLATFORMS
   universal-darwin-19
+  universal-darwin-20
 
 DEPENDENCIES
   github-pages
 
 BUNDLED WITH
-   2.2.15
+   2.2.17

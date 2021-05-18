@@ -2,6 +2,7 @@
 layout: post
 title:  "Attacking IP Loggers"
 desc: "Using multithreading in Python to efficiently bombard IP loggers and other trackers with spam."
+tags: ["python", "tutorials"]
 ---
 
 

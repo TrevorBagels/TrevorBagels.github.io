@@ -2,6 +2,7 @@
 layout: post
 title:  "Exploring Cyrillic"
 desc: "Using Cyrillic to fingerprint text, impersonate online profiles, and encode secret messages in just about anything."
+tags: []
 ---
 
 Back sometime in January, I stumbled across a Discord server for crypto pumping, which is market manipulation, but with cryptocurrency. I looked into it a little bit, got bored, and just forgot about it. I never left the server, and then I started getting random messages from people, either trying to invite me to their own pumping server, or trying to scam me with a cryptocurrency advancement fee scam. Believe it or not, this is the reason I've stayed in this server for as long as I have *(wasting the time of scammers is fun, and it's also fun to surprise people using botted user accounts, <span title="it's a fun trick with discord's API">joining the server they invite me to, and then telling them I know about their bots.</span>)* But I found one of the recruitment attempts quite facinating. You'll need some context for this, so I'll go ahead and give it.
@@ -83,3 +84,6 @@ A few days ago, I found some random online chatting site, and started talking wi
 For the record, I didn't do anything nefarious with this fake account, in fact I contacted the people running the site and informed them about the risks of letting users choose usernames that go further than a-z and 0-9. Hopefully they'll do something about that. 
 
 Also, I don't condone people abusing Cyrillic to impersonate accounts. A lot of harm can be done with it. That Discord server, that I was talking about earlier, had over 3,000 members. While some of those were probably bots, and some were likely people joining, just to join, I'm sure that a third of those people joined, and then *stayed*, because they fell for the fake account. And if you're a developer, setting up login/registration functionality, you might want to make sure to disable characters outside certain scopes, so that people don't impersonate each other with Cyrillic. Unless that's the selling point of your platform, of course.
+
+
+Update: The site didn't respond to the email I sent them, but they did patch the vulnerability. Usernames are more strict, and cryllic can't be used anywhere. It's a shame I didn't get some kind of reply from them, but it's good to see that they made their site a little more secure.

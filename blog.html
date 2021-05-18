@@ -21,6 +21,11 @@ permalink: /blog
 			<p>
 				{{post.desc}}
 			</p>
+			<div style='font-size: .7em; margin-top: 15px;'>
+				{% for tag in post.tags %}
+					<span class='tag'>{{tag}}</span>
+				{% endfor %}
+			</div>
 		</div>
 	{% endfor %}
 </div>

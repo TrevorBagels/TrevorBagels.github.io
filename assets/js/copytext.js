@@ -10,7 +10,7 @@ function copyText(event, id)
 
 	/* Copy the text inside the text field */
 	document.execCommand("copy");
-	notify(event, "Copied!")
+	notify(event, "Copied!", document.getElementById(id))
 }
 
 
@@ -22,10 +22,11 @@ function destroyNotification(id){
 	document.getElementById(id).remove()
 }
 
-function notify(event, text){
+function notify(event, text, element){
 	var id = notifications.toString();
-	var x = event.clientX;
-	var y = event.clientY;
+	var rect = element.getBoundingClientRect();
+	var x = event.pageX;
+	var y = event.pageY;
 	var style = `position: absolute; display:block; z-index: 15; left: ${x}px; top: ${y}px;`
 	document.body.innerHTML += `<div style="${style}" class='notification' id="notify${id}">${text}</div>`;
 	setTimeout(destroyNotification, 1800, `notify${id}`);

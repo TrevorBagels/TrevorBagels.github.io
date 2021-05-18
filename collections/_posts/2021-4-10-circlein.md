@@ -2,6 +2,7 @@
 layout: post
 title:  "100 Million Points in Fifteen Minutes"
 desc: "Exploiting a vulnerability, becoming rich, and then reporting it. I was responsible, for the most part."
+tags: []
 ---
 
 
@@ -32,3 +33,7 @@ So, in the end, I racked up 100 million points. It was also pretty late at night
 
 So, I talked with their design team, and they seemed to take the issue somewhat seriously, for they passed it on to their development team. Also, turns out they had received an email from someone else, probably someone attending the same university, looking at the leaderboard, and seeing me up at the top with a hundred million points. It was actually a report, about how I seemed suspicious, having so many points. I also asked them about the giveaways, and apparently, they manually review every selected winner before sending out the gift cards. So, had I won something, they would've seen my 100 million points, taken a look at my tasks, and found that my tasks were full of gibberish; they would have just skipped me and rerolled the giveaway. 
 There is one thing I forgot to ask them though, and I'm pretty bummed I forgot to ask this: was I at the top of the global leaderboard? Oh well, I guess I'll never know. Now, I'm gonna go and test their systems again for rate-limiting.
+
+As of May 17th, 2021, they haven't implemented any rate-limiting. 
+
+<img class='large-img zoomable' src='/assets/images/blog/addratelimiting.png'>

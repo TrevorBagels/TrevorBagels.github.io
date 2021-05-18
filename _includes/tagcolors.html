@@ -1,0 +1,24 @@
+<script src="/assets/js/lib/darkness.js"></script>
+<script>
+	colors = {
+		
+	}
+	{% for tag in site.data.tags %}
+		colors["{{tag[0]}}"] = "{{tag[1]}}";
+	{%endfor%}
+
+	tags = document.getElementsByClassName("tag")
+	
+	for(i=0; i<tags.length; i++)
+	{
+		element = tags[i]
+		console.log(element.innerHTML)
+		if(colors[element.innerHTML] != null){
+			element.style.backgroundColor = colors[element.innerHTML]
+			if(lightOrDark(colors[element.innerHTML]) == "light"){
+				element.style.color = "black"
+			}
+		}
+
+	}
+</script>

@@ -29,7 +29,7 @@ permalink: /
 <h2>PROJECTS</h2>
 <div class='projects homepage-part'>
 	{% for project in site.data.projects %}
-	<div class="grid-{{ project.size }}">
+	<div class='project' class="grid-{{ project.size }}">
 		<h2>
 			{% if project.link %} <a href={{project.link}} 
 				{% if project.link contains 'https://' %}
@@ -42,6 +42,11 @@ permalink: /
 		<p>
 			{{ project.desc }}
 		</p>
+		<div class='project-tags'>
+			{% for tag in project.tags %}
+				<span class='tag'>{{tag}}</span>
+			{% endfor %}
+		</div>
 	</div>
 	{% endfor %}
 </div>
