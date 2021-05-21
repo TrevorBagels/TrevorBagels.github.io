@@ -2,7 +2,7 @@
 layout: post
 title:  "100 Million Points in Fifteen Minutes"
 desc: "Exploiting a vulnerability, becoming rich, and then reporting it. I was responsible, for the most part."
-tags: []
+tags: ["hacking?"]
 ---
 
 
@@ -27,13 +27,13 @@ Normally, something like this would fail, and get rate-limited. For those who ar
 
 ## Conclusion
 
-I suppose now is when I'll say, I had no nefarious means when doing this. It was mostly out of curiosity and for fun. Oh, and people with over 200K points get selected to be part of monthly giveaways, where CircleIn gives out free gift cards. I <span title="i did, actually.">totally didn't know that when I was doing this.</span>
+I suppose now is when I'll say, I had no nefarious means when doing this. It was mostly out of curiosity and for fun. Oh, and people with over 200K points get selected to be part of monthly giveaways, where CircleIn gives out free gift cards. I <span title="i did, actually. I wouldn't have accepted any rewards though.">totally didn't know that when I was doing this.</span>
 
 So, in the end, I racked up 100 million points. It was also pretty late at night and I was getting tired, so I didn't continue exploring to see what else I could mess with. Instead, I checked my school email and found the email that CircleIn emailed me when I signed up on that day. Down at the bottom, there was an option to schedule a meeting with their design team. I saw this and realized it'd be a great way to report the vulnerability. I mean, if you send an email to an organization, informing them of a flaw, and a single person reads it, they're much more likely to dismiss it as unimportant, move on, and leave that flaw unattended. On the other hand, if an entire group of people see and read it, it'll be taken much more seriously. So I scheduled a meeting with the design team for the next available time window, and we had a chat about the exploit the next day.
 
 So, I talked with their design team, and they seemed to take the issue somewhat seriously, for they passed it on to their development team. Also, turns out they had received an email from someone else, probably someone attending the same university, looking at the leaderboard, and seeing me up at the top with a hundred million points. It was actually a report, about how I seemed suspicious, having so many points. I also asked them about the giveaways, and apparently, they manually review every selected winner before sending out the gift cards. So, had I won something, they would've seen my 100 million points, taken a look at my tasks, and found that my tasks were full of gibberish; they would have just skipped me and rerolled the giveaway. 
 There is one thing I forgot to ask them though, and I'm pretty bummed I forgot to ask this: was I at the top of the global leaderboard? Oh well, I guess I'll never know. Now, I'm gonna go and test their systems again for rate-limiting.
 
-As of May 17th, 2021, they haven't implemented any rate-limiting. 
+As of May 17th, 2021, they still haven't implemented any rate-limiting. 
 
 <img class='large-img zoomable' src='/assets/images/blog/addratelimiting.png'>

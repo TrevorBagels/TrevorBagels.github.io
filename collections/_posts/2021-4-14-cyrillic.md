@@ -2,7 +2,7 @@
 layout: post
 title:  "Exploring Cyrillic"
 desc: "Using Cyrillic to fingerprint text, impersonate online profiles, and encode secret messages in just about anything."
-tags: []
+tags: ["cryptography"]
 ---
 
 Back sometime in January, I stumbled across a Discord server for crypto pumping, which is market manipulation, but with cryptocurrency. I looked into it a little bit, got bored, and just forgot about it. I never left the server, and then I started getting random messages from people, either trying to invite me to their own pumping server, or trying to scam me with a cryptocurrency advancement fee scam. Believe it or not, this is the reason I've stayed in this server for as long as I have *(wasting the time of scammers is fun, and it's also fun to surprise people using botted user accounts, <span title="it's a fun trick with discord's API">joining the server they invite me to, and then telling them I know about their bots.</span>)* But I found one of the recruitment attempts quite facinating. You'll need some context for this, so I'll go ahead and give it.

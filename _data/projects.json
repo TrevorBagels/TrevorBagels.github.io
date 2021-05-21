@@ -25,6 +25,16 @@
 		"tags": ["python", "data", "web scraping"]
 	}, 
 	{
+		"name": "Cryptic Cyrillic",
+		"desc": "Uses Cryillic to fingerprint text and hide secret messages in seemingly normal text.",
+		"link": "https://github.com/TrevorBagels/CrypticCyrillic",
+		"time": ["04/14", "04/14"],
+		"size": 1, 
+		"short": "Uses Cryillic to fingerprint text and encrypt secret messages.",
+		"tags": ["python", "cryptography"]
+
+	},
+	{
 		"name": "JSON4JSON",
 		"desc": "A python library that uses json to configure rules for json files. Makes the lives of developers much easier. Can be installed with <code class='inline'>pip install JSON4JSON</code>",
 		"link": "https://github.com/TrevorBagels/JSON4JSON",

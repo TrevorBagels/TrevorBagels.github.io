@@ -5,21 +5,26 @@
 			"start": 2014
 		},
 		{
+			"name": "Web development",
+			"desc": "",
+			"start": 2013
+		},
+		{
+			"name": "Data scraping",
+			"desc": "",
+			"start": 2020
+		},
+		{
 			"name": "Musical composition",
 			"desc": "",
 			"start": 2012
 		},
 		{
-			"name": "Web Development",
-			"desc": "",
-			"start": 2013
-		},
-		{
-			"name": "Discord Bot Development",
+			"name": "Discord bot development",
 			"start": 2019
 		},
 		{
-			"name": "Game Development",
+			"name": "Game development",
 			"start": 2017
 		}
 	],
@@ -66,8 +71,8 @@
 			"desc": "A three week project based workshop where highschool students form teams and write software.",
 			"things": [
 				"Worked with two other team members to create a simple music fingerprinting program with a browser interface.",
-				"Did all of the frontend",
-				"Integrated the frontend to the backend, and vice versa, using NodeJS and SocketIO"
+				"Designed and built the frontend.",
+				"Integrated the frontend to the backend, and vice versa, using NodeJS and SocketIO."
 			],
 			"links": ["https://nwapw.org/about/"],
 			"time": ["07/20", "08/20"]
