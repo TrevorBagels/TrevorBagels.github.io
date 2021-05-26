@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Collecting Data"
+title:  "Collecting Data (draft)"
 desc: ""
 tags: []
 hidden: true
