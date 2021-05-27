@@ -26,7 +26,7 @@ Aside from advertisers, data brokers (who buy your data then resell it to advert
 That's cool and all (it really isn't, it's an invasion of privacy, as literally anyone with money can pay thirty bucks and find where you live, work, get details like your SSN, date of birth, etc), but why pay these data brokers if you can become one yourself?
 For the typical person, it's too much of a hassle to try and set up a system to do that, and a typical person can't just pay Facebook and get all of their information. So really, if you try to do this, you aren't as powerful as an actual data broker. But it's still possible, it's just not as sophisticated. 
 
-So, to start, where do you get the data? There's a few options here. 
+So, to start, where do you get the data? There's a couple of options here. 
 
 ### Scraping
 
@@ -37,3 +37,26 @@ Scraping is probably the most difficult way to collect data, but if done right, 
 Typically, breaching data is illegal (if you gained unauthorized access to the system, that constitutes as a federal crime in the US), however, once the breached data is published somewhere inconspicuous on the internet, it becomes public information. And having public information is *not* illegal. 
 There are sites and forums where you can get these leaks for free, generally by participating in the forum discussions, earning credits, and then spending those credits to unlock download links to the data breaches/leaks. 
 While I'm *somewhat* okay with all this sensitive data being available to the public, I'm not going to say where these places are, as raising awareness of where you can go to download this data would be a dangerous move for me. People on these sites don't like it when someone tells everyone about their site, and also, more awareness tends to lead to more abuse of this information. 
+
+
+## Using your data
+
+To collect and use all this data, you'll also need somewhere to store it. Right now, I'm using a 4TB external HDD to store my live database, although it's had some issues, and it isn't the most reliable drive. It might just be a defect, or the result of me buying an HDD on the cheap side, but the important thing to note here, is that I can't rely on the drive completely. There was an instance where the drive became read-only, and my Mac couldn't repair the disk without wiping it. Thanks to google giving unlimited storage to .edu domains, I was able to back all of the data up to the cloud. Then, about a month later (I hadn't wiped the drive yet), it suddenly started working again. Honestly, I'm not sure if that's a good thing or a bad thing.
+The point is, if you want to collect and horde data, make sure your storage won't fail you. It'd suck to have spent several months collecting multiple terrabytes of datadumps only for the hard drive to fail and to lose everything. 
+
+And if you're extremely concerned about losing data, consider getting a RAID. It's basically a way to keep your data on multiple local drives, so that if one fails, you still have other drives to recover from.
+
+Ok, so once you've got your data, you'll need a way to search through it. A lot of people like to use **grep**, which is a command line utility that let's you search for text. Grep is great for reading a file and searching for specific things in that file, but when it comes to trying to find info in terrabytes of leaked data, you'll find it rather slow. Ripgrep is a much better alternative; it's the same thing, but more optimized for speed. So, grep and ripgrep are good for their ease of use. But, again, when searching through a lot of data, they won't be the fastest. Having a live database that can handle *billions* of records would be much more preferable if you're aiming for speed. And that's what I've been doing, for the most part. 
+
+Lot's of people like to use SQL, which is fine, although MongoDB has been said to be faster than SQL, and it can handle more advanced types of documents. And, because of that, I prefer MongoDB, and have a program designed for searching through multiple databases. There's a few problems with using a database rather than grep though. As I said, grep is the easiest method, since it's just a text search program. Having a database means you need a way to import all of your data, which isn't always easy.
+
+When leaked data gets published online, it's often a zip file filled with a bunch of text files, usually from mutliple different contributors. This leads to many problems. Sometimes you'll get a bunch of data, but no headers (labels) for the columns. Which means you'll have to look through and try to determine what each column is, which is a pain when trying to do this for hundreds of leaks.
+Also, the consistency of the data may vary, and this is largely a result of having multiple contributors bundled into one leak. Sometimes I'll try to parse a combo list, where the data looks like 
+```
+username:password
+```
+but halfway through the file, the format becomes 
+```
+username;password
+```
+which makes it difficult to parse through, which is why most people prefer to use grep. And if you haven't done much programming, it might be better to stick to grep, since parsing through these files will generally require custom scripts to do things properly. 
