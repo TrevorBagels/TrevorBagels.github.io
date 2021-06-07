@@ -5,24 +5,6 @@ title: Projects
 <h2>PROJECTS</h2>
 <div class='projects'>
 	{% for project in site.data.projects %}
-	<div class='project' style="grid-column: span {{ project.size }}">
-		<h2>
-			{% if project.link %} <a href={{project.link}} 
-				{% if project.link contains 'https://' %}
-				target='_blank'
-				{% endif %}
-			> {%endif%}
-			{{ project.name | title }}
-			{% if project.link %} </a> {%endif%}
-		</h2>
-		<p>
-			{{ project.desc }}
-		</p>
-		<div class='project-tags'>
-			{% for tag in project.tags %}
-				<span class='tag'>{{tag}}</span>
-			{% endfor %}
-		</div>
-	</div>
+		{% include project.html project=project%}
 	{% endfor %}
 </div>

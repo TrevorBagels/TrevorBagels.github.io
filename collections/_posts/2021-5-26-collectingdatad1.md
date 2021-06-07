@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Collecting Data (draft)"
+title:  "Collecting Data (roughish draft)"
 desc: ""
 tags: []
 hidden: true

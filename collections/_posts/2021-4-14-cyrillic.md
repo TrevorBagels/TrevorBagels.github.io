@@ -78,6 +78,8 @@ If you'd like to take a look at the program that I wrote for this, check it out 
 
 So that's cool, but hidden messages might not be enough. What else can we do with this?
 
+## Impersonating People on the Internet
+
 Profile impersonation is one fun thing to do.
 A few days ago, I found some random online chatting site, and started talking with random people on the internet (think Discord, but not as good.) Today, I impersonated someone there (that I had gotten to know a couple days earlier.) The guy, at first, thought his account was being hacked, because he saw messages in one of the open rooms, that looked as if they were coming from his account. I made it clear that I was impersonating him after I said "hello" to everybody in the room. I told everyone in the room that I wasn't actually him, and then I changed the profile picture to make it clear that it was a fake account. The profile picture was literally the word "FAKE." But that didn't seem to defuse the situation, and the guy ended up telling me he'd find where I live, kick down my door, and rip my hands off. Eventually though, he calmed down and said it was cool and all, and that he simply didn't like that there were two of him.
 

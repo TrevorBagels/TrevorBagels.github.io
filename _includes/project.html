@@ -1,0 +1,22 @@
+{% capture project %} {{include.project}} {%endcapture%}
+
+
+<div class='project' class="grid-{{ project.size }}" style="{% if project.vertical != null %} grid-row-start: {{project.vertical[0] }}; grid-row-end: {{project.vertical[1]}};{%endif%}{% if project.horizontal != null %} grid-column-start: {{project.horizontal[0] }}; grid-column-end: {{project.horizontal[1]}};{%endif%}">
+	<h2>
+		{% if project.link %} <a href={{project.link}} 
+			{% if project.link contains 'https://' %}
+			target='_blank'
+			{% endif %}
+		> {%endif%}
+		{{ project.name | title }}
+		{% if project.link %} </a> {%endif%}
+	</h2>
+	<p>
+		{{ project.desc }}
+	</p>
+	<div class='project-tags'>
+		{% for tag in project.tags %}
+		<span class='tag'>{{tag}}</span>
+		{% endfor %}
+	</div>
+</div>
