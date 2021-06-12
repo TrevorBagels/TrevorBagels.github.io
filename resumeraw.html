@@ -1,0 +1,159 @@
+---
+title: Resume
+myname:	"Trevor Bagels"
+myheader: "Student at Portland State University"
+mysummary:	"I'm a student, currently looking for an entry level position to support myself through college. On my free time, I create and program things, from little experiments, to proof-of-concepts, all the way to fully fledged programs that have an actual use. "
+---
+
+<style>
+	body {
+		background: #c9c9c9; 
+	}
+	page { 
+		background: #fff;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 0.5cm;
+		box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		width: 21cm;
+		min-width: 21cm;
+		height: 29.7cm; 
+		min-height: 29.7cm; 
+		position: relative;
+	}
+	@media print {
+		body, page {
+			margin: 0;
+			box-shadow: 0;
+		}
+	}
+
+	#resume{
+		padding: .2cm .6cm .2cm .6cm;
+	}
+	#main-header{
+		max-width: 60%;
+		border-bottom: .1cm solid black;
+	}
+	#summary{
+		padding: .25cm;
+		max-width: 90%;
+		border-bottom: .075cm solid black;
+	}
+	#projects, #education{
+		font-size: .8em;
+		border-bottom: .075cm solid black;
+	}
+	#projects div, #education div{
+		max-width: 75%;
+	}
+	#projects div h3, #education div h3{
+		margin-bottom: .1cm
+	}
+	.exptime{
+		margin-top: 0cm;
+	}
+
+</style>
+
+<page id="resume">
+	<div style="max-width: 70%; float: left;">
+		<div id='main-header'>
+			<h1>
+				{{page.myname}}
+			</h1>
+			<h4>{{page.myheader}}</h4>
+		</div>
+		<div id='summary'>
+			<p>
+				{{page.mysummary}}
+			</p>
+		</div>
+	</div>
+
+	<div id='contact' style='float: right; margin-top: 1.5cm; width: 27%; border-bottom: .05cm solid black;'>
+		{% for contact in site.data.resume.contact%}
+			<h4 style='margin-bottom: .05cm; margin-top: .05cm;'>{{contact[0] | capitalize}}</h4>
+			<p style="margin-top: .05cm;">{{contact[1]}}</p>
+		{%endfor%}
+	</div>
+	<div style='float: left; max-width: 70%'>
+
+		<div style="border-bottom: .075cm solid black; padding-bottom: .2cm;">
+			<h2>Links</h2>			
+			{% for link in site.data.resume.links %}
+			<h4 style='margin-bottom: .05cm; margin-top: .05cm;'>{{link.name | capitalize}}</h4>
+			<a href="https://{{link.url}}" style="margin-top: .05cm;">{{link.url}}</a>
+			{% endfor %}
+		</div>
+
+		<div id='education'>
+			<h2>Education</h2>
+			{% for edu in site.data.resume.education%}
+			<div>
+				<h3 style='position: relative; display: block; height: .25cm; margin-bottom: .035cm;'>
+					<span style='position: absolute; left: 0;'>{{edu.name}}</span>
+					<span style='position: absolute; right: 0; font-weight: 500; color: rgba(20, 20, 20, 1); font-size: .9em;'>
+						<i>{{edu.time[0]}} - {{edu.time[1]}}</i>
+					</span>
+				</h3>
+				<!--h3>{{edu.name}}</h3>
+				<p class='exptime' style='margin-bottom: .03cm;'><i>{{edu.time[0]}} - {{edu.time[1]}}</i></p-->
+				<p class='shortdesc'>{{edu.desc}}</p>
+			</div>
+			{%endfor%}
+		</div>
+
+		<div id='projects'>
+			<h2>Personal Projects</h2>
+			{% for project in site.data.projects%}
+				{% if project.short %}
+				<div class='project'>
+					<h3 style='position: relative; display: block; height: .25cm; margin-bottom: .035cm;'>
+						<span style='position: absolute; left: 0;'>{{project.name}}</span>
+						<span style='position: absolute; right: 0; font-weight: 500; color: rgba(20, 20, 20, 1); font-size: .9em;'>
+							<i>{{project.time[0]}} - {{project.time[1]}}</i>
+						</span>
+					</h3>
+					
+					<p class='shortdesc'>{{project.short}}</p>
+				</div>
+				{% endif %}
+			{%endfor%}
+		</div>
+
+	</div>
+
+	<div style='float: right; max-width: 30%; border-left: .05cm solid black; padding-left: .2cm;'>
+
+
+		<div id='skills'>
+			<h2>Skills</h2>
+			<ul>
+				{% for skill in site.data.resume.soft_skills%}
+				<li>{{skill.name | capitalize }}</li>
+				{%endfor%}
+			</ul>
+			<ul>
+				{% for skill in site.data.resume.skills%}
+				<li>{{skill.name | capitalize}}</li>
+				{%endfor%}
+			</ul>
+		</div>
+		
+		<div id='tools'>
+			<h2>Tools</h2>
+			<ul>
+				{% for tool in site.data.resume.tools%}
+				<li>{{tool[0] | capitalize }}</li>
+				<ul>
+					{% for x in tool[1] %}
+					<li>{{x}}</li>
+					{% endfor %}
+				</ul>
+				{%endfor%}
+			</ul>
+		</div>
+	</div>
+</page>

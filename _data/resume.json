@@ -29,11 +29,11 @@
 		}
 	],
 	"interests":[
-		"Investigations, open source intelligence",
-		"Vulnerability research",
 		"Data Analysis",
-		"Web Development",
+		"Vulnerability research",
+		"Investigations, open source intelligence",
 		"Discord bot development",
+		"Web Development",
 		"Soundtrack composition/production",
 		"Game development"
 	],
@@ -54,6 +54,11 @@
 
 	],
 	"education": [
+		{
+			"name": "Portland State University",
+			"desc": "Bachelors of Science - Data Science",
+			"time": [2021, "Present"]
+		},
 		{
 			"name": "The Internet",
 			"desc": "Pretty much all of my knowledge comes from this place.",
@@ -90,5 +95,11 @@
 		"email": "trevorbagels@gmail.com",
 		"phone": "(248) 434 5508",
 		"discord": "theangrybagel#2557"
-	}
+	},
+	"links":
+	[
+		{"name": "Linkedin", "url": "linkedin.com/in/trevor-bagels-0570431b9"},
+		{"name": "GitHub", "url": "github.com/TrevorBagels"},
+		{"name": "Personal Website", "url": "trevorbagels.com"}
+	]
 }
