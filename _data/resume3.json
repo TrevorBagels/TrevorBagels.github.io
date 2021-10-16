@@ -1,0 +1,106 @@
+{
+	"skills": [
+		["Computers and tech", 100],
+		["Open-mindedness", 100],
+		["Problem-solving", 100],
+		["Conflict resolution and patience", 100],
+		["Attention to detail and consistency", 100],
+		["Adaptability", 95],
+		["Communication and collaboration", 90],
+		["Project management", 93],
+		["Time management", 90]
+	],
+	"technical":
+	[
+		["Research", 100],
+		["Programming", 100],
+		["Web scraping/data collection", 100],
+		["Automation", 97],
+		["Open Source Intelligence (OSINT)", 97],
+		["Data Analysis", 95]
+	],
+	"interests":[
+		"Data Analysis",
+		"Vulnerability research",
+		"Investigations, open source intelligence",
+		"Discord bot development",
+		"Web Development",
+		"Soundtrack composition/production",
+		"Game development"
+	],
+	"languages": [
+		{"name": "Python", "level": 100},
+		{"name": "JSON, XML", "level": 100},
+		{"name": "HTML, Markdown, CSS, SASS", "level": 95},
+		{"name": "JavaScript", "level": 90},
+		{"name": "C#", "level": 70},
+		{"name": "LUA, PHP, SQL", "level": 30, "note": "i hate you php"}
+	],
+	"soft_skills":
+	[
+		{"name": "communication", "level": 100},
+		{"name": "conflict resolution", "level": 100},
+		{"name": "problem solving", "level": 90},
+		{"name": "collaboration", "level": 89}
+
+	],
+	"education": [
+		{
+			"name": "Portland State University",
+			"desc": "Bachelors of Science - Data Science",
+			"time": "2021 - Expected graduation 2025"
+		},
+		{
+			"name": "[redacted] Highschool",
+			"desc": "High School Diploma",
+			"time": "2021"
+		}
+	],
+	"tools": {
+		"Source control": ["Git", "GitHub", "Bitbucket"],
+		"Editors and IDEs": ["Visual Studio Code", "Sublime Text", "Visual Studio"],
+		"OS": ["Windows", "macOS", "Debian/Ubuntu", "Linux shell"],
+		"GSuite": ["Docs", "Sheets", "Slides", "Forms", "Gmail", "Meet", "Chat (Hangouts)"],
+		"Misc": ["Jekyll (static site development)", "Unity3D", "Chrome / Firefox Devleoper Tools", "MongoDB", "FMOD Studio", "Ableton Live", "Adobe Illustrator"]
+	},
+	"details":
+	[
+		"Portland, OR",
+		"<email domain='gmail.com' prefix='trevorbagels'>trevorbagels [at] gmail [dot] com</email>",
+		"<phone AC='458' rest='206-6205'>[phone number hidden]</phone>"
+	],
+	"links":
+	[
+		{"name": "Linkedin", "url": "linkedin.com/in/TrevorBagels"},
+		{"name": "GitHub", "url": "github.com/TrevorBagels"},
+		{"name": "Personal Website", "url": "trevorbagels.com"}
+	],
+	"experience":
+	[
+		{"name": "Dairy Queen", "position": "Crew Member", "time": "06/2021 - present", "desc": "Made blizzards and other treats, coordinated during rushes, helped train new employees."}
+	],
+	"projects":
+	[
+		{
+			"name": "PulsePoint Scraper",
+			"desc": "Uses Python to scrape PulsePoint for data, allowing users to create custom configurations and receive notifications when EMS incidents occur in the vicinity of a specified area of interest. Includes an optional program that scrapes hundreds of PulsePoint connected agencies every 12 hours, keeping API call times evenly spaced to avoid heavy network traffic. It adds all of these incidents to a database in MongoDB. So far, it has collected over three million incidents, and I publish this data as a release on GitHub every month, so it's publicly available to download."
+		},
+		{
+			"name": "Cryptic Cyrillic",
+			"desc": "Uses Cyrillic to fingerprint text by replacing characters of the English alphabet with Cyrillic characters, allowing users to fingerprint their text, such as a name on a digital document or form. It also allows users to encrypt messages, translated to binary, using this method. In addition to fingerprinting text and encrypting messages, it serves as an easy way to impersonate others online, making it a major security risk from a social engineering standpoint. I wrote a blog post about this on my website, demonstrating how people have used Cyrillic to impersonate others for nefarious purposes."
+		},
+		{
+			"name": "JSON4JSON",
+			"desc": "A Python library that uses JSON to create rules for JSON configuration files. It allows developers to focus on their program, while JSON4JSON focuses on the user-friendliness of the configuration. It features automatic unit conversion, variables (within the JSON files), precise rules that can even apply to specific indexes of a list, and more."
+		},
+		{
+			"name": "Case Manager Discord Bot",
+			"desc": "A case management system within Discord, ideal for online investigations. The bot handles security and permissions, cases, divisions, and can even create Google Drive folders automatically and share them with people assigned to a case. I utilized Python, Discord.py, and Google APIs when working on this project."
+		},
+		{
+			"name": "Discord Anti-Stalker System",
+			"desc": "A Python program to monitor your Discord account, keeping track of individual users and what servers they join. It notifies you when a user begins joining servers that you occupy. It also eliminates false positives by performing analysis on servers and building a map of related servers based on their mutual members. The program won't notify you until someone steps out of a circle of related servers, cutting down on <i>hundreds</i> of false positives."
+		}
+
+	]
+}

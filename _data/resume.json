@@ -49,7 +49,7 @@
 	[
 		{"name": "listening", "level": 90},
 		{"name": "communication", "level": 95},
-		{"name": "efficiency", "level": 90},
+		{"name": "problem solving", "level": 90},
 		{"name": "collaboration", "level": 89}
 
 	],
@@ -65,8 +65,8 @@
 			"time": [2010, "Present"]
 		},
 		{
-			"name": "Highschool",
-			"desc": "",
+			"name": "[redacted] High School",
+			"desc": "High School Diploma",
 			"time": [2017, 2021]
 		}
 	],
@@ -75,12 +75,21 @@
 			"name": "NWAPW",
 			"desc": "A three week project based workshop where highschool students form teams and write software.",
 			"things": [
-				"Worked with two other team members to create a simple music fingerprinting program with a browser interface.",
-				"Designed and built the frontend.",
-				"Integrated the frontend to the backend, and vice versa, using NodeJS and SocketIO."
+				"Worked with team members to create a music fingerprinting program with a browser interface",
+				"Designed and built the frontend, along with backend integration using NodeJS and SocketIO"
 			],
 			"links": ["https://nwapw.org/about/"],
-			"time": ["07/20", "08/20"]
+			"time": ["07/2021", "08/2021"]
+		},
+		{
+			"name": "Dairy Queen",
+			"desc": "Worked on the chill team, making blizzards and doing physical labor.",
+			"things": [
+				"Coordinated during rushes",
+				"Maintained and encouraged positive attitudes while under pressure",
+				"Assisted in training new employees"
+			],
+			"time": ["06/2021", "present"]
 		}
 	],
 	"tools": {
@@ -92,8 +101,8 @@
 	},
 	"contact":
 	{
-		"email": "trevorbagels@gmail.com",
-		"phone": "(248) 434 5508",
+		"email": "<email domain='gmail.com' prefix='trevorbagels'>trevorbagels [at] gmail [dot] com</email>",
+		"phone": "<phone AC=458 rest='206-6205‬'>[redacted phone number]</phone>",
 		"discord": "theangrybagel#2557"
 	},
 	"links":

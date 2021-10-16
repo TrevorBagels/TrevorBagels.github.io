@@ -22,3 +22,20 @@
 
 	}
 </script>
+
+<script>
+	function itertag(tagName, funct) {
+		tags = document.getElementsByTagName(tagName);
+		for(i=0; i<tags.length;i++){
+			funct(tags[i]);
+		}
+	}
+	
+	//find all the <email> and <phone> tags and modify their contents. 
+	itertag("email", function(tag){
+		tag.innerHTML = tag.getAttribute("prefix") + "@" + tag.getAttribute("domain")
+	})
+	itertag("phone", function(tag){
+		tag.innerHTML = "(" + tag.getAttribute("AC") + ") " + tag.getAttribute("rest")
+	})
+</script>

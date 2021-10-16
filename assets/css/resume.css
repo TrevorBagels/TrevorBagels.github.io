@@ -1,0 +1,122 @@
+body {
+	background: #a59595; 
+}
+:root{
+	--width: 21cm;
+	--height: 29.69cm;
+}
+page { 
+	background: #fff;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 0.5cm;
+	box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	width: var(--width);
+	min-width: var(--width);
+	height: var(--height);
+	min-height: var(--height);
+	position: relative;
+	overflow: hidden;
+}
+
+
+@media print {
+	body, page {
+		margin: 0;
+		box-shadow: 0;
+	}
+}
+a{
+	color: rgb(41, 41, 150);
+}
+#side hr{
+	margin-left: -.1cm;
+}
+#side div h1, #side div h2, #side div h3, #side div h4, #side div p{
+	padding-left: .2cm;
+}
+#side div{
+	font-size: .75em;
+}
+
+#contact > a{
+	font-weight: 600;
+	color:darkslategrey;
+	margin-bottom: .15cm;
+	display: block;
+	margin-left: 0;
+	padding-left: .2cm;
+	font-size: .95em;
+}
+#side div h3{
+	width: 100%;
+	background-color: #b4b4b4;
+	margin-left: -.1cm;
+	padding-left: .1cm;
+	letter-spacing: .04cm;
+}
+#side{
+	padding-left: .1cm;
+	max-width: 23%;
+	width: 23%;
+	background: #c9c9c9;
+	float: left;
+	height: 100%;
+}
+
+#summary{
+	padding: .25cm;
+	padding-bottom: .1cm;
+	max-width: 96.79%;
+	border-bottom: .075cm solid black;
+}
+#projects, #education, #experience{
+	font-size: .8em;
+}
+#education{
+	border-bottom: .075cm solid black;
+}
+#experience{
+	border-bottom: .075cm solid black;
+}
+#projects div, #education div, #experience div{
+	max-width: 75%;
+}
+#projects div h3, #education div h3, #experience div h3{
+	margin-bottom: .1cm
+}
+.exptime{
+	margin-top: 0cm;
+}
+
+.section-header{
+	color:rgb(33, 93, 184)
+}
+
+
+.progress-container{
+	margin-top: -.125cm;
+	margin-left: .01cm;
+	height: 4px;
+	overflow: hidden;
+	padding: 0;
+	width: 100px;
+	display: block;
+	background-color: #a59595;
+}
+.progressbar{
+	height: 110%;
+	display: block;
+	margin-left: 0px;
+	background: rgb(39, 39, 39);
+}
+#tools span
+{
+	display: inline-block;
+	word-wrap: normal;
+}
+#tools div
+{
+	word-wrap: break-word;
+}

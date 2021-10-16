@@ -4,3 +4,7 @@ toindex.html
 .vscode
 .jekyll-cache
 .oldsite
+resume2.html
+resumeraw.html
+/_data/resume2.json
+#resume 2 contains PII, so I'm not going to keep it publicly hosted. 

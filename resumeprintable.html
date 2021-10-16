@@ -1,0 +1,141 @@
+---
+title: Resume
+myname:	"Trevor Bagels"
+myheader: "Student, Developer, and OSINT Enthusiast."
+mysummary: College student. Active contributor to several online code repositories. Frequently utilizes programming to assist in database development and other things. Interested in data collection and analysis, programming, and open-source intelligence.
+---
+<head>
+
+</head>
+<link rel='stylesheet' href="/assets/css/resume.css" >
+<page id="resume">
+	<div id='side'>
+		<div id='main-header'>
+			<h1>
+				{{page.myname}}
+			</h1>
+			<h4>{{page.myheader}}</h4>
+		</div>
+		<hr>
+		<div id='contact' class='section-header'>
+			<h3>Details</h3>
+			{% for contact in site.data.resume3.details%}
+				<a>{{contact}}</a>
+			{%endfor%}
+			{% for link in site.data.resume2.links %}
+				<a href="https://{{link.url}}">
+					{{link.url}}
+				</a>
+			{% endfor %}
+		</div>
+		<div id='skills'>
+			<h3 class='section-header'>Skills</h3>
+			<div>
+				{% for skill in site.data.resume3.skills%}
+				<div style='margin-left: .2cm;'>
+					<p style='padding-left: 0cm;'>{{skill[0]}}</p>
+					<div class='progress-container' style='min-width: 25px'>
+						<div class='progressbar' style='width: {{skill[1]}}%;'></div>
+					</div>
+				</div>
+
+				{%endfor%}
+			</div>
+			<h3 class='section-header'>Technical Skills</h3>
+			<div>
+				{% for skill in site.data.resume3.technical%}
+				<div style='margin-left: .2cm;'>
+					<p style='padding-left: 0cm;'>{{skill[0]}}</p>
+					<div class='progress-container' style='min-width: 25px'>
+						<div class='progressbar' style='width: {{skill[1]}}%;'></div>
+					</div>
+				</div>
+
+				{%endfor%}
+			</div>
+		</div>
+		<div id='langs'>
+			<h3 class='section-header'>Languages</h3>
+			{% for lang in site.data.resume3.languages%}
+			<div style='margin-left: .2cm;'>
+				<p style='padding-left: 0cm;'>{{lang.name}}</p>
+				<div class='progress-container' style='min-width: 25px'>
+					<div class='progressbar' style='width: {{lang.level}}%;'></div>
+				</div>
+			</div>
+
+			{%endfor%}
+		</div>
+		<div id='tools'>
+			<h3 class="section-header">Tools</h3>
+			{% for tool in site.data.resume3.tools%}
+			<div style='margin-top: .15cm; margin-bottom: .15cm;'>
+				{% assign finalindex = tool[1].size | minus: 1 %}
+				<b>
+					{{tool[0]}} - 
+				</b>
+				{% for x in tool[1] %}
+				{%if x != tool[1][finalindex] %}
+				<span>
+					{{x}} | 
+				</span>
+				{%endif%}
+				{%endfor%}
+				<span>{{tool[1][finalindex]}}</span>
+				
+			</div>
+			{%endfor%}
+		</div>
+	</div>
+
+	<div style='float: right; max-width: 75%'>		
+		<div id='summary' style='width: 100%; font-size: .75em;'>
+			<p style="width: 85%">
+				{{page.mysummary}}
+			</p>
+		</div>
+
+		
+		<div id='education'>
+			<h2 class='section-header'>Education</h2>
+			{% for edu in site.data.resume3.education%}
+			<div>
+				<h3 style='position: relative; display: block; height: .25cm; margin-bottom: .035cm;'>
+					<span style='position: absolute; left: 0;'>{{edu.name}}</span>
+					<span style='position: absolute; right: 0; font-weight: 500; color: rgba(20, 20, 20, 1); font-size: .9em;'>
+						<i>{{edu.time}}</i>
+					</span>
+				</h3>
+				<p class='shortdesc'>{{edu.desc}}</p>
+			</div>
+			{%endfor%}
+		</div>
+		<div id='experience'>
+			<h2 class='section-header'>Work Experience</h2>
+			{% for exp in site.data.resume3.experience%}
+			<div>
+				<h3 style='position: relative; display: block; height: .25cm; margin-bottom: .035cm;'>
+					<span style='position: absolute; left: 0;'>{{exp.position}} at {{exp.name}}</span>
+					<span style='position: absolute; right: 0; font-weight: 500; color: rgba(20, 20, 20, 1); font-size: .9em;'>
+						<i>{{exp.time}}</i>
+					</span>
+				</h3>
+				<p class='shortdesc'>{{exp.desc}}</p>
+			</div>
+			{%endfor%}
+		</div>
+		<div id='projects'>
+			<h2 class='section-header'>Personal Projects</h2>
+			{% for project in site.data.resume3.projects%}
+			<div class='project'>
+				<h3 style='display: block; height: .25cm; margin-bottom: .035cm;'>
+					{{project.name}}
+				</h3>
+				<p class='shortdesc'>{{project.desc}}</p>
+			</div>
+			{%endfor%}
+		</div>
+	</div>
+</page>
+
+{%include tagcolors.html %}
