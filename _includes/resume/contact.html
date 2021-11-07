@@ -5,7 +5,16 @@
 		<h4>{{contact[0] | capitalize}}</h4>
 		{% capture contact_id %}{{contact[0]}}{% endcapture %}
 		{% capture contact_value %}{{contact[1]}}{% endcapture %}
-		<p>{% include tags/copyinput.html id=contact_id value=contact_value %}</p>
+		<a id="{{contact_id}}_" style='display:none'>
+			{{contact_value}}
+		</a>
+		<p>{% include tags/copyinput.html id=contact_id value="[redacted]" %}</p>
+		<script>
+			setTimeout(() => {
+				var value = document.getElementById("{{contact_id}}_");
+				document.getElementById("{{contact_id}}").value = value.innerText.trim()
+			}, 2000);
+		</script>
 		{%endfor%}
 	</div>
 </div>
