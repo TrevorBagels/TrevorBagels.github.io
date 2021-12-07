@@ -7,6 +7,13 @@
         "year": 2020
     },
     {
+        "name": "They Call Me Bagel",
+        "desc": "It's true. People call me that.",
+        "path": "/assets/audio/Music/3/theyCallMeBagel.wav",
+        "tags": [],
+        "year": 2020
+    },
+    {
         "name": "Orchestral Action Music",
         "desc": "Action music I made for an indie RPG.",
         "path": "/assets/audio/Music/1/OrchestralAction.mp3",
@@ -66,13 +73,6 @@
         "name": "Bulk",
         "desc": "Another one of my singles, written during a period of time in which I had a lot going on. I also spent an incredible amount of time fine tuning the details of this song.",
         "path": "/assets/audio/Music/3/bulk.wav",
-        "tags": [],
-        "year": 2020
-    },
-    {
-        "name": "They Call Me Bagel",
-        "desc": "It's true. People call me that.",
-        "path": "/assets/audio/Music/3/theyCallMeBagel.wav",
         "tags": [],
         "year": 2020
     },
