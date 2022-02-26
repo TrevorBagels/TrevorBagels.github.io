@@ -4,7 +4,7 @@ title: Home
 permalink: /ukraine
 ---
 <style>
-	.vidfeed {
+	#vidfeed {
 		float: left;
 		position: fixed;
 	}
@@ -18,9 +18,26 @@ permalink: /ukraine
 	.rss-in{
 
 	}
+	#help a {
+		display: inline-block;
+		padding: 20px 20px 20px 20px;
+	}
 </style>
 <div>
-	<iframe class='vidfeed' width="1120" height="630" src="https://www.youtube.com/embed/44sWIU0rMKI?&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div id="vidfeed">
+		<iframe width="1120" height="630" src="https://www.youtube.com/embed/44sWIU0rMKI?&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+		<div id="help" style="padding: 20px 20px 20px 20px;">
+			<h3 style="text-align: left;">Help Ukraine</h3>
+			<a href="https://savelife.in.ua/en/donate/">Military Aid - <i>Come Back Alive</i></a>
+			<a href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi">Military Aid - <i>National Bank of Ukraine</i></a>
+			<br>
+			<a href="https://www.facebook.com/donate/337101825010055/">Medical Aid - <i>United Help Ukraine</i></a>
+			<a href="https://www.icrc.org/en/where-we-work/europe-central-asia/ukraine">Humanitarian Aid - <i>ICRC</i></a>
+			<span>Or... <i>just spread awareness. That helps too.</i></span>
+		</div>
+
+	</div>
 		<rssapp-feed class="rss" id="_GqrmbMOJiMy4fsuR"></rssapp-feed>
 	<script src="https://widget.rss.app/v1/feed.js" type="text/javascript" async></script>
 </div>
