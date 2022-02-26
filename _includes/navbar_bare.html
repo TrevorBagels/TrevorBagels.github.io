@@ -1,6 +1,7 @@
 <nav>
 	<a href="/">Home</a>
-
+	<a class='no-mobile'> | </a>
+	<a target="_blank" href="https://www.google.com/maps/d/u/0/viewer?mid=180u1IkUjtjpdJWnIC0AxTKSiqK4G6Pez&ll=48.492869881379626%2C31.18946775000002&z=6">Map</a>
 	<!--div class="dropdown">
 		<button id="themeselector" onclick="togglethemeDropdown()" class=".dropbtn">Theme</button>
 		<div id='themedropdown' class="dropdown-content">
@@ -9,14 +10,14 @@
 			<button onclick="setTheme(2);">Paper</button>
 		</div>
 	</div-->
-	<a style="float: right" id="currentTime" class='no-mobile'>The current time for me is (javascript does this part)</a>
+	<a style="float: right" id="currentTime" class='no-mobile'>Time in Kyiv, Ukraine (JS does this part)</a>
 </nav>
 <script src="/assets/node_modules/spacetime/builds/spacetime.min.js"></script>
 <script>
 	function updateTime(){
-		var s = spacetime.now("America/Los_Angeles")
+		var s = spacetime.now("Europe/Kiev")
 		var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "This day doesn't exist"]
-		document.getElementById("currentTime").innerHTML = `<code class='inline'>${s.format('nice')} (PST)</code>`
+		document.getElementById("currentTime").innerHTML = `<code class='inline'>${s.format('nice')} (GMT+2)</code>`
 	}
 	updateTime()
 	setInterval(updateTime, 2000)
