@@ -6,7 +6,9 @@ permalink: /ukraine
 <style>
 	#map {
 		height: 480px;
-		width: 95%;
+		width: 97%;
+		display: block;
+		margin: auto;
 	}
 	#vidfeed {
 		float: left;
@@ -20,6 +22,9 @@ permalink: /ukraine
 	#livevideo {
 		width: 1120px;
 		height: 630px;
+	}
+	#livevideo, #map {
+		border: 4px groove #FFD500;
 	}
 	@media only screen and (max-width: 1600px) {
 		#livevideo {
@@ -77,7 +82,9 @@ permalink: /ukraine
 		</div>
 	</div>
 	<div class="rss">
-		<iframe id="map" src="https://www.google.com/maps/d/embed?mid=180u1IkUjtjpdJWnIC0AxTKSiqK4G6Pez&ehbc=2E312F"></iframe>
+		<div style="width: 100%;">
+			<iframe id="map" src="https://www.google.com/maps/d/embed?mid=180u1IkUjtjpdJWnIC0AxTKSiqK4G6Pez&ehbc=2E312F"></iframe>
+		</div>
 		<rssapp-feed id="_GqrmbMOJiMy4fsuR"></rssapp-feed>
 	</div>
 	<script src="https://widget.rss.app/v1/feed.js" type="text/javascript" async></script>
