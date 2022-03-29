@@ -13,12 +13,19 @@ permalink: /connect
 	</article>
 	<div class='card center' style='margin: auto; max-width: 50vw;'>
 		{% for contact in site.data.resume.contact%}
-		<div style='padding: 25px;'>
-			{% capture contact_id %}{{contact[0]}}{% endcapture %}
-			{% capture contact_value %}{{contact[1]}}{% endcapture %}
-			<span style='padding-right: 25px;'>{{contact[0] | capitalize}}:</span>
-			{% include tags/copyinput.html id=contact_id value=contact_value %}
-		</div>
+		<h4>{{contact[0] | capitalize}}</h4>
+		{% capture contact_id %}{{contact[0]}}{% endcapture %}
+		{% capture contact_value %}{{contact[1]}}{% endcapture %}
+		<a id="{{contact_id}}_" style='display:none'>
+			{{contact_value}}
+		</a>
+		<p>{% include tags/copyinput.html id=contact_id value="[redacted]" %}</p>
+		<script>
+			setTimeout(() => {
+				var value = document.getElementById("{{contact_id}}_");
+				document.getElementById("{{contact_id}}").value = value.innerText.trim()
+			}, 2000);
+		</script>
 		{%endfor%}
 	</div>
 	<div class='center' style='display: block;'>
@@ -37,3 +44,4 @@ permalink: /connect
 		And calling that phone number will, by no means at all, notify me of anything. So don't call it. Unless you're curious. Go ahead, see what happens ;)
 	</p>
 </article>
+{% include tagcolors.html %}
