@@ -56,8 +56,8 @@
 	"education": [
 		{
 			"name": "Portland State University",
-			"desc": "Bachelors of Science - Data Science",
-			"time": [2021, "Present"]
+			"desc": "Dropped out - was studying Data Science / Electrical Engineering",
+			"time": [2021, 2022]
 		},
 		{
 			"name": "The Internet",
@@ -72,16 +72,6 @@
 	],
 	"work_experience": [
 		{
-			"name": "NWAPW",
-			"desc": "A three week project based workshop where highschool students form teams and write software.",
-			"things": [
-				"Worked with team members to create a music fingerprinting program with a browser interface",
-				"Designed and built the frontend, along with backend integration using NodeJS and SocketIO"
-			],
-			"links": ["https://nwapw.org/about/"],
-			"time": ["07/2021", "08/2021"]
-		},
-		{
 			"name": "Dairy Queen",
 			"desc": "Worked on the chill team, making blizzards and doing physical labor.",
 			"things": [
@@ -89,7 +79,16 @@
 				"Maintained and encouraged positive attitudes while under pressure",
 				"Assisted in training new employees"
 			],
-			"time": ["06/2021", "present"]
+			"time": ["06/2021", "09/2022"]
+		},
+		{
+			"name": "UPS",
+			"desc": "Hazmat Response / Package Service Center",
+			"things": [
+				"Responding to leaking packages and hazmats on a daily basis",
+				"Adapting to different situations and determining the safest course of action for myself, fellow employees, and customers"
+			],
+			"time": ["05/2022", "present"]
 		}
 	],
 	"tools": {

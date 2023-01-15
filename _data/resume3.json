@@ -12,12 +12,12 @@
 	],
 	"technical":
 	[
-		["Research", 100],
+		["Research", 98],
 		["Programming", 100],
 		["Web scraping/data collection", 100],
-		["Automation", 97],
-		["Open Source Intelligence (OSINT)", 97],
-		["Data Analysis", 95]
+		["Automation", 95],
+		["Open Source Intelligence (OSINT)", 90],
+		["Data Analysis", 80]
 	],
 	"interests":[
 		"Data Analysis",
@@ -47,8 +47,8 @@
 	"education": [
 		{
 			"name": "Portland State University",
-			"desc": "Bachelors of Science - Data Science",
-			"time": "2021 - Expected graduation 2025"
+			"desc": "Dropped out - was studying Data Science / Electrical Engineering",
+			"time": "2021 - 2022"
 		},
 		{
 			"name": "[redacted] Highschool",
@@ -77,13 +77,14 @@
 	],
 	"experience":
 	[
-		{"name": "Dairy Queen", "position": "Crew Member", "time": "06/2021 - present", "desc": "Made blizzards and other treats, coordinated during rushes, helped train new employees."}
+		{"name": "Dairy Queen", "position": "Crew Member", "time": "06/2021 - 09/2021", "desc": "Made blizzards and other treats, coordinated during rushes, helped train new employees."},
+		{"name": "UPS", "position": "Hazmat Response", "time": "05/2022 - present", "desc": "Responded to leaking packages and hazardous materials, adapted on the fly to unfamiliar and rapidly changing situations."}
 	],
 	"projects":
 	[
 		{
 			"name": "PulsePoint Scraper",
-			"desc": "Uses Python to scrape PulsePoint for data, allowing users to create custom configurations and receive notifications when EMS incidents occur in the vicinity of a specified area of interest. Includes an optional program that scrapes hundreds of PulsePoint connected agencies every 12 hours, keeping API call times evenly spaced to avoid heavy network traffic. It adds all of these incidents to a database in MongoDB. So far, it has collected over three million incidents, and I publish this data as a release on GitHub every month, so it's publicly available to download."
+			"desc": "Uses Python to scrape PulsePoint for data, allowing users to create custom configurations and receive notifications when EMS incidents occur in the vicinity of a specified area of interest. Includes an optional program that scrapes hundreds of PulsePoint connected agencies every 12 hours, keeping API call times evenly spaced to avoid heavy network traffic. It adds all of these incidents to a database in MongoDB. So far, it has collected over thirteen million incidents, and I publish this data as a release on GitHub every month, so it's publicly available to download."
 		},
 		{
 			"name": "Cryptic Cyrillic",

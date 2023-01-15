@@ -1,0 +1,21 @@
+{
+	"window": {
+	},
+	"grid": {
+		"count": 3
+	},
+	"control": {
+	  "address": "http://localhost:80",
+	  "username": "streamwall",
+	  "password": "default"
+	},
+	"data": {
+	  "json-url": []
+	},
+	"twitch": {
+	  "announce": {},
+	  "vote": {}
+	},
+	"cert": {},
+	"streamdelay": {}
+  }
